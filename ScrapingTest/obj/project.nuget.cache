@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "V/dhxqFrSV2vFteVE6wrI2Y3w6/Ax7fXeHHXZGB7m7kEmumCjlQwTmPs1T3//IdIT7hQ++j5m4u4VZnspZ6/Hw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\malzugaray\\source\\repos\\ScrapingTest\\ScrapingTest\\ScrapingTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\malzugaray\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\malzugaray\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
