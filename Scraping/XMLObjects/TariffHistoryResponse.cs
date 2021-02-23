@@ -5863,7 +5863,7 @@ namespace Scraping
 
         private measurementUnit measurementUnitField;
 
-        private measurementUnitQualifier measurementUnitQualifierField;
+        private MeasurementUnitQualifier measurementUnitQualifierField;
 
         private monetaryUnit monetaryUnitField;
 
@@ -6173,7 +6173,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnitQualifier measurementUnitQualifier
+        public MeasurementUnitQualifier measurementUnitQualifier
         {
             get
             {
@@ -6401,7 +6401,7 @@ namespace Scraping
 
         private Description[] measurementUnitDescriptionField;
 
-        private measurementUnitQualifier[] measurementUnitQualifierField;
+        private MeasurementUnitQualifier[] measurementUnitQualifierField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -6573,7 +6573,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("measurementUnitQualifier", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public measurementUnitQualifier[] measurementUnitQualifier
+        public MeasurementUnitQualifier[] measurementUnitQualifier
         {
             get
             {
@@ -6592,7 +6592,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class measurementUnitQualifier
+    public partial class MeasurementUnitQualifier
     {
 
         private long hjidField;
@@ -13573,11 +13573,11 @@ namespace Scraping
     public partial class findMeasurementUnitQualifierByDatesResponse
     {
 
-        private measurementUnitQualifier[] measurementUnitQualifierField;
+        private MeasurementUnitQualifier[] measurementUnitQualifierField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("MeasurementUnitQualifier", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnitQualifier[] MeasurementUnitQualifier
+        public MeasurementUnitQualifier[] MeasurementUnitQualifier
         {
             get
             {
@@ -16397,7 +16397,7 @@ namespace Scraping
 
         private measurementUnit measurementUnitField;
 
-        private measurementUnitQualifier measurementUnitQualifierField;
+        private MeasurementUnitQualifier measurementUnitQualifierField;
 
         private monetaryUnit monetaryUnitField;
 
@@ -16543,7 +16543,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnitQualifier measurementUnitQualifier
+        public MeasurementUnitQualifier measurementUnitQualifier
         {
             get
             {
@@ -16859,7 +16859,7 @@ namespace Scraping
 
         private measurementUnit measurementUnitField;
 
-        private measurementUnitQualifier measurementUnitQualifierField;
+        private MeasurementUnitQualifier measurementUnitQualifierField;
 
         private monetaryUnit monetaryUnitField;
 
@@ -17075,7 +17075,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnitQualifier measurementUnitQualifier
+        public MeasurementUnitQualifier measurementUnitQualifier
         {
             get
             {
@@ -17907,7 +17907,7 @@ namespace Scraping
 
         private measurementUnit measurementUnitField;
 
-        private measurementUnitQualifier measurementUnitQualifierField;
+        private MeasurementUnitQualifier measurementUnitQualifierField;
 
         private monetaryUnit monetaryUnitField;
 
@@ -18053,7 +18053,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnitQualifier measurementUnitQualifier
+        public MeasurementUnitQualifier measurementUnitQualifier
         {
             get
             {

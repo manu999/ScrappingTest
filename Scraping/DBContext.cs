@@ -10,7 +10,7 @@ namespace Scraping
     public class DBContext : DbContext
     {
         private const string CONNECTION_STRING_ON_2005_10017 = @"server=(local);initial catalog=ScrapingDB;Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework;connection timeout=10";
-
+         
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         {
         }
@@ -54,7 +54,9 @@ namespace Scraping
         public DbSet<DBModels.AdditionalCodeTypeMeasureType> AdditionalCodeTypeMeasureTypes { get; set; }
         public DbSet<DBModels.MeasureTypeSeries> MeasureTypeSeries { get; set; }
         public DbSet<DBModels.MeasureTypeSeriesDescription> MeasureTypeSeriesDescriptions { get; set; }
-
+        public DbSet<DBModels.DutyExpression> DutyExpressions { get; set; }
+        public DbSet<DBModels.MeasurementUnitQualifier> MeasurementUnitQualifiers { get; set; }
+        public DbSet<DBModels.MeasurementUnitQualifierDescription> MeasurementUnitQualifierDescriptions { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

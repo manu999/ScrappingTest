@@ -316,6 +316,27 @@ namespace Scraping.Controllers
                                     Interlocked.Decrement(ref activeThreadCount);
                                 });
                                 break;
+                            case "MeasurementUnitQualifier":
+                                if (FindXmlElements.MeasurementUnitQualifierBypass) break;
+                                var measurementUnitQualifierString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(measurementUnitQualifierString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MeasurementUnitQualifier));
+                                            var xmlObject = (Scraping.MeasurementUnitQualifier)serializer.Deserialize(stringReader);
+
+                                            ProccessMeasurementUnitQualifier(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
                             default:
                                 break;
                         }
@@ -1167,7 +1188,7 @@ namespace Scraping.Controllers
 
             return success;
         }
-        #endregion ProccessMeasure
+        #endregion ProccessAdditionalCodeType
 
         #region ProccessMeasureTypeSeries
         private bool ProccessMeasureTypeSeries(Scraping.MeasureTypeSeries item, DBContext dbContext, string fileName = "")
@@ -1238,6 +1259,76 @@ namespace Scraping.Controllers
             return success;
         }
         #endregion ProccessMeasureTypeSeries
+
+        #region ProccessMeasurementUnitQualifier
+        private bool ProccessMeasurementUnitQualifier(Scraping.MeasurementUnitQualifier item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MeasurementUnitQualifiers.Add(new DBModels.MeasurementUnitQualifier(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MeasurementUnitQualifiers.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MeasurementUnitQualifiers.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MeasurementUnitQualifiers.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MeasurementUnitQualifiers.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess measureTypeSeriesDescription
+                foreach (var d in item.measurementUnitQualifierDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MeasurementUnitQualifierDescriptions.Add(new DBModels.MeasurementUnitQualifierDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MeasurementUnitQualifierDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MeasurementUnitQualifierDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MeasurementUnitQualifierDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MeasurementUnitQualifierDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessMeasurementUnitQualifier
     }
 
     internal static class FindXmlElements
