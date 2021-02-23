@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scraping", "Scraping\Scraping.csproj", "{3DEC4816-DC47-4B9A-8427-149606F90C03}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TariffDB", "TariffDB\TariffDB.sqlproj", "{AE55E4FF-D671-4B14-B457-2872DE494362}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +15,6 @@ Global
 		{3DEC4816-DC47-4B9A-8427-149606F90C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DEC4816-DC47-4B9A-8427-149606F90C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DEC4816-DC47-4B9A-8427-149606F90C03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE55E4FF-D671-4B14-B457-2872DE494362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE55E4FF-D671-4B14-B457-2872DE494362}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE55E4FF-D671-4B14-B457-2872DE494362}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{AE55E4FF-D671-4B14-B457-2872DE494362}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE55E4FF-D671-4B14-B457-2872DE494362}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE55E4FF-D671-4B14-B457-2872DE494362}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
