@@ -2837,7 +2837,7 @@ namespace Scraping
 
         private bool validityStartDateFieldSpecified;
 
-        private goodsNomenclatureGroup goodsNomenclatureGroupField;
+        private GoodsNomenclatureGroupoodsNomenclatureGroup goodsNomenclatureGroupField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -2981,7 +2981,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public goodsNomenclatureGroup goodsNomenclatureGroup
+        public GoodsNomenclatureGroupoodsNomenclatureGroup goodsNomenclatureGroup
         {
             get
             {
@@ -3000,7 +3000,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class goodsNomenclatureGroup
+    public partial class GoodsNomenclatureGroupoodsNomenclatureGroup
     {
 
         private long hjidField;
@@ -18561,11 +18561,11 @@ namespace Scraping
     public partial class findGoodsNomenclatureGroupByDatesResponse
     {
 
-        private goodsNomenclatureGroup[] goodsNomenclatureGroupField;
+        private GoodsNomenclatureGroupoodsNomenclatureGroup[] goodsNomenclatureGroupField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("GoodsNomenclatureGroup", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public goodsNomenclatureGroup[] GoodsNomenclatureGroup
+        public GoodsNomenclatureGroupoodsNomenclatureGroup[] GoodsNomenclatureGroup
         {
             get
             {
