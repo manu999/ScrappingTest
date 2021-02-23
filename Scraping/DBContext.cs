@@ -55,6 +55,9 @@ namespace Scraping
         public DbSet<DBModels.MeasureTypeSeries> MeasureTypeSeries { get; set; }
         public DbSet<DBModels.MeasureTypeSeriesDescription> MeasureTypeSeriesDescriptions { get; set; }
         public DbSet<DBModels.DutyExpression> DutyExpressions { get; set; }
+        public DbSet<DBModels.DutyExpressionDescription> DutyExpressionDescriptions { get; set; }
+        public DbSet<DBModels.MonetaryUnit> MonetaryUnits { get; set; }
+        public DbSet<DBModels.MonetaryUnitDescription> MonetaryUnitDescriptions { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

@@ -6794,7 +6794,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class monetaryUnit
+    public partial class MonetaryUnit
     {
 
         private long hjidField;
@@ -16393,7 +16393,7 @@ namespace Scraping
 
         private bool dutyAmountFieldSpecified;
 
-        private dutyExpression dutyExpressionField;
+        private global::DutyExpression dutyExpressionField;
 
         private measurementUnit measurementUnitField;
 
@@ -16515,7 +16515,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public dutyExpression dutyExpression
+        public global::DutyExpression dutyExpression
         {
             get
             {
@@ -16576,7 +16576,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class dutyExpression
+    public partial class DutyExpression
     {
 
         private long hjidField;
@@ -17903,7 +17903,7 @@ namespace Scraping
 
         private bool dutyAmountFieldSpecified;
 
-        private dutyExpression dutyExpressionField;
+        private global::DutyExpression dutyExpressionField;
 
         private measurementUnit measurementUnitField;
 
@@ -18025,7 +18025,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public dutyExpression dutyExpression
+        public global::DutyExpression dutyExpression
         {
             get
             {
@@ -19317,11 +19317,11 @@ namespace Scraping
     public partial class findDutyExpressionByDatesResponse
     {
 
-        private dutyExpression[] dutyExpressionField;
+        private global::DutyExpression[] dutyExpressionField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("DutyExpression", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public dutyExpression[] DutyExpression
+        public global::DutyExpression[] DutyExpression
         {
             get
             {

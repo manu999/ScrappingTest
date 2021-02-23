@@ -316,6 +316,48 @@ namespace Scraping.Controllers
                                     Interlocked.Decrement(ref activeThreadCount);
                                 });
                                 break;
+                            case "DutyExpressions":
+                                if (FindXmlElements.CertificateBypass) break;
+                                var dutyExpressionsstring = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(dutyExpressionsstring))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.DutyExpression));
+                                            var xmlObject = (Scraping.DutyExpression)serializer.Deserialize(stringReader);
+
+                                            ProccessDutyExpression(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "MonetaryUnit":
+                                if (FindXmlElements.CertificateBypass) break;
+                                var monetaryUnitsstring = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(monetaryUnitsstring))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MonetaryUnit));
+                                            var xmlObject = (Scraping.MonetaryUnit)serializer.Deserialize(stringReader);
+
+                                            ProccessMonetaryUnit(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
                             default:
                                 break;
                         }
@@ -1238,6 +1280,145 @@ namespace Scraping.Controllers
             return success;
         }
         #endregion ProccessMeasureTypeSeries
+
+        #region ProcessDutyExpression
+        private bool ProccessDutyExpression(Scraping.DutyExpression item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.DutyExpressions.Add(new DBModels.DutyExpression(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.DutyExpressions.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.DutyExpressions.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.DutyExpressions.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.DutyExpressions.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess Footnote Type Descriptions
+                foreach (Description d in item.dutyExpressionDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.DutyExpressionDescriptions.Add(new DBModels.DutyExpressionDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.DutyExpressionDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.DutyExpressionDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.DutyExpressionDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.DutyExpressionDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Certificate Types");
+            }
+
+            return success;
+        }
+
+        #endregion
+
+        #region ProcessMonetaryUnit
+        private bool ProccessMonetaryUnit(Scraping.MonetaryUnit item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MonetaryUnits.Add(new DBModels.MonetaryUnit(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MonetaryUnits.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MonetaryUnits.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MonetaryUnits.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MonetaryUnits.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess Footnote Type Descriptions
+                foreach (Description d in item.monetaryUnitDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MonetaryUnitDescriptions.Add(new DBModels.MonetaryUnitDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MonetaryUnitDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MonetaryUnitDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MonetaryUnitDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MonetaryUnitDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Certificate Types");
+            }
+
+            return success;
+        }
+        #endregion
     }
 
     internal static class FindXmlElements

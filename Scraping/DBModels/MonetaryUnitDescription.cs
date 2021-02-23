@@ -4,17 +4,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("DutyExpressionDescriptions")]
-    public class DutyExpressionDescription
+    [Table("MonetaryUnitDescriptions")]
+    public class MonetaryUnitDescription
     {
         [Key]
         public long key { get; set; }
-
-        public long hjid { get; set; }
+        
+		public long hjid { get; set; }
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public long dutyExpression_hjid { get; set; }
+        public long monetaryUnit_hjid { get; set; }
         public string description { get; set; }
         public long languages_hjid { get; set; }
 
@@ -25,14 +25,14 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public DutyExpressionDescription()
+        public MonetaryUnitDescription()
         {
         }
 
-        public DutyExpressionDescription(Description obj, long? DutyExpression_hjid, string fileName = "")
+        public MonetaryUnitDescription(Description obj, long monetaryUnitDescription, string fileName = "")
         {
             hjid = obj.hjid;
-            dutyExpression_hjid = DutyExpression_hjid ?? 0;
+            monetaryUnit_hjid = monetaryUnitDescription;
             languages_hjid = obj.language.hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
