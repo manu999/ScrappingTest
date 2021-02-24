@@ -58,8 +58,6 @@ namespace Scraping
         public DbSet<DBModels.DutyExpressionDescription> DutyExpressionDescriptions { get; set; }
         public DbSet<DBModels.MeasurementUnitQualifier> MeasurementUnitQualifiers { get; set; }
         public DbSet<DBModels.MeasurementUnitQualifierDescription> MeasurementUnitQualifierDescriptions { get; set; }
-        public DbSet<DBModels.GoodsNomenclatureGroup> GoodsNomenclatureGroups { get; set; }
-        public DbSet<DBModels.GoodsNomenclatureGroupDescription> GoodsNomenclatureGroupDescriptions { get; set; }
         public DbSet<DBModels.RegulationRoleType> RegulationRoleTypes { get; set; }
         public DbSet<DBModels.RegulationRoleTypeDescription> RegulationRoleTypeDescriptions { get; set; }
         public DbSet<DBModels.MeasurementUnit> MeasurementUnits { get; set; }
@@ -70,6 +68,15 @@ namespace Scraping
         public DbSet<DBModels.ExportRefundNomenclatureDescriptionPeriod> ExportRefundNomenclatureDescriptionPeriods { get; set; }
         public DbSet<DBModels.RegulationGroup> RegulationGroups { get; set; }
         public DbSet<DBModels.RegulationGroupDescription> RegulationGroupDescriptions { get; set; }
+        public DbSet<DBModels.MeasureType> MeasureTypes { get; set; }
+        public DbSet<DBModels.MeasureTypeDescription> MeasureTypeDescriptions { get; set; }
+        public DbSet<DBModels.GoodsNomenclature> GoodsNomenclatures { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureDescription> GoodsNomenclatureDescriptions { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureDescriptionPeriod> GoodsNomenclatureDescriptionPeriods { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureFootnoteAssociation> GoodsNomenclatureFootnoteAssociations { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureGroup> GoodsNomenclatureGroups { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureGroupDescription> GoodsNomenclatureGroupDescriptions { get; set; }
+        public DbSet<DBModels.RegulationRoleCombinations> RegulationRoleCombinationss { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

@@ -526,6 +526,48 @@ namespace Scraping.Controllers
                                     Interlocked.Decrement(ref activeThreadCount);
                                 });
                                 break;
+                            case "MeasureType":
+                                if (FindXmlElements.MeasureTypeBypass) break;
+                                var measureTypeString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(measureTypeString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MeasureType));
+                                            var xmlObject = (Scraping.MeasureType)serializer.Deserialize(stringReader);
+
+                                            ProccessMeasureType(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "GoodsNomenclature":
+                                if (FindXmlElements.GoodsNomenclatureBypass) break;
+                                var goodsNomenclatureString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(goodsNomenclatureString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.GoodsNomenclature));
+                                            var xmlObject = (Scraping.GoodsNomenclature)serializer.Deserialize(stringReader);
+
+                                            ProccessGoodsNomenclature(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
                             default:
                                 break;
                         }
@@ -1646,6 +1688,33 @@ namespace Scraping.Controllers
                             break;
                     }
                 }
+
+                foreach (var d in item.regulationRoleCombinations)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.RegulationRoleCombinationss.Add(new DBModels.RegulationRoleCombinations(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.RegulationRoleCombinationss.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.RegulationRoleCombinationss.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.RegulationRoleCombinationss.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.RegulationRoleCombinationss.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
                 dbContext.SaveChanges();
                 success = true;
             }
@@ -2142,6 +2211,202 @@ namespace Scraping.Controllers
             return success;
         }
         #endregion ProccessRegulationGroup
+
+        #region ProccessMeasureType
+        private bool ProccessMeasureType(Scraping.MeasureType item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MeasureTypes.Add(new DBModels.MeasureType(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MeasureTypes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MeasureTypes.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MeasureTypes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MeasureTypes.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess measureTypeSeriesDescription
+                foreach (var d in item.measureTypeDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MeasureTypeDescriptions.Add(new DBModels.MeasureTypeDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MeasureTypeDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MeasureTypeDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MeasureTypeDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MeasureTypeDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessMeasureType
+
+        #region ProccessGoodsNomenclature
+        private bool ProccessGoodsNomenclature(Scraping.GoodsNomenclature item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.GoodsNomenclatures.Add(new DBModels.GoodsNomenclature(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.GoodsNomenclatures.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.GoodsNomenclatures.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.GoodsNomenclatures.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.GoodsNomenclatures.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess footnoteAssociationMeasure
+                foreach (var d in item.footnoteAssociationGoodsNomenclature)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.GoodsNomenclatureFootnoteAssociations.Add(new DBModels.GoodsNomenclatureFootnoteAssociation(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.GoodsNomenclatureFootnoteAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.GoodsNomenclatureFootnoteAssociations.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.GoodsNomenclatureFootnoteAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.GoodsNomenclatureFootnoteAssociations.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                //Proccess Footnote Description Periods
+                foreach (goodsNomenDescriptionPeriod certificateDP in item.goodsNomenclatureDescriptionPeriod)
+                {
+                    switch (certificateDP.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.GoodsNomenclatureDescriptionPeriods.Add(new DBModels.GoodsNomenclatureDescriptionPeriod(certificateDP, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.GoodsNomenclatureDescriptionPeriods.Where(x => x.hjid == certificateDP.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(certificateDP, fileName);
+                                dbContext.GoodsNomenclatureDescriptionPeriods.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.GoodsNomenclatureDescriptionPeriods.Where(x => x.hjid == certificateDP.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.GoodsNomenclatureDescriptionPeriods.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                    //Proccess Footnote Descriptions
+                    foreach (Description desc in certificateDP.goodsNomenclatureDescription)
+                    {
+                        switch (desc.metainfo.opType)
+                        {
+                            case OpType.C:
+                                dbContext.GoodsNomenclatureDescriptions.Add(new DBModels.GoodsNomenclatureDescription(desc, certificateDP.hjid, fileName));
+                                break;
+                            case OpType.U:
+                                var dbObject = dbContext.GoodsNomenclatureDescriptions.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbObject.UpdateFields(desc, fileName);
+                                    dbContext.GoodsNomenclatureDescriptions.Update(dbObject);
+                                }
+                                break;
+                            case OpType.D:
+                                dbObject = dbContext.GoodsNomenclatureDescriptions.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbContext.GoodsNomenclatureDescriptions.Remove(dbObject);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessGoodsNomenclature
     }
 
     internal static class FindXmlElements

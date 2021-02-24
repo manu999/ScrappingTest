@@ -297,7 +297,7 @@ namespace Scraping
 
         private bool validityStartDateFieldSpecified;
 
-        private goodsNomenclature goodsNomenclatureField;
+        private GoodsNomenclature goodsNomenclatureField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -413,7 +413,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public goodsNomenclature GoodsNomenclature
+        public GoodsNomenclature GoodsNomenclature
         {
             get
             {
@@ -630,7 +630,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class goodsNomenclature
+    public partial class GoodsNomenclature
     {
 
         private long hjidField;
@@ -13977,7 +13977,7 @@ namespace Scraping
 
         private GeographicalArea geographicalAreaField;
 
-        private goodsNomenclature goodsNomenclatureField;
+        private GoodsNomenclature goodsNomenclatureField;
 
         private measureComponent[] measureComponentField;
 
@@ -14317,7 +14317,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public goodsNomenclature goodsNomenclature
+        public GoodsNomenclature goodsNomenclature
         {
             get
             {
@@ -15511,7 +15511,7 @@ namespace Scraping
 
         private exportRefundNomenFootnotesAssoc[] footnoteAssociationErnField;
 
-        private goodsNomenclature goodsNomenclatureField;
+        private GoodsNomenclature goodsNomenclatureField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -15739,7 +15739,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public goodsNomenclature goodsNomenclature
+        public GoodsNomenclature goodsNomenclature
         {
             get
             {
@@ -18587,11 +18587,11 @@ namespace Scraping
     public partial class findGoodsNomenclatureByDatesResponse
     {
 
-        private goodsNomenclature[] goodsNomenclatureField;
+        private GoodsNomenclature[] goodsNomenclatureField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("GoodsNomenclature", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public goodsNomenclature[] GoodsNomenclature
+        public GoodsNomenclature[] GoodsNomenclature
         {
             get
             {

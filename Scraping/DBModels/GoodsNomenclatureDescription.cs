@@ -2,20 +2,19 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
 namespace Scraping.DBModels
 {
-    [Table("MeasureTypeDescriptions")]
-    public class MeasureTypeDescription
+    [Table("GoodsNomenclatureDescriptions")]
+    public class GoodsNomenclatureDescription
     {
         [Key]
         public long key { get; set; }
-
-        public long hjid { get; set; }
+        
+		public long hjid { get; set; }
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public long measureType_hjid { get; set; }
+        public long goodsNomenclatureDescriptionPeriod_hjid { get; set; }
         public string description { get; set; }
         public long languages_hjid { get; set; }
 
@@ -26,14 +25,14 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public MeasureTypeDescription()
+        public GoodsNomenclatureDescription()
         {
         }
 
-        public MeasureTypeDescription(Description desc, long MeasureType_hjid, string fileName = "")
+        public GoodsNomenclatureDescription(Description desc, long GoodsNomenclatureDescriptionPeriod_hjid, string fileName = "")
         {
             hjid = desc.hjid;
-            measureType_hjid = MeasureType_hjid;
+            goodsNomenclatureDescriptionPeriod_hjid = GoodsNomenclatureDescriptionPeriod_hjid;
             languages_hjid = desc.language.hjid;
             opType = desc.metainfo?.opType.ToString();
             origin = desc.metainfo?.origin.ToString();
