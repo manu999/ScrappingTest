@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("MeasureActionDescriptions")]
-    public class MeasureActionDescription
+    [Table("ExportRefundNomenclatureDescriptions")]
+    public class ExportRefundNomenclatureDescription
     {
         [Key]
         public long key { get; set; }
@@ -14,7 +14,7 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public long objectMeasureAction_hjid { get; set; }
+        public long exportRefundNomenclatureDescriptionPeriod_hjid { get; set; }
         public string description { get; set; }
         public long languages_hjid { get; set; }
 
@@ -25,14 +25,14 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public MeasureActionDescription()
+        public ExportRefundNomenclatureDescription()
         {
         }
 
-        public MeasureActionDescription(Description desc, long ObjectMeasureAction_hjid, string fileName = "")
+        public ExportRefundNomenclatureDescription(Description desc, long ExportRefundNomenclatureDescriptionPeriod_hjid, string fileName = "")
         {
             hjid = desc.hjid;
-            objectMeasureAction_hjid = ObjectMeasureAction_hjid;
+            exportRefundNomenclatureDescriptionPeriod_hjid = ExportRefundNomenclatureDescriptionPeriod_hjid;
             languages_hjid = desc.language.hjid;
             opType = desc.metainfo?.opType.ToString();
             origin = desc.metainfo?.origin.ToString();

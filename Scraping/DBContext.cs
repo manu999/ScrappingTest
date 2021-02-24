@@ -55,8 +55,21 @@ namespace Scraping
         public DbSet<DBModels.MeasureTypeSeries> MeasureTypeSeries { get; set; }
         public DbSet<DBModels.MeasureTypeSeriesDescription> MeasureTypeSeriesDescriptions { get; set; }
         public DbSet<DBModels.DutyExpression> DutyExpressions { get; set; }
+        public DbSet<DBModels.DutyExpressionDescription> DutyExpressionDescriptions { get; set; }
         public DbSet<DBModels.MeasurementUnitQualifier> MeasurementUnitQualifiers { get; set; }
         public DbSet<DBModels.MeasurementUnitQualifierDescription> MeasurementUnitQualifierDescriptions { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureGroup> GoodsNomenclatureGroups { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureGroupDescription> GoodsNomenclatureGroupDescriptions { get; set; }
+        public DbSet<DBModels.RegulationRoleType> RegulationRoleTypes { get; set; }
+        public DbSet<DBModels.RegulationRoleTypeDescription> RegulationRoleTypeDescriptions { get; set; }
+        public DbSet<DBModels.MeasurementUnit> MeasurementUnits { get; set; }
+        public DbSet<DBModels.MeasurementUnitDescription> MeasurementUnitDescriptions { get; set; }
+        public DbSet<DBModels.PublicationSigle> PublicationSigles { get; set; }
+        public DbSet<DBModels.ExportRefundNomenclature> ExportRefundNomenclatures { get; set; }
+        public DbSet<DBModels.ExportRefundNomenclatureDescription> ExportRefundNomenclatureDescriptions { get; set; }
+        public DbSet<DBModels.ExportRefundNomenclatureDescriptionPeriod> ExportRefundNomenclatureDescriptionPeriods { get; set; }
+        public DbSet<DBModels.RegulationGroup> RegulationGroups { get; set; }
+        public DbSet<DBModels.RegulationGroupDescription> RegulationGroupDescriptions { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

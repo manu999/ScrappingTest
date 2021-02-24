@@ -4,17 +4,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("MeasureConditionCodes")]
-    public class MeasureConditionCode
+    [Table("PublicationSigles")]
+    public class PublicationSigle
     {
         [Key]
         public long key { get; set; }
-        
-		public long hjid { get; set; }
+
+        public long hjid { get; set; }
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public string conditionCode { get; set; }
+        public string code { get; set; }
+        public string codeTypeId { get; set; }
+        public string publicationCode { get; set; }
+        public string publicationSigle1 { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime validityStartDate { get; set; }
@@ -29,33 +32,35 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public MeasureConditionCode()
+        public PublicationSigle()
         {
         }
 
-        public MeasureConditionCode(Scraping.MeasureConditionCode obj, string fileName = "")
+        public PublicationSigle(Scraping.PublicationSigle obj, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
-            validityStartDate = obj.validityStartDate;
-            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
+            codeTypeId = obj.codeTypeId;
+            code = obj.code;
+            publicationCode = obj.publicationCode;
+            publicationSigle1 = obj.publicationSigle1;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.MeasureConditionCode obj, string fileName = "")
+        public void UpdateFields(Scraping.PublicationSigle obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
-            validityStartDate = obj.validityStartDate;
-            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
+            codeTypeId = obj.codeTypeId;
+            code = obj.code;
+            publicationCode = obj.publicationCode;
+            publicationSigle1 = obj.publicationSigle1;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";

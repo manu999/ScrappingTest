@@ -1,20 +1,26 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("MeasureConditionCodes")]
-    public class MeasureConditionCode
+    [Table("MeasureTypes")]
+    public class MeasureType
     {
         [Key]
         public long key { get; set; }
-        
-		public long hjid { get; set; }
+
+        public long hjid { get; set; }
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public string conditionCode { get; set; }
+        public string measureComponentApplicableCode { get; set; }
+        public int measureExplosionLevel { get; set; }
+        public string measureTypeId { get; set; }
+        public string orderNumberCaptureCode { get; set; }
+        public string originDestCode { get; set; }
+        public string priorityCode { get; set; }
+        public string tradeMovementCode { get; set; }
+        public long measureTypeSeries_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime validityStartDate { get; set; }
@@ -29,17 +35,18 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public MeasureConditionCode()
+        public MeasureType()
         {
         }
 
-        public MeasureConditionCode(Scraping.MeasureConditionCode obj, string fileName = "")
+        public MeasureType(Scraping.MeasureType obj, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
+            measureTypeCombination = obj.measureTypeCombination;
+            measureTypeSeriesId = obj.measureTypeSeriesId;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -48,12 +55,13 @@ namespace Scraping.DBModels
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.MeasureConditionCode obj, string fileName = "")
+        public void UpdateFields(Scraping.MeasureType obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
+            measureTypeCombination = obj.measureTypeCombination;
+            measureTypeSeriesId = obj.measureTypeSeriesId;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();

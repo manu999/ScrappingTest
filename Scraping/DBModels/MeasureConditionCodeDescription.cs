@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
@@ -23,5 +24,37 @@ namespace Scraping.DBModels
         public string dataFileType { get; set; }
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
+
+        public MeasureConditionCodeDescription()
+        {
+        }
+
+        public MeasureConditionCodeDescription(Description desc, long MeasureConditionCode_hjid, string fileName = "")
+        {
+            hjid = desc.hjid;
+            measureConditionCode_hjid = MeasureConditionCode_hjid;
+            languages_hjid = desc.language.hjid;
+            opType = desc.metainfo?.opType.ToString();
+            origin = desc.metainfo?.origin.ToString();
+            status = desc.metainfo?.status.ToString();
+            description = desc.description;
+            transactionDate = desc.metainfo?.transactionDate ?? new DateTime();
+            dataFileName = fileName;
+            dataFileType = "";
+            dataFileTypeValue = 0;
+        }
+
+        public void UpdateFields(Description desc, string fileName = "")
+        {
+            languages_hjid = desc.language.hjid;
+            opType = desc.metainfo?.opType.ToString();
+            origin = desc.metainfo?.origin.ToString();
+            status = desc.metainfo?.status.ToString();
+            description = desc.description;
+            transactionDate = desc.metainfo?.transactionDate ?? new DateTime();
+            dataFileName = fileName;
+            dataFileType = "";
+            dataFileTypeValue = 0;
+        }
     }
 }

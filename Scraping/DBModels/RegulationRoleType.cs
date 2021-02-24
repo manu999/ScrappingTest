@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("MeasureConditionCodes")]
-    public class MeasureConditionCode
+    [Table("RegulationRoleTypes")]
+    public class RegulationRoleType
     {
         [Key]
         public long key { get; set; }
@@ -14,7 +14,8 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public string conditionCode { get; set; }
+        public string regulationRoleTypeId { get; set; }
+        public long regulationRoleCombinations_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime validityStartDate { get; set; }
@@ -29,18 +30,18 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public MeasureConditionCode()
+        public RegulationRoleType()
         {
         }
 
-        public MeasureConditionCode(Scraping.MeasureConditionCode obj, string fileName = "")
+        public RegulationRoleType(Scraping.RegulationRoleType obj, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
-            validityStartDate = obj.validityStartDate;
+            regulationRoleTypeId = obj.regulationRoleTypeId;
+            //regulationRoleCombinations_hjid = obj.RegulationRoleCombinations_hjid;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
@@ -48,12 +49,12 @@ namespace Scraping.DBModels
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.MeasureConditionCode obj, string fileName = "")
+        public void UpdateFields(Scraping.RegulationRoleType obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
+            regulationRoleTypeId = obj.regulationRoleTypeId;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();

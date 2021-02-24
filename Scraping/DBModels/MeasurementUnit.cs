@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("MeasureConditionCodes")]
-    public class MeasureConditionCode
+    [Table("MeasurementUnits")]
+    public class MeasurementUnit
     {
         [Key]
         public long key { get; set; }
@@ -14,7 +14,8 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public string conditionCode { get; set; }
+        public string measurementUnitCode { get; set; }
+        public long measurementUnitQualifier_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime validityStartDate { get; set; }
@@ -29,17 +30,18 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public MeasureConditionCode()
+        public MeasurementUnit()
         {
         }
 
-        public MeasureConditionCode(Scraping.MeasureConditionCode obj, string fileName = "")
+        public MeasurementUnit(Scraping.MeasurementUnit obj, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
+            measurementUnitCode = obj.measurementUnitCode;
+            //measurementUnitQualifier_hjid = obj.measurementUnitQualifier.hjid;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -48,12 +50,12 @@ namespace Scraping.DBModels
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.MeasureConditionCode obj, string fileName = "")
+        public void UpdateFields(Scraping.MeasurementUnit obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
+            measurementUnitCode = obj.measurementUnitCode;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();

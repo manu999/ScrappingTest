@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("MeasureActionDescriptions")]
-    public class MeasureActionDescription
+    [Table("RegulationGroupDescriptions")]
+    public class RegulationGroupDescription
     {
         [Key]
         public long key { get; set; }
@@ -14,7 +14,7 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public long objectMeasureAction_hjid { get; set; }
+        public long regulationGroup_hjid { get; set; }
         public string description { get; set; }
         public long languages_hjid { get; set; }
 
@@ -25,14 +25,14 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public MeasureActionDescription()
+        public RegulationGroupDescription()
         {
         }
 
-        public MeasureActionDescription(Description desc, long ObjectMeasureAction_hjid, string fileName = "")
+        public RegulationGroupDescription(Description desc, long RegulationGroup_hjid, string fileName = "")
         {
             hjid = desc.hjid;
-            objectMeasureAction_hjid = ObjectMeasureAction_hjid;
+            regulationGroup_hjid = RegulationGroup_hjid;
             languages_hjid = desc.language.hjid;
             opType = desc.metainfo?.opType.ToString();
             origin = desc.metainfo?.origin.ToString();

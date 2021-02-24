@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
@@ -26,5 +27,38 @@ namespace Scraping.DBModels
         public string dataFileType { get; set; }
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
+
+        public MeasureAction()
+        {
+        }
+
+        public MeasureAction(Scraping.MeasureAction obj, string fileName = "")
+        {
+            hjid = obj.hjid;
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            actionCode = obj.actionCode;
+            validityStartDate = obj.validityStartDate;
+            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
+            dataFileName = fileName;
+            dataFileType = "";
+            dataFileTypeValue = 0;
+        }
+
+        public void UpdateFields(Scraping.MeasureAction obj, string fileName = "")
+        {
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            actionCode = obj.actionCode;
+            validityStartDate = obj.validityStartDate;
+            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
+            dataFileName = fileName;
+            dataFileType = "";
+            dataFileTypeValue = 0;
+        }
     }
 }

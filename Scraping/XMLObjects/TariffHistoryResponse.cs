@@ -2837,7 +2837,7 @@ namespace Scraping
 
         private bool validityStartDateFieldSpecified;
 
-        private GoodsNomenclatureGroupoodsNomenclatureGroup goodsNomenclatureGroupField;
+        private GoodsNomenclatureGroup goodsNomenclatureGroupField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -2981,7 +2981,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GoodsNomenclatureGroupoodsNomenclatureGroup goodsNomenclatureGroup
+        public GoodsNomenclatureGroup goodsNomenclatureGroup
         {
             get
             {
@@ -3000,7 +3000,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class GoodsNomenclatureGroupoodsNomenclatureGroup
+    public partial class GoodsNomenclatureGroup
     {
 
         private long hjidField;
@@ -3237,11 +3237,11 @@ namespace Scraping
     public partial class findRegulationRoleTypeByDatesResponseHistory
     {
 
-        private regulationRoleType[] regulationRoleTypeField;
+        private RegulationRoleType[] regulationRoleTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("RegulationRoleType", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType[] RegulationRoleType
+        public RegulationRoleType[] RegulationRoleType
         {
             get
             {
@@ -3260,7 +3260,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class regulationRoleType
+    public partial class RegulationRoleType
     {
 
         private long hjidField;
@@ -3493,7 +3493,7 @@ namespace Scraping
 
         private bool sidFieldSpecified;
 
-        private regulationRoleType regulationRoleTypeMasterField;
+        private RegulationRoleType regulationRoleTypeMasterField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3581,7 +3581,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType regulationRoleTypeMaster
+        public RegulationRoleType regulationRoleTypeMaster
         {
             get
             {
@@ -3653,7 +3653,7 @@ namespace Scraping
 
         private GeographicalArea geographicalAreaField;
 
-        private measureType measureTypeField;
+        private MeasureType measureTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3825,7 +3825,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measureType measureType
+        public MeasureType measureType
         {
             get
             {
@@ -3875,7 +3875,7 @@ namespace Scraping
 
         private bool validityStartDateFieldSpecified;
 
-        private geographicalAreaDescriptionPeriod[] geographicalAreaDescriptionPeriodField;
+        private GeographicalAreaDescriptionPeriod[] geographicalAreaDescriptionPeriodField;
 
         private geographicalAreaMembership[] geographicalAreaMembershipField;
 
@@ -4077,7 +4077,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("geographicalAreaDescriptionPeriod", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public geographicalAreaDescriptionPeriod[] geographicalAreaDescriptionPeriod
+        public GeographicalAreaDescriptionPeriod[] geographicalAreaDescriptionPeriod
         {
             get
             {
@@ -4110,7 +4110,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class geographicalAreaDescriptionPeriod
+    public partial class GeographicalAreaDescriptionPeriod
     {
 
         private long hjidField;
@@ -4466,7 +4466,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class measureType
+    public partial class MeasureType
     {
 
         private long hjidField;
@@ -5017,11 +5017,11 @@ namespace Scraping
     public partial class findRegulationGroupByDatesResponseHistory
     {
 
-        private regulationGroup[] regulationGroupField;
+        private RegulationGroup[] regulationGroupField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("RegulationGroup", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationGroup[] RegulationGroup
+        public RegulationGroup[] RegulationGroup
         {
             get
             {
@@ -5040,7 +5040,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class regulationGroup
+    public partial class RegulationGroup
     {
 
         private long hjidField;
@@ -5861,7 +5861,7 @@ namespace Scraping
 
         private bool volumeFieldSpecified;
 
-        private measurementUnit measurementUnitField;
+        private MeasurementUnit measurementUnitField;
 
         private MeasurementUnitQualifier measurementUnitQualifierField;
 
@@ -6159,7 +6159,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnit measurementUnit
+        public MeasurementUnit measurementUnit
         {
             get
             {
@@ -6374,7 +6374,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class measurementUnit
+    public partial class MeasurementUnit
     {
 
         private long hjidField;
@@ -9317,11 +9317,11 @@ namespace Scraping
     public partial class findPublicationSigleByDatesResponseHistory
     {
 
-        private publicationSigle[] publicationSigleField;
+        private PublicationSigle[] publicationSigleField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("PublicationSigle", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public publicationSigle[] PublicationSigle
+        public PublicationSigle[] PublicationSigle
         {
             get
             {
@@ -9340,7 +9340,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class publicationSigle
+    public partial class PublicationSigle
     {
 
         private long hjidField;
@@ -9635,7 +9635,7 @@ namespace Scraping
 
         private prorogationRegulationAction[] prorogationRegulationActionField;
 
-        private regulationRoleType regulationRoleTypeField;
+        private RegulationRoleType regulationRoleTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -9863,7 +9863,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType regulationRoleType
+        public RegulationRoleType regulationRoleType
         {
             get
             {
@@ -9905,7 +9905,7 @@ namespace Scraping
 
         private string prorogatedRegulationRoleField;
 
-        private baseRegulation baseRegulationField;
+        private BaseRegulation baseRegulationField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -10049,7 +10049,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public baseRegulation baseRegulation
+        public BaseRegulation baseRegulation
         {
             get
             {
@@ -10068,7 +10068,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class baseRegulation
+    public partial class BaseRegulation
     {
 
         private long hjidField;
@@ -10127,9 +10127,9 @@ namespace Scraping
 
         private explicitAbrogationRegulation explicitAbrogationRegulationField;
 
-        private regulationGroup regulationGroupField;
+        private RegulationGroup regulationGroupField;
 
-        private regulationRoleType regulationRoleTypeField;
+        private RegulationRoleType regulationRoleTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -10525,7 +10525,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationGroup regulationGroup
+        public RegulationGroup regulationGroup
         {
             get
             {
@@ -10539,7 +10539,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType regulationRoleType
+        public RegulationRoleType regulationRoleType
         {
             get
             {
@@ -10591,7 +10591,7 @@ namespace Scraping
 
         private string replacementIndicatorField;
 
-        private regulationRoleType regulationRoleTypeField;
+        private RegulationRoleType regulationRoleTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -10805,7 +10805,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType regulationRoleType
+        public RegulationRoleType regulationRoleType
         {
             get
             {
@@ -10861,7 +10861,7 @@ namespace Scraping
 
         private string replacementIndicatorField;
 
-        private regulationRoleType regulationRoleTypeField;
+        private RegulationRoleType regulationRoleTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -11103,7 +11103,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType regulationRoleType
+        public RegulationRoleType regulationRoleType
         {
             get
             {
@@ -11151,11 +11151,11 @@ namespace Scraping
     public partial class findMonetaryPlaceOfPublicationByDatesResponseHistory
     {
 
-        private monetaryPlaceOfPublication[] monetaryPlaceOfPublicationField;
+        private MonetaryPlaceOfPublication[] monetaryPlaceOfPublicationField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("MonetaryPlaceOfPublication", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public monetaryPlaceOfPublication[] MonetaryPlaceOfPublication
+        public MonetaryPlaceOfPublication[] MonetaryPlaceOfPublication
         {
             get
             {
@@ -11174,7 +11174,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class monetaryPlaceOfPublication
+    public partial class MonetaryPlaceOfPublication
     {
 
         private long hjidField;
@@ -11863,13 +11863,13 @@ namespace Scraping
 
         private bool validityStartDateFieldSpecified;
 
-        private baseRegulation baseRegulationField;
+        private BaseRegulation baseRegulationField;
 
         private completeAbrogationRegulation completeAbrogationRegulationField;
 
         private explicitAbrogationRegulation explicitAbrogationRegulationField;
 
-        private regulationRoleType regulationRoleTypeField;
+        private RegulationRoleType regulationRoleTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -12181,7 +12181,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public baseRegulation baseRegulation
+        public BaseRegulation baseRegulation
         {
             get
             {
@@ -12223,7 +12223,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType regulationRoleType
+        public RegulationRoleType regulationRoleType
         {
             get
             {
@@ -13599,11 +13599,11 @@ namespace Scraping
     public partial class findMeasurementUnitByDatesResponse
     {
 
-        private measurementUnit[] measurementUnitField;
+        private MeasurementUnit[] measurementUnitField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("MeasurementUnit", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnit[] MeasurementUnit
+        public MeasurementUnit[] MeasurementUnit
         {
             get
             {
@@ -13651,11 +13651,11 @@ namespace Scraping
     public partial class findMeasureTypeByDatesResponse
     {
 
-        private measureType[] measureTypeField;
+        private MeasureType[] measureTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("MeasureType", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measureType[] MeasureType
+        public MeasureType[] MeasureType
         {
             get
             {
@@ -13677,11 +13677,11 @@ namespace Scraping
     public partial class findMeasureConditionCodeByDatesResponse
     {
 
-        private measureConditionCode[] measureConditionCodeField;
+        private MeasureConditionCode[] measureConditionCodeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("MeasureConditionCode", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measureConditionCode[] MeasureConditionCode
+        public MeasureConditionCode[] MeasureConditionCode
         {
             get
             {
@@ -13700,7 +13700,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class measureConditionCode
+    public partial class MeasureConditionCode
     {
 
         private long hjidField;
@@ -13945,11 +13945,11 @@ namespace Scraping
 
         private string justificationRegulationIdField;
 
-        private regulationRoleType justificationRegulationRoleField;
+        private RegulationRoleType justificationRegulationRoleField;
 
         private string measureGeneratingRegulationIdField;
 
-        private regulationRoleType measureGeneratingRegulationRoleField;
+        private RegulationRoleType measureGeneratingRegulationRoleField;
 
         private long measureGeneratingRegulationSIDField;
 
@@ -13971,7 +13971,7 @@ namespace Scraping
 
         private additionalCode additionalCodeField;
 
-        private exportRefundNomenclature exportRefundNomenclatureField;
+        private ExportRefundNomenclature exportRefundNomenclatureField;
 
         private ftnoteAssocMeasure[] footnoteAssociationMeasureField;
 
@@ -13987,11 +13987,11 @@ namespace Scraping
 
         private measurePartTempStop[] measurePartialTemporaryStopField;
 
-        private measureType measureTypeField;
+        private MeasureType measureTypeField;
 
         private meursingAdditionalCode meursingAdditionalCodeField;
 
-        private regulationRoleType regulationRoleTypeField;
+        private RegulationRoleType regulationRoleTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -14093,7 +14093,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType justificationRegulationRole
+        public RegulationRoleType justificationRegulationRole
         {
             get
             {
@@ -14121,7 +14121,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType measureGeneratingRegulationRole
+        public RegulationRoleType measureGeneratingRegulationRole
         {
             get
             {
@@ -14275,7 +14275,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public exportRefundNomenclature exportRefundNomenclature
+        public ExportRefundNomenclature exportRefundNomenclature
         {
             get
             {
@@ -14387,7 +14387,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measureType measureType
+        public MeasureType measureType
         {
             get
             {
@@ -14415,7 +14415,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType regulationRoleType
+        public RegulationRoleType regulationRoleType
         {
             get
             {
@@ -15127,7 +15127,7 @@ namespace Scraping
 
         private bool validityStartDateFieldSpecified;
 
-        private measureType measureTypeField;
+        private MeasureType measureTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -15271,7 +15271,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measureType measureType
+        public MeasureType measureType
         {
             get
             {
@@ -15476,7 +15476,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class exportRefundNomenclature
+    public partial class ExportRefundNomenclature
     {
 
         private long hjidField;
@@ -16393,9 +16393,9 @@ namespace Scraping
 
         private bool dutyAmountFieldSpecified;
 
-        private dutyExpression dutyExpressionField;
+        private DutyExpression dutyExpressionField;
 
-        private measurementUnit measurementUnitField;
+        private MeasurementUnit measurementUnitField;
 
         private MeasurementUnitQualifier measurementUnitQualifierField;
 
@@ -16515,7 +16515,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public dutyExpression dutyExpression
+        public DutyExpression dutyExpression
         {
             get
             {
@@ -16529,7 +16529,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnit measurementUnit
+        public MeasurementUnit measurementUnit
         {
             get
             {
@@ -16576,7 +16576,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class dutyExpression
+    public partial class DutyExpression
     {
 
         private long hjidField;
@@ -16851,13 +16851,13 @@ namespace Scraping
 
         private Certificate certificateField;
 
-        private measureAction measureActionField;
+        private MeasureAction measureActionField;
 
-        private measureConditionCode measureConditionCodeField;
+        private MeasureConditionCode measureConditionCodeField;
 
         private measureConditionComp[] measureConditionComponentField;
 
-        private measurementUnit measurementUnitField;
+        private MeasurementUnit measurementUnitField;
 
         private MeasurementUnitQualifier measurementUnitQualifierField;
 
@@ -17019,7 +17019,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measureAction measureAction
+        public MeasureAction measureAction
         {
             get
             {
@@ -17033,7 +17033,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measureConditionCode measureConditionCode
+        public MeasureConditionCode measureConditionCode
         {
             get
             {
@@ -17061,7 +17061,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnit measurementUnit
+        public MeasurementUnit measurementUnit
         {
             get
             {
@@ -17682,7 +17682,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class measureAction
+    public partial class MeasureAction
     {
 
         private long hjidField;
@@ -17903,9 +17903,9 @@ namespace Scraping
 
         private bool dutyAmountFieldSpecified;
 
-        private dutyExpression dutyExpressionField;
+        private DutyExpression dutyExpressionField;
 
-        private measurementUnit measurementUnitField;
+        private MeasurementUnit measurementUnitField;
 
         private MeasurementUnitQualifier measurementUnitQualifierField;
 
@@ -18025,7 +18025,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public dutyExpression dutyExpression
+        public DutyExpression dutyExpression
         {
             get
             {
@@ -18039,7 +18039,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measurementUnit measurementUnit
+        public MeasurementUnit measurementUnit
         {
             get
             {
@@ -18509,11 +18509,11 @@ namespace Scraping
     public partial class findMeasureActionByDatesResponse
     {
 
-        private measureAction[] measureActionField;
+        private MeasureAction[] measureActionField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("MeasureAction", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public measureAction[] MeasureAction
+        public MeasureAction[] MeasureAction
         {
             get
             {
@@ -18561,11 +18561,11 @@ namespace Scraping
     public partial class findGoodsNomenclatureGroupByDatesResponse
     {
 
-        private GoodsNomenclatureGroupoodsNomenclatureGroup[] goodsNomenclatureGroupField;
+        private GoodsNomenclatureGroup[] goodsNomenclatureGroupField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("GoodsNomenclatureGroup", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public GoodsNomenclatureGroupoodsNomenclatureGroup[] GoodsNomenclatureGroup
+        public GoodsNomenclatureGroup[] GoodsNomenclatureGroup
         {
             get
             {
@@ -18713,7 +18713,7 @@ namespace Scraping
 
         private ftsRegulationAction[] ftsRegulationActionField;
 
-        private regulationRoleType regulationRoleTypeField;
+        private RegulationRoleType regulationRoleTypeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -19053,7 +19053,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationRoleType regulationRoleType
+        public RegulationRoleType regulationRoleType
         {
             get
             {
@@ -19265,11 +19265,11 @@ namespace Scraping
     public partial class findExportRefundNomenclatureByDatesResponse
     {
 
-        private exportRefundNomenclature[] exportRefundNomenclatureField;
+        private ExportRefundNomenclature[] exportRefundNomenclatureField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ExportRefundNomenclature", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public exportRefundNomenclature[] ExportRefundNomenclature
+        public ExportRefundNomenclature[] ExportRefundNomenclature
         {
             get
             {
@@ -19317,11 +19317,11 @@ namespace Scraping
     public partial class findDutyExpressionByDatesResponse
     {
 
-        private dutyExpression[] dutyExpressionField;
+        private DutyExpression[] dutyExpressionField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("DutyExpression", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public dutyExpression[] DutyExpression
+        public DutyExpression[] DutyExpression
         {
             get
             {
@@ -19665,11 +19665,11 @@ namespace Scraping
     public partial class findBaseRegulationByDatesResponseHistory
     {
 
-        private baseRegulation[] baseRegulationField;
+        private BaseRegulation[] baseRegulationField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("BaseRegulation", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public baseRegulation[] BaseRegulation
+        public BaseRegulation[] BaseRegulation
         {
             get
             {

@@ -34,7 +34,7 @@ namespace Scraping.DBModels
         {
         }
 
-        public GoodsNomenclatureGroup(Scraping.GoodsNomenclatureGroupoodsNomenclatureGroup obj, string fileName = "")
+        public GoodsNomenclatureGroup(Scraping.GoodsNomenclatureGroup obj, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
@@ -50,7 +50,7 @@ namespace Scraping.DBModels
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.GoodsNomenclatureGroupoodsNomenclatureGroup obj, string fileName = "")
+        public void UpdateFields(Scraping.GoodsNomenclatureGroup obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();

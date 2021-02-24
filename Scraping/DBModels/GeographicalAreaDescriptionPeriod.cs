@@ -30,7 +30,7 @@ namespace Scraping.DBModels
         {
         }
 
-        public GeographicalAreaDescriptionPeriod(geographicalAreaDescriptionPeriod gad, long GeographicalArea_hjid, string fileName = "")
+        public GeographicalAreaDescriptionPeriod(Scraping.GeographicalAreaDescriptionPeriod gad, long GeographicalArea_hjid, string fileName = "")
         {
             hjid = gad.hjid;
             geographicalArea_hjid = GeographicalArea_hjid;
@@ -44,7 +44,7 @@ namespace Scraping.DBModels
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(geographicalAreaDescriptionPeriod gad, string fileName = "")
+        public void UpdateFields(Scraping.GeographicalAreaDescriptionPeriod gad, string fileName = "")
         {
             opType = gad.metainfo?.opType.ToString();
             origin = gad.metainfo?.origin.ToString();

@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("MeasureConditionCodes")]
-    public class MeasureConditionCode
+    [Table("ExportRefundNomenclatures")]
+    public class ExportRefundNomenclature
     {
         [Key]
         public long key { get; set; }
@@ -14,7 +14,11 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public string conditionCode { get; set; }
+        public string exportRefundCode { get; set; }
+        public string productLine { get; set; }
+        public long additionalCodeType_hjid { get; set; }
+        public long exportRefundNomenclatureIndents_hjid { get; set; }
+        public long goodsNomenclature_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime validityStartDate { get; set; }
@@ -29,17 +33,19 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public MeasureConditionCode()
+        public ExportRefundNomenclature()
         {
         }
 
-        public MeasureConditionCode(Scraping.MeasureConditionCode obj, string fileName = "")
+        public ExportRefundNomenclature(Scraping.ExportRefundNomenclature obj, string fileName = "")
         {
             hjid = obj.hjid;
+            additionalCodeType_hjid = obj.additionalCodeType.hjid;
+            exportRefundCode = obj.exportRefundCode;
+            productLine = obj.productLine;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -48,12 +54,14 @@ namespace Scraping.DBModels
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.MeasureConditionCode obj, string fileName = "")
+        public void UpdateFields(Scraping.ExportRefundNomenclature obj, string fileName = "")
         {
+            additionalCodeType_hjid = obj.additionalCodeType.hjid;
+            exportRefundCode = obj.exportRefundCode;
+            productLine = obj.productLine;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            conditionCode = obj.conditionCode;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();

@@ -337,6 +337,195 @@ namespace Scraping.Controllers
                                     Interlocked.Decrement(ref activeThreadCount);
                                 });
                                 break;
+                            case "GoodsNomenclatureGroup":
+                                if (FindXmlElements.GoodsNomenclatureGroupBypass) break;
+                                var goodsNomenclatureGroupString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(goodsNomenclatureGroupString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.GoodsNomenclatureGroup));
+                                            var xmlObject = (Scraping.GoodsNomenclatureGroup)serializer.Deserialize(stringReader);
+
+                                            ProccessGoodsNomenclatureGroup(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "RegulationRoleType":
+                                if (FindXmlElements.RegulationRoleTypeBypass) break;
+                                var regulationRoleTypeString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(regulationRoleTypeString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.RegulationRoleType));
+                                            var xmlObject = (Scraping.RegulationRoleType)serializer.Deserialize(stringReader);
+
+                                            ProccessRegulationRoleType(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "MeasurementUnit":
+                                if (FindXmlElements.MeasurementUnitBypass) break;
+                                var measurementUnitString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(measurementUnitString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MeasurementUnit));
+                                            var xmlObject = (Scraping.MeasurementUnit)serializer.Deserialize(stringReader);
+
+                                            ProccessMeasurementUnit(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "PublicationSigle":
+                                if (FindXmlElements.PublicationSigleBypass) break;
+                                var publicationSigleString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(publicationSigleString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.PublicationSigle));
+                                            var xmlObject = (Scraping.PublicationSigle)serializer.Deserialize(stringReader);
+
+                                            ProccessPublicationSigle(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "ExportRefundNomenclature":
+                                if (FindXmlElements.ExportRefundNomenclatureBypass) break;
+                                var exportRefundNomenclatureString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(exportRefundNomenclatureString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.ExportRefundNomenclature));
+                                            var xmlObject = (Scraping.ExportRefundNomenclature)serializer.Deserialize(stringReader);
+
+                                            ProccessExportRefundNomenclature(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "MeasureConditionCode":
+                                if (FindXmlElements.MeasureConditionCodeBypass) break;
+                                var measureConditionCodeString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(measureConditionCodeString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MeasureConditionCode));
+                                            var xmlObject = (Scraping.MeasureConditionCode)serializer.Deserialize(stringReader);
+
+                                            ProccessMeasureConditionCode(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "DutyExpression":
+                                if (FindXmlElements.DutyExpressionBypass) break;
+                                var dutyExpressionString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(dutyExpressionString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.DutyExpression));
+                                            var xmlObject = (Scraping.DutyExpression)serializer.Deserialize(stringReader);
+
+                                            ProccessDutyExpression(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "MeasureAction":
+                                if (FindXmlElements.MeasureActionBypass) break;
+                                var measureActionString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(measureActionString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MeasureAction));
+                                            var xmlObject = (Scraping.MeasureAction)serializer.Deserialize(stringReader);
+
+                                            ProccessMeasureAction(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "RegulationGroup":
+                                if (FindXmlElements.RegulationGroupBypass) break;
+                                var regulationGroupString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(regulationGroupString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.RegulationGroup));
+                                            var xmlObject = (Scraping.RegulationGroup)serializer.Deserialize(stringReader);
+
+                                            ProccessRegulationGroup(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
                             default:
                                 break;
                         }
@@ -715,7 +904,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Geographical Area Description Periods
-                foreach (geographicalAreaDescriptionPeriod geoAreaDP in item.geographicalAreaDescriptionPeriod)
+                foreach (GeographicalAreaDescriptionPeriod geoAreaDP in item.geographicalAreaDescriptionPeriod)
                 {
                     switch (geoAreaDP.metainfo.opType)
                     {
@@ -1329,6 +1518,630 @@ namespace Scraping.Controllers
             return success;
         }
         #endregion ProccessMeasurementUnitQualifier
+
+        #region ProccessGoodsNomenclatureGroup
+        private bool ProccessGoodsNomenclatureGroup(Scraping.GoodsNomenclatureGroup item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.GoodsNomenclatureGroups.Add(new DBModels.GoodsNomenclatureGroup(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.GoodsNomenclatureGroups.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.GoodsNomenclatureGroups.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.GoodsNomenclatureGroups.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.GoodsNomenclatureGroups.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess measureTypeSeriesDescription
+                foreach (var d in item.goodsNomenclatureGroupDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.GoodsNomenclatureGroupDescriptions.Add(new DBModels.GoodsNomenclatureGroupDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.GoodsNomenclatureGroupDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.GoodsNomenclatureGroupDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.GoodsNomenclatureGroupDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.GoodsNomenclatureGroupDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessGoodsNomenclatureGroup
+
+        #region ProccessRegulationRoleType
+        private bool ProccessRegulationRoleType(Scraping.RegulationRoleType item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.RegulationRoleTypes.Add(new DBModels.RegulationRoleType(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.RegulationRoleTypes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.RegulationRoleTypes.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.RegulationRoleTypes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.RegulationRoleTypes.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess additionalCodeTypeDescription
+                foreach (var d in item.regulationRoleTypeDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.RegulationRoleTypeDescriptions.Add(new DBModels.RegulationRoleTypeDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.RegulationRoleTypeDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.RegulationRoleTypeDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.RegulationRoleTypeDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.RegulationRoleTypeDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessRegulationRoleType
+
+        #region ProccessMeasurementUnit
+        private bool ProccessMeasurementUnit(Scraping.MeasurementUnit item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MeasurementUnits.Add(new DBModels.MeasurementUnit(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MeasurementUnits.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MeasurementUnits.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MeasurementUnits.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MeasurementUnits.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess measureTypeSeriesDescription
+                foreach (var d in item.measurementUnitDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MeasurementUnitDescriptions.Add(new DBModels.MeasurementUnitDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MeasurementUnitDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MeasurementUnitDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MeasurementUnitDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MeasurementUnitDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessMeasurementUnit
+
+        #region ProccessPublicationSigle
+        private bool ProccessPublicationSigle(Scraping.PublicationSigle item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.PublicationSigles.Add(new DBModels.PublicationSigle(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.PublicationSigles.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.PublicationSigles.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.PublicationSigles.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.PublicationSigles.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessMeasurementUnit
+
+        #region ProccessExportRefundNomenclature
+        private bool ProccessExportRefundNomenclature(Scraping.ExportRefundNomenclature item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.ExportRefundNomenclatures.Add(new DBModels.ExportRefundNomenclature(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.ExportRefundNomenclatures.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.ExportRefundNomenclatures.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.ExportRefundNomenclatures.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.ExportRefundNomenclatures.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess Export Refund Nomenclature Description Periods
+                foreach (exportRefundNomenDescriptionPeriod certificateDP in item.exportRefundNomenclatureDescriptionPeriod)
+                {
+                    switch (certificateDP.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.ExportRefundNomenclatureDescriptionPeriods.Add(new DBModels.ExportRefundNomenclatureDescriptionPeriod(certificateDP, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.ExportRefundNomenclatureDescriptionPeriods.Where(x => x.hjid == certificateDP.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(certificateDP, fileName);
+                                dbContext.ExportRefundNomenclatureDescriptionPeriods.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.ExportRefundNomenclatureDescriptionPeriods.Where(x => x.hjid == certificateDP.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.ExportRefundNomenclatureDescriptionPeriods.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    //Proccess Footnote Descriptions
+                    foreach (Description desc in certificateDP.exportRefundNomenclatureDescription)
+                    {
+                        switch (desc.metainfo.opType)
+                        {
+                            case OpType.C:
+                                dbContext.ExportRefundNomenclatureDescriptions.Add(new DBModels.ExportRefundNomenclatureDescription(desc, certificateDP.hjid, fileName));
+                                break;
+                            case OpType.U:
+                                var dbObject = dbContext.ExportRefundNomenclatureDescriptions.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbObject.UpdateFields(desc, fileName);
+                                    dbContext.ExportRefundNomenclatureDescriptions.Update(dbObject);
+                                }
+                                break;
+                            case OpType.D:
+                                dbObject = dbContext.ExportRefundNomenclatureDescriptions.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbContext.ExportRefundNomenclatureDescriptions.Remove(dbObject);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Certificates");
+            }
+
+            return success;
+        }
+
+        #endregion ProccessExportRefundNomenclature
+
+        #region ProccessMeasureConditionCode
+        private bool ProccessMeasureConditionCode(Scraping.MeasureConditionCode item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MeasureConditionCodes.Add(new DBModels.MeasureConditionCode(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MeasureConditionCodes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MeasureConditionCodes.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MeasureConditionCodes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MeasureConditionCodes.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess additionalCodeTypeDescription
+                foreach (var d in item.measureConditionCodeDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MeasureConditionCodeDescriptions.Add(new DBModels.MeasureConditionCodeDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MeasureConditionCodeDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MeasureConditionCodeDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MeasureConditionCodeDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MeasureConditionCodeDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessMeasureConditionCode
+
+        #region ProccessDutyExpression
+        private bool ProccessDutyExpression(Scraping.DutyExpression item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.DutyExpressions.Add(new DBModels.DutyExpression(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.DutyExpressions.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.DutyExpressions.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.DutyExpressions.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.DutyExpressions.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess additionalCodeTypeDescription
+                foreach (var d in item.dutyExpressionDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.DutyExpressionDescriptions.Add(new DBModels.DutyExpressionDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.DutyExpressionDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.DutyExpressionDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.DutyExpressionDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.DutyExpressionDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessDutyExpression
+
+        #region ProccessMeasureAction
+        private bool ProccessMeasureAction(Scraping.MeasureAction item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MeasureActions.Add(new DBModels.MeasureAction(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MeasureActions.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MeasureActions.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MeasureActions.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MeasureActions.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess additionalCodeTypeDescription
+                foreach (var d in item.measureActionDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MeasureActionDescriptions.Add(new DBModels.MeasureActionDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MeasureActionDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MeasureActionDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MeasureActionDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MeasureActionDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessMeasureAction
+
+        #region ProccessRegulationGroup
+        private bool ProccessRegulationGroup(Scraping.RegulationGroup item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.RegulationGroups.Add(new DBModels.RegulationGroup(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.RegulationGroups.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.RegulationGroups.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.RegulationGroups.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.RegulationGroups.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess additionalCodeTypeDescription
+                foreach (var d in item.regulationGroupDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.RegulationGroupDescriptions.Add(new DBModels.RegulationGroupDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.RegulationGroupDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.RegulationGroupDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.RegulationGroupDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.RegulationGroupDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessRegulationGroup
     }
 
     internal static class FindXmlElements
