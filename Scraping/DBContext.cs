@@ -80,6 +80,11 @@ namespace Scraping
         public DbSet<DBModels.AdditionalCodeFootnoteAssociation> AdditionalCodeFootnoteAssociations { get; set; }
         public DbSet<DBModels.ProrogationRegulation> ProrogationRegulations { get; set; }
         public DbSet<DBModels.ProrogationRegulationAction> ProrogationRegulationActions { get; set; }
+        public DbSet<DBModels.FullTemporaryStopRegulation> FullTemporaryStopRegulations { get; set; }
+        public DbSet<DBModels.FullTemporaryStopRegulationAction> FullTemporaryStopRegulationActions { get; set; }
+        public DbSet<DBModels.RegulationReplacement> RegulationReplacements { get; set; }
+        public DbSet<DBModels.MeursingAdditionalCode> MeursingAdditionalCodes { get; set; }
+        public DbSet<DBModels.MeursingCellComponent> MeursingCellComponents { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

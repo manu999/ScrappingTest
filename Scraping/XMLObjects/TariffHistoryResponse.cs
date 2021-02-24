@@ -3603,11 +3603,11 @@ namespace Scraping
     public partial class findRegulationReplacementByDatesResponseHistory
     {
 
-        private regulationReplacement[] regulationReplacementField;
+        private RegulationReplacement[] regulationReplacementField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("RegulationReplacement", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public regulationReplacement[] RegulationReplacement
+        public RegulationReplacement[] RegulationReplacement
         {
             get
             {
@@ -3626,7 +3626,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class regulationReplacement
+    public partial class RegulationReplacement
     {
 
         private long hjidField;
@@ -13143,11 +13143,11 @@ namespace Scraping
     public partial class findMeursingAdditionalCodeByDatesResponseHistory
     {
 
-        private meursingAdditionalCode[] meursingAdditionalCodeField;
+        private MeursingAdditionalCode[] meursingAdditionalCodeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("MeursingAdditionalCode", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public meursingAdditionalCode[] MeursingAdditionalCode
+        public MeursingAdditionalCode[] MeursingAdditionalCode
         {
             get
             {
@@ -13166,7 +13166,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class meursingAdditionalCode
+    public partial class MeursingAdditionalCode
     {
 
         private long hjidField;
@@ -13191,7 +13191,7 @@ namespace Scraping
 
         private bool validityStartDateFieldSpecified;
 
-        private meursingCellComponent[] meursingCellComponentField;
+        private MeursingCellComponent[] meursingCellComponentField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -13349,7 +13349,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("meursingCellComponent", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public meursingCellComponent[] meursingCellComponent
+        public MeursingCellComponent[] meursingCellComponent
         {
             get
             {
@@ -13368,7 +13368,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class meursingCellComponent
+    public partial class MeursingCellComponent
     {
 
         private long hjidField;
@@ -13391,7 +13391,7 @@ namespace Scraping
 
         private bool validityStartDateFieldSpecified;
 
-        private meursingAdditionalCode meursingAdditionalCodeField;
+        private MeursingAdditionalCode meursingAdditionalCodeField;
 
         private meursingSubheading meursingSubheadingField;
 
@@ -13537,7 +13537,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public meursingAdditionalCode meursingAdditionalCode
+        public MeursingAdditionalCode meursingAdditionalCode
         {
             get
             {
@@ -13989,7 +13989,7 @@ namespace Scraping
 
         private MeasureType measureTypeField;
 
-        private meursingAdditionalCode meursingAdditionalCodeField;
+        private MeursingAdditionalCode meursingAdditionalCodeField;
 
         private RegulationRoleType regulationRoleTypeField;
 
@@ -14401,7 +14401,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public meursingAdditionalCode meursingAdditionalCode
+        public MeursingAdditionalCode meursingAdditionalCode
         {
             get
             {
@@ -18639,11 +18639,11 @@ namespace Scraping
     public partial class findFullTemporaryStopRegulationByDatesResponseHistory
     {
 
-        private fullTemporaryStopRegulation[] fullTemporaryStopRegulationField;
+        private FullTemporaryStopRegulation[] fullTemporaryStopRegulationField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FullTemporaryStopRegulation", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public fullTemporaryStopRegulation[] FullTemporaryStopRegulation
+        public FullTemporaryStopRegulation[] FullTemporaryStopRegulation
         {
             get
             {
@@ -18662,7 +18662,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class fullTemporaryStopRegulation
+    public partial class FullTemporaryStopRegulation
     {
 
         private long hjidField;

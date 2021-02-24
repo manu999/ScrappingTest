@@ -589,6 +589,69 @@ namespace Scraping.Controllers
                                     Interlocked.Decrement(ref activeThreadCount);
                                 });
                                 break;
+                            case "FullTemporaryStopRegulation":
+                                if (FindXmlElements.FullTemporaryStopRegulationBypass) break;
+                                var fullTemporaryStopRegulationString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(fullTemporaryStopRegulationString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.FullTemporaryStopRegulation));
+                                            var xmlObject = (Scraping.FullTemporaryStopRegulation)serializer.Deserialize(stringReader);
+
+                                            ProccessFullTemporaryStopRegulation(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "RegulationReplacement":
+                                if (FindXmlElements.RegulationReplacementBypass) break;
+                                var regulationReplacementString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(regulationReplacementString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.RegulationReplacement));
+                                            var xmlObject = (Scraping.RegulationReplacement)serializer.Deserialize(stringReader);
+
+                                            ProccessRegulationReplacement(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "MeursingAdditionalCode":
+                                if (FindXmlElements.MeursingAdditionalCodeBypass) break;
+                                var meursingAdditionalCodeString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(meursingAdditionalCodeString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MeursingAdditionalCode));
+                                            var xmlObject = (Scraping.MeursingAdditionalCode)serializer.Deserialize(stringReader);
+
+                                            ProccessMeursingAdditionalCode(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
                             default:
                                 break;
                         }
@@ -2527,6 +2590,186 @@ namespace Scraping.Controllers
             return success;
         }
         #endregion ProccessProrogationRegulation
+
+        #region ProccessFullTemporaryStopRegulation
+        private bool ProccessFullTemporaryStopRegulation(Scraping.FullTemporaryStopRegulation item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.FullTemporaryStopRegulations.Add(new DBModels.FullTemporaryStopRegulation(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.FullTemporaryStopRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.FullTemporaryStopRegulations.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.FullTemporaryStopRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.FullTemporaryStopRegulations.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                
+                //Proccess Full Temporary Stop Regulation Action
+                foreach (var d in item.ftsRegulationAction)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.FullTemporaryStopRegulationActions.Add(new DBModels.FullTemporaryStopRegulationAction(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.FullTemporaryStopRegulationActions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.FullTemporaryStopRegulationActions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.FullTemporaryStopRegulationActions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.FullTemporaryStopRegulationActions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessFullTemporaryStopRegulation
+
+        #region ProccessRegulationReplacement
+        private bool ProccessRegulationReplacement(Scraping.RegulationReplacement item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.RegulationReplacements.Add(new DBModels.RegulationReplacement(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.RegulationReplacements.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.RegulationReplacements.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.RegulationReplacements.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.RegulationReplacements.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessRegulationReplacement
+
+        #region ProccessMeursingAdditionalCode
+        private bool ProccessMeursingAdditionalCode(Scraping.MeursingAdditionalCode item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MeursingAdditionalCodes.Add(new DBModels.MeursingAdditionalCode(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MeursingAdditionalCodes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MeursingAdditionalCodes.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MeursingAdditionalCodes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MeursingAdditionalCodes.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess Meursing Cell Component
+                foreach (var d in item.meursingCellComponent)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MeursingCellComponents.Add(new DBModels.MeursingCellComponent(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MeursingCellComponents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MeursingCellComponents.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MeursingCellComponents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MeursingCellComponents.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessMeursingAdditionalCode
     }
 
     internal static class FindXmlElements
