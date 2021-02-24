@@ -9577,11 +9577,11 @@ namespace Scraping
     public partial class findProrogationRegulationByDatesResponseHistory
     {
 
-        private prorogationRegulation[] prorogationRegulationField;
+        private ProrogationRegulation[] prorogationRegulationField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ProrogationRegulation", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public prorogationRegulation[] ProrogationRegulation
+        public ProrogationRegulation[] ProrogationRegulation
         {
             get
             {
@@ -9600,7 +9600,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class prorogationRegulation
+    public partial class ProrogationRegulation
     {
 
         private long hjidField;
@@ -9633,7 +9633,7 @@ namespace Scraping
 
         private string replacementIndicatorField;
 
-        private prorogationRegulationAction[] prorogationRegulationActionField;
+        private ProrogationRegulationAction[] prorogationRegulationActionField;
 
         private RegulationRoleType regulationRoleTypeField;
 
@@ -9849,7 +9849,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("prorogationRegulationAction", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public prorogationRegulationAction[] prorogationRegulationAction
+        public ProrogationRegulationAction[] prorogationRegulationAction
         {
             get
             {
@@ -9882,7 +9882,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class prorogationRegulationAction
+    public partial class ProrogationRegulationAction
     {
 
         private long hjidField;

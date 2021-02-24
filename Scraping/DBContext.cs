@@ -77,6 +77,9 @@ namespace Scraping
         public DbSet<DBModels.GoodsNomenclatureGroup> GoodsNomenclatureGroups { get; set; }
         public DbSet<DBModels.GoodsNomenclatureGroupDescription> GoodsNomenclatureGroupDescriptions { get; set; }
         public DbSet<DBModels.RegulationRoleCombinations> RegulationRoleCombinationss { get; set; }
+        public DbSet<DBModels.AdditionalCodeFootnoteAssociation> AdditionalCodeFootnoteAssociations { get; set; }
+        public DbSet<DBModels.ProrogationRegulation> ProrogationRegulations { get; set; }
+        public DbSet<DBModels.ProrogationRegulationAction> ProrogationRegulationActions { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

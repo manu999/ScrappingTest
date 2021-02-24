@@ -568,6 +568,27 @@ namespace Scraping.Controllers
                                     Interlocked.Decrement(ref activeThreadCount);
                                 });
                                 break;
+                            case "ProrogationRegulation":
+                                if (FindXmlElements.ProrogationRegulationBypass) break;
+                                var prorogationRegulationString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(prorogationRegulationString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.ProrogationRegulation));
+                                            var xmlObject = (Scraping.ProrogationRegulation)serializer.Deserialize(stringReader);
+
+                                            ProccessProrogationRegulation(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
                             default:
                                 break;
                         }
@@ -1353,7 +1374,35 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess additionalCodeTypeDescription
+                //Proccess Additional Code Footnote Association
+                foreach (var d in item.footnoteAssociationGoodsNomenclature)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.AdditionalCodeFootnoteAssociations.Add(new DBModels.AdditionalCodeFootnoteAssociation(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.AdditionalCodeFootnoteAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.AdditionalCodeFootnoteAssociations.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.AdditionalCodeFootnoteAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.AdditionalCodeFootnoteAssociations.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                //Proccess additional Code Type Description
                 foreach (var d in item.additionalCodeTypeDescription)
                 {
                     switch (d.metainfo.opType)
@@ -1381,7 +1430,7 @@ namespace Scraping.Controllers
                     }
                 }
 
-                //Proccess additionalCodeTypeMeasureType
+                //Proccess additional Code Type Measure Type
                 foreach (var d in item.additionalCodeTypeMeasureType)
                 {
                     switch (d.metainfo.opType)
@@ -1451,7 +1500,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess measureTypeSeriesDescription
+                //Proccess measure Type Series Description
                 foreach (var d in item.measureTypeSeriesDescription)
                 {
                     switch (d.metainfo.opType)
@@ -1521,7 +1570,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess measureTypeSeriesDescription
+                //Proccess measurement Unit Qualifier Description
                 foreach (var d in item.measurementUnitQualifierDescription)
                 {
                     switch (d.metainfo.opType)
@@ -1591,7 +1640,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess measureTypeSeriesDescription
+                //Proccess goods Nomenclature Group Description
                 foreach (var d in item.goodsNomenclatureGroupDescription)
                 {
                     switch (d.metainfo.opType)
@@ -1661,7 +1710,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess additionalCodeTypeDescription
+                //Proccess regulation Role Type Description
                 foreach (var d in item.regulationRoleTypeDescription)
                 {
                     switch (d.metainfo.opType)
@@ -1689,6 +1738,7 @@ namespace Scraping.Controllers
                     }
                 }
 
+                //Proccess regulation Role Combinations
                 foreach (var d in item.regulationRoleCombinations)
                 {
                     switch (d.metainfo.opType)
@@ -1757,7 +1807,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess measureTypeSeriesDescription
+                //Proccess measurement Unit Description
                 foreach (var d in item.measurementUnitDescription)
                 {
                     switch (d.metainfo.opType)
@@ -1894,7 +1944,8 @@ namespace Scraping.Controllers
                         default:
                             break;
                     }
-                    //Proccess Footnote Descriptions
+
+                    //Proccess export Refund Nomenclature Description
                     foreach (Description desc in certificateDP.exportRefundNomenclatureDescription)
                     {
                         switch (desc.metainfo.opType)
@@ -1966,7 +2017,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess additionalCodeTypeDescription
+                //Proccess measure Condition Code Description
                 foreach (var d in item.measureConditionCodeDescription)
                 {
                     switch (d.metainfo.opType)
@@ -2035,7 +2086,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess additionalCodeTypeDescription
+                //Proccess duty Expression Description
                 foreach (var d in item.dutyExpressionDescription)
                 {
                     switch (d.metainfo.opType)
@@ -2104,7 +2155,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess additionalCodeTypeDescription
+                //Proccess measure Action Description
                 foreach (var d in item.measureActionDescription)
                 {
                     switch (d.metainfo.opType)
@@ -2173,7 +2224,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess additionalCodeTypeDescription
+                //Proccess regulation Group Description
                 foreach (var d in item.regulationGroupDescription)
                 {
                     switch (d.metainfo.opType)
@@ -2242,7 +2293,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess measureTypeSeriesDescription
+                //Proccess measure Type Description
                 foreach (var d in item.measureTypeDescription)
                 {
                     switch (d.metainfo.opType)
@@ -2312,7 +2363,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                //Proccess footnoteAssociationMeasure
+                //Proccess footnote Association Goods Nomenclature
                 foreach (var d in item.footnoteAssociationGoodsNomenclature)
                 {
                     switch (d.metainfo.opType)
@@ -2340,7 +2391,7 @@ namespace Scraping.Controllers
                     }
                 }
 
-                //Proccess Footnote Description Periods
+                //Proccess goods Nomenclature Description Period
                 foreach (goodsNomenDescriptionPeriod certificateDP in item.goodsNomenclatureDescriptionPeriod)
                 {
                     switch (certificateDP.metainfo.opType)
@@ -2367,7 +2418,7 @@ namespace Scraping.Controllers
                             break;
                     }
 
-                    //Proccess Footnote Descriptions
+                    //Proccess goods Nomenclature Description
                     foreach (Description desc in certificateDP.goodsNomenclatureDescription)
                     {
                         switch (desc.metainfo.opType)
@@ -2407,6 +2458,75 @@ namespace Scraping.Controllers
             return success;
         }
         #endregion ProccessGoodsNomenclature
+
+        #region ProccessProrogationRegulation
+        private bool ProccessProrogationRegulation(Scraping.ProrogationRegulation item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.ProrogationRegulations.Add(new DBModels.ProrogationRegulation(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.ProrogationRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.ProrogationRegulations.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.ProrogationRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.ProrogationRegulations.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess prorogation Regulation Action
+                foreach (var d in item.prorogationRegulationAction)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.ProrogationRegulationActions.Add(new DBModels.ProrogationRegulationAction(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.ProrogationRegulationActions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.ProrogationRegulationActions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.ProrogationRegulationActions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.ProrogationRegulationActions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Proccess Language");
+            }
+
+            return success;
+        }
+        #endregion ProccessProrogationRegulation
     }
 
     internal static class FindXmlElements
