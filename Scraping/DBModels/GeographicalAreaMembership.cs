@@ -33,27 +33,27 @@ namespace Scraping.DBModels
         {
         }
 
-        public GeographicalAreaMembership(geographicalAreaMembership gam, long GeographicalArea_hjid, string fileName = "")
+        public GeographicalAreaMembership(geographicalAreaMembership obj, long GeographicalArea_hjid, string fileName = "")
         {
-            hjid = gam.hjid;
+            hjid = obj.hjid;
             geographicalArea_hjid = GeographicalArea_hjid;
-            opType = gam.metainfo?.opType.ToString();
-            origin = gam.metainfo?.origin.ToString();
-            status = gam.metainfo?.status.ToString();
-            validityStartDate = gam.validityStartDate;
-            transactionDate = gam.metainfo?.transactionDate ?? new DateTime();
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            validityStartDate = obj.validityStartDate;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(geographicalAreaMembership gam, string fileName = "")
+        public void UpdateFields(geographicalAreaMembership obj, string fileName = "")
         {
-            opType = gam.metainfo?.opType.ToString();
-            origin = gam.metainfo?.origin.ToString();
-            status = gam.metainfo?.status.ToString();
-            validityStartDate = gam.validityStartDate;
-            transactionDate = gam.metainfo?.transactionDate ?? new DateTime();
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            validityStartDate = obj.validityStartDate;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;

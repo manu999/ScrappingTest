@@ -14,8 +14,7 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        //public long oid { get; set; }
-        //public long sid { get; set; }
+
         public long Footnote_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]

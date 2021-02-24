@@ -58,6 +58,17 @@ namespace Scraping
         public DbSet<DBModels.DutyExpressionDescription> DutyExpressionDescriptions { get; set; }
         public DbSet<DBModels.MonetaryUnit> MonetaryUnits { get; set; }
         public DbSet<DBModels.MonetaryUnitDescription> MonetaryUnitDescriptions { get; set; }
+        public DbSet<DBModels.AdditionalCode> AdditionalCodes { get; set; }
+        public DbSet<DBModels.AdditionalCodeDescription> AdditionalCodeDescriptions { get; set; }
+        public DbSet<DBModels.AdditionalCodeDescriptionPeriod> AdditionalCodeDescriptionPeriods { get; set; }
+        public DbSet<DBModels.BaseRegulation> BaseRegulations { get; set; }
+        public DbSet<DBModels.ModificationRegulation> ModificationRegulations { get; set; }
+        public DbSet<DBModels.MonetaryPlaceOfPublication> MonetaryPlaceOfPublications { get; set; }
+        public DbSet<DBModels.MonetaryPlaceOfPublicationDescription> MonetaryPlaceOfPublicationDescriptions { get; set; }
+        public DbSet<DBModels.MonetaryExchangePeriod> MonetaryExchangePeriods { get; set; }
+        public DbSet<DBModels.QuotaDefinition> QuotaDefinitions { get; set; }
+        public DbSet<DBModels.MeursingTablePlan> MeursingTablePlans { get; set; }
+        public DbSet<DBModels.RegulationReplacement> RegulationReplacements { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

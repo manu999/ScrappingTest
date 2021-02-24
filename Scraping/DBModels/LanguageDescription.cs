@@ -29,30 +29,30 @@ namespace Scraping.DBModels
         {
         }
 
-        public LanguageDescription(DescriptionLang langDesc, long Language_hjid, string fileName = "")
+        public LanguageDescription(DescriptionLang obj, long Language_hjid, string fileName = "")
         {
-            hjid = langDesc.hjid;
+            hjid = obj.hjid;
             language_hjid = Language_hjid;
-            opType = langDesc.metainfo?.opType.ToString();
-            origin = langDesc.metainfo?.origin.ToString();
-            status = langDesc.metainfo?.status.ToString();
-            description = langDesc.description;
-            language = langDesc.language;
-            transactionDate = langDesc.metainfo?.transactionDate ?? new DateTime();
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            description = obj.description;
+            language = obj.language;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(DescriptionLang langDesc, string fileName = "")
+        public void UpdateFields(DescriptionLang obj, string fileName = "")
         {
-            language_hjid = langDesc.hjid;
-            opType = langDesc.metainfo?.opType.ToString();
-            origin = langDesc.metainfo?.origin.ToString();
-            status = langDesc.metainfo?.status.ToString();
-            description = langDesc.description;
-            language = langDesc.language;
-            transactionDate = langDesc.metainfo?.transactionDate ?? new DateTime();
+            language_hjid = obj.hjid;
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            description = obj.description;
+            language = obj.language;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;

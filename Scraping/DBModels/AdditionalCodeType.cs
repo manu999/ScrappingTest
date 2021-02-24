@@ -42,6 +42,7 @@ namespace Scraping.DBModels
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
             additionalCodeTypeId = obj.additionalCodeTypeId;
+            meursingTablePlan_hjid = obj.meursingTablePlan.hjid;
             applicationCode = obj.applicationCode;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
@@ -57,6 +58,7 @@ namespace Scraping.DBModels
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
             additionalCodeTypeId = obj.additionalCodeTypeId;
+            meursingTablePlan_hjid = obj.meursingTablePlan.hjid;
             applicationCode = obj.applicationCode;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;

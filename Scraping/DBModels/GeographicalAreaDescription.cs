@@ -29,29 +29,29 @@ namespace Scraping.DBModels
         {
         }
 
-        public GeographicalAreaDescription(Description desc, long GeographicalAreaDescriptionPeriod_hjid, string fileName = "")
+        public GeographicalAreaDescription(Description obj, long GeographicalAreaDescriptionPeriod_hjid, string fileName = "")
         {
-            hjid = desc.hjid;
+            hjid = obj.hjid;
             geographicalAreaDescriptionPeriod_hjid = GeographicalAreaDescriptionPeriod_hjid;
-            languages_hjid = desc.language.hjid;
-            opType = desc.metainfo?.opType.ToString();
-            origin = desc.metainfo?.origin.ToString();
-            status = desc.metainfo?.status.ToString();
-            description = desc.description;
-            transactionDate = desc.metainfo?.transactionDate ?? new DateTime();
+            languages_hjid = obj.language.hjid;
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            description = obj.description;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Description desc, string fileName = "")
+        public void UpdateFields(Description obj, string fileName = "")
         {
-            languages_hjid = desc.language.hjid;
-            opType = desc.metainfo?.opType.ToString();
-            origin = desc.metainfo?.origin.ToString();
-            status = desc.metainfo?.status.ToString();
-            description = desc.description;
-            transactionDate = desc.metainfo?.transactionDate ?? new DateTime();
+            languages_hjid = obj.language.hjid;
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            description = obj.description;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;

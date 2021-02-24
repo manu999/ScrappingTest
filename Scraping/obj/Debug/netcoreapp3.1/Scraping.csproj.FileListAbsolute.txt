@@ -113,7 +113,6 @@ C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\bin\Debug\netcoreapp3.1\r
 C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.csprojAssemblyReference.cache
 C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.AssemblyInfoInputs.cache
 C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.AssemblyInfo.cs
 C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.csproj.CoreCompileInputs.cache

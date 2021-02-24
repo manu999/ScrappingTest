@@ -42,7 +42,10 @@ namespace Scraping.DBModels
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
+            dutyAmountApplicabilityCode = obj.dutyAmountApplicabilityCode;
             dutyExpressionId = obj.dutyExpressionId;
+            measurementUnitApplicabilityCode = obj.measurementUnitApplicabilityCode;
+            monetaryUnitApplicabilityCode = obj.monetaryUnitApplicabilityCode;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -56,7 +59,10 @@ namespace Scraping.DBModels
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
+            dutyAmountApplicabilityCode = obj.dutyAmountApplicabilityCode;
             dutyExpressionId = obj.dutyExpressionId;
+            measurementUnitApplicabilityCode = obj.measurementUnitApplicabilityCode;
+            monetaryUnitApplicabilityCode = obj.monetaryUnitApplicabilityCode;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();

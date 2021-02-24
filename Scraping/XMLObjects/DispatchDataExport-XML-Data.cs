@@ -9167,7 +9167,7 @@ public partial class monetaryPlaceOfPublication {
     
     private Description[] monetaryPlaceOfPublicationDescriptionField;
     
-    private monetaryExchangePeriod monetaryExchangePeriodField;
+    private MonetaryExchangePeriod monetaryExchangePeriodField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -9292,7 +9292,7 @@ public partial class monetaryPlaceOfPublication {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public monetaryExchangePeriod monetaryExchangePeriod {
+    public MonetaryExchangePeriod monetaryExchangePeriod {
         get {
             return this.monetaryExchangePeriodField;
         }
@@ -9308,7 +9308,7 @@ public partial class monetaryPlaceOfPublication {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-public partial class monetaryExchangePeriod {
+public partial class MonetaryExchangePeriod {
     
     private long hjidField;
     
@@ -9627,11 +9627,11 @@ public partial class monetaryExchangeRate {
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
 public partial class findMonetaryExchangePeriodByDatesResponseHistory {
     
-    private monetaryExchangePeriod[] monetaryExchangePeriodField;
+    private MonetaryExchangePeriod[] monetaryExchangePeriodField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("MonetaryExchangePeriod", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public monetaryExchangePeriod[] MonetaryExchangePeriod {
+    public MonetaryExchangePeriod[] MonetaryExchangePeriod {
         get {
             return this.monetaryExchangePeriodField;
         }
@@ -13414,7 +13414,7 @@ public partial class measureComponent {
     
     private bool dutyAmountFieldSpecified;
     
-    private DutyExpression dutyExpressionField;
+    private dutyExpression dutyExpressionField;
     
     private measurementUnit measurementUnitField;
     
@@ -13512,7 +13512,7 @@ public partial class measureComponent {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public DutyExpression dutyExpression {
+    public dutyExpression dutyExpression {
         get {
             return this.dutyExpressionField;
         }
@@ -13561,7 +13561,7 @@ public partial class measureComponent {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-public partial class DutyExpression {
+public partial class dutyExpression {
     
     private long hjidField;
     
@@ -14647,7 +14647,7 @@ public partial class measureConditionComp {
     
     private bool dutyAmountFieldSpecified;
     
-    private DutyExpression dutyExpressionField;
+    private dutyExpression dutyExpressionField;
     
     private measurementUnit measurementUnitField;
     
@@ -14745,7 +14745,7 @@ public partial class measureConditionComp {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public DutyExpression dutyExpression {
+    public dutyExpression dutyExpression {
         get {
             return this.dutyExpressionField;
         }
@@ -15806,11 +15806,11 @@ public partial class findExplicitAbrogationRegulationByDatesResponseHistory {
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
 public partial class findDutyExpressionByDatesResponse {
     
-    private DutyExpression[] dutyExpressionField;
+    private dutyExpression[] dutyExpressionField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("DutyExpression", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public DutyExpression[] DutyExpression {
+    public dutyExpression[] DutyExpression {
         get {
             return this.dutyExpressionField;
         }

@@ -22,8 +22,6 @@ namespace Scraping.DBModels
         [Column(TypeName = "datetime2")]
         public System.DateTime validityStartDate { get; set; }
 
-        //public long oid { get; set; }
-        //public long sid { get; set; }
         public long footnoteTypes_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]
