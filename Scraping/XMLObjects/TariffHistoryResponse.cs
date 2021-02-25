@@ -15507,9 +15507,9 @@ namespace Scraping
 
         private exportRefundNomenDescriptionPeriod[] exportRefundNomenclatureDescriptionPeriodField;
 
-        private exportRefundNomenIndents[] exportRefundNomenclatureIndentsField;
+        private ExportRefundNomenIndents[] exportRefundNomenclatureIndentsField;
 
-        private exportRefundNomenFootnotesAssoc[] footnoteAssociationErnField;
+        private ExportRefundNomenFootnotesAssoc[] footnoteAssociationErnField;
 
         private GoodsNomenclature goodsNomenclatureField;
 
@@ -15711,7 +15711,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("exportRefundNomenclatureIndents", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public exportRefundNomenIndents[] exportRefundNomenclatureIndents
+        public ExportRefundNomenIndents[] exportRefundNomenclatureIndents
         {
             get
             {
@@ -15725,7 +15725,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("footnoteAssociationErn", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public exportRefundNomenFootnotesAssoc[] footnoteAssociationErn
+        public ExportRefundNomenFootnotesAssoc[] footnoteAssociationErn
         {
             get
             {
@@ -15912,7 +15912,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class exportRefundNomenIndents
+    public partial class ExportRefundNomenIndents
     {
 
         private long hjidField;
@@ -16066,7 +16066,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class exportRefundNomenFootnotesAssoc
+    public partial class ExportRefundNomenFootnotesAssoc
     {
 
         private long hjidField;

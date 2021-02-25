@@ -90,6 +90,8 @@ namespace Scraping
         public DbSet<DBModels.QuotaOrderNumber> QuotaOrderNumbers { get; set; }
         public DbSet<DBModels.QuotaOrderNumberOrigin> QuotaOrderNumberOrigins { get; set; }
         public DbSet<DBModels.QuotaOrderNumberOriginExclusions> QuotaOrderNumberOriginExclusionss { get; set; }
+        public DbSet<DBModels.ExportRefundNomenFootnotesAssociation> ExportRefundNomenFootnotesAssociations { get; set; }
+        public DbSet<DBModels.ExportRefundNomenIndents> ExportRefundNomenIndentss { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

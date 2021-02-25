@@ -2030,6 +2030,63 @@ namespace Scraping.Controllers
 
                     }
                 }
+
+                //Proccess Export Refund Nomen Footnotes Association
+                foreach (ExportRefundNomenFootnotesAssoc d in item.footnoteAssociationErn)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.ExportRefundNomenFootnotesAssociations.Add(new DBModels.ExportRefundNomenFootnotesAssociation(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.ExportRefundNomenFootnotesAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.ExportRefundNomenFootnotesAssociations.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.ExportRefundNomenFootnotesAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.ExportRefundNomenFootnotesAssociations.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                //Proccess Export Refund Nomen Indents
+                foreach (ExportRefundNomenIndents d in item.exportRefundNomenclatureIndents)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.ExportRefundNomenIndentss.Add(new DBModels.ExportRefundNomenIndents(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.ExportRefundNomenIndentss.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.ExportRefundNomenIndentss.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.ExportRefundNomenIndentss.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.ExportRefundNomenIndentss.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
                 dbContext.SaveChanges();
                 success = true;
             }
