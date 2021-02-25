@@ -30,24 +30,24 @@ namespace Scraping.DBModels
         {
         }
 
-        public Language(Scraping.Language fn, string fileName = "")
+        public Language(Scraping.Language obj, string fileName = "")
         {
-            hjid = fn.hjid;
-            languageId = fn.languageId;
-            validityStartDate = fn.validityStartDate;
-            validityEndDate = fn.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : fn.validityEndDate;
-            transactionDate = fn.metainfo?.transactionDate ?? new DateTime();
+            hjid = obj.hjid;
+            languageId = obj.languageId;
+            validityStartDate = obj.validityStartDate;
+            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.Language fn, string fileName = "")
+        public void UpdateFields(Scraping.Language obj, string fileName = "")
         {
-            languageId = fn.languageId;
-            validityStartDate = fn.validityStartDate;
-            validityEndDate = fn.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : fn.validityEndDate;
-            transactionDate = fn.metainfo?.transactionDate ?? new DateTime();
+            languageId = obj.languageId;
+            validityStartDate = obj.validityStartDate;
+            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;

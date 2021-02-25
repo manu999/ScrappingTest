@@ -9167,7 +9167,7 @@ public partial class monetaryPlaceOfPublication {
     
     private Description[] monetaryPlaceOfPublicationDescriptionField;
     
-    private monetaryExchangePeriod monetaryExchangePeriodField;
+    private MonetaryExchangePeriod monetaryExchangePeriodField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -9292,7 +9292,7 @@ public partial class monetaryPlaceOfPublication {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public monetaryExchangePeriod monetaryExchangePeriod {
+    public MonetaryExchangePeriod monetaryExchangePeriod {
         get {
             return this.monetaryExchangePeriodField;
         }
@@ -9308,7 +9308,7 @@ public partial class monetaryPlaceOfPublication {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-public partial class monetaryExchangePeriod {
+public partial class MonetaryExchangePeriod {
     
     private long hjidField;
     
@@ -9627,11 +9627,11 @@ public partial class monetaryExchangeRate {
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
 public partial class findMonetaryExchangePeriodByDatesResponseHistory {
     
-    private monetaryExchangePeriod[] monetaryExchangePeriodField;
+    private MonetaryExchangePeriod[] monetaryExchangePeriodField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("MonetaryExchangePeriod", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public monetaryExchangePeriod[] MonetaryExchangePeriod {
+    public MonetaryExchangePeriod[] MonetaryExchangePeriod {
         get {
             return this.monetaryExchangePeriodField;
         }

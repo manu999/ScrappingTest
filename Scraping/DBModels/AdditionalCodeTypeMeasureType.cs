@@ -51,7 +51,7 @@ namespace Scraping.DBModels
         }
 
         public void UpdateFields(Scraping.additionalCodeTypeMeasureType obj, string fileName = "")
-        {
+        {        
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();

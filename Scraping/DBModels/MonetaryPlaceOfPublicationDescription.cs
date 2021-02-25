@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("FootnoteDescriptions")]
-    public class FootnoteDescription
+    [Table("MonetaryPlaceOfPublicationDescriptions")]
+    public class MonetaryPlaceOfPublicationDescription
     {
         [Key]
         public long key { get; set; }
@@ -14,8 +14,7 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-
-        public long footnoteDescriptionPeriod_hjid { get; set; }
+        public long monetaryPlaceOfPublication_hjid { get; set; }
         public string description { get; set; }
         public long languages_hjid { get; set; }
 
@@ -26,14 +25,14 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public FootnoteDescription()
+        public MonetaryPlaceOfPublicationDescription()
         {
         }
 
-        public FootnoteDescription(Description desc, long footNoteDescPeriod_hjid, string fileName = "")
+        public MonetaryPlaceOfPublicationDescription(Description desc, long MonetaryPlaceOfPublication_hjid, string fileName = "")
         {
             hjid = desc.hjid;
-            footnoteDescriptionPeriod_hjid = footNoteDescPeriod_hjid;
+            monetaryPlaceOfPublication_hjid = MonetaryPlaceOfPublication_hjid;
             languages_hjid = desc.language.hjid;
             opType = desc.metainfo?.opType.ToString();
             origin = desc.metainfo?.origin.ToString();

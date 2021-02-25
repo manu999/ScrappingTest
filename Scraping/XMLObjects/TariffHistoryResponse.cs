@@ -5820,7 +5820,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class quotaDefinition
+    public partial class QuotaDefinition
     {
 
         private long hjidField;
@@ -6794,7 +6794,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class monetaryUnit
+    public partial class MonetaryUnit
     {
 
         private long hjidField;
@@ -10558,7 +10558,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class completeAbrogationRegulation
+    public partial class CompleteAbrogationRegulation
     {
 
         private long hjidField;
@@ -11199,7 +11199,7 @@ namespace Scraping
 
         private Description[] monetaryPlaceOfPublicationDescriptionField;
 
-        private monetaryExchangePeriod monetaryExchangePeriodField;
+        private MonetaryExchangePeriod monetaryExchangePeriodField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -11357,7 +11357,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public monetaryExchangePeriod monetaryExchangePeriod
+        public MonetaryExchangePeriod monetaryExchangePeriod
         {
             get
             {
@@ -11376,7 +11376,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class monetaryExchangePeriod
+    public partial class MonetaryExchangePeriod
     {
 
         private long hjidField;
@@ -11767,11 +11767,11 @@ namespace Scraping
     public partial class findMonetaryExchangePeriodByDatesResponseHistory
     {
 
-        private monetaryExchangePeriod[] monetaryExchangePeriodField;
+        private MonetaryExchangePeriod[] monetaryExchangePeriodField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("MonetaryExchangePeriod", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public monetaryExchangePeriod[] MonetaryExchangePeriod
+        public MonetaryExchangePeriod[] MonetaryExchangePeriod
         {
             get
             {
@@ -11816,7 +11816,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class modificationRegulation
+    public partial class ModificationRegulation
     {
 
         private long hjidField;
@@ -12268,7 +12268,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class meursingTablePlan
+    public partial class MeursingTablePlan
     {
 
         private long hjidField;
@@ -14434,7 +14434,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class additionalCode
+    public partial class AdditionalCode
     {
 
         private long hjidField;

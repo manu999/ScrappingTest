@@ -673,6 +673,239 @@ namespace Scraping.Controllers
                                     Interlocked.Decrement(ref activeThreadCount);
                                 });
                                 break;
+                            case "DutyExpressions":
+                                if (FindXmlElements.DutyExpressionBypass) break;
+                                var dutyExpressionsstring = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(dutyExpressionsstring))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.DutyExpression));
+                                            var xmlObject = (Scraping.DutyExpression)serializer.Deserialize(stringReader);
+
+                                            ProccessDutyExpression(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "MonetaryUnit":
+                                if (FindXmlElements.MonetaryUnitBypass) break;
+                                var monetaryUnitsstring = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(monetaryUnitsstring))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MonetaryUnit));
+                                            var xmlObject = (Scraping.MonetaryUnit)serializer.Deserialize(stringReader);
+
+                                            ProccessMonetaryUnit(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "AdditionalCode":
+                                if (FindXmlElements.AdditionalCodeBypass) break;
+                                var additionalCode = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(additionalCode))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.AdditionalCode));
+                                            var xmlObject = (Scraping.AdditionalCode)serializer.Deserialize(stringReader);
+
+                                            ProcessAditionalCode(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+
+                            case "BaseRegulation":
+                                if (FindXmlElements.BaseRegulationBypass) break;
+                                var baseRegulations = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(baseRegulations))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.BaseRegulation));
+                                            var xmlObject = (Scraping.BaseRegulation)serializer.Deserialize(stringReader);
+
+                                            ProccessBaseRegulations(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+
+                            case "ModificationRegulation":
+                                if (FindXmlElements.ModificationRegulationBypass) break;
+                                var modificationRegulation = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(modificationRegulation))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.ModificationRegulation));
+                                            var xmlObject = (Scraping.ModificationRegulation)serializer.Deserialize(stringReader);
+
+                                            ProcessModificationRegulation(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "MonetaryPlaceOfPublication":
+                                if (FindXmlElements.MonetaryPlaceOfPublicationBypass) break;
+                                var monetaryPlaceOfPublication = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(monetaryPlaceOfPublication))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MonetaryPlaceOfPublication));
+                                            var xmlObject = (Scraping.MonetaryPlaceOfPublication)serializer.Deserialize(stringReader);
+
+                                            ProcessMonetaryPlaceOfPublication(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "MonetaryExchangePeriod":
+                                if (FindXmlElements.MonetaryExchangePeriodBypass) break;
+                                var monetaryExchangePeriod = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(monetaryExchangePeriod))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MonetaryExchangePeriod));
+                                            var xmlObject = (Scraping.MonetaryExchangePeriod)serializer.Deserialize(stringReader);
+
+                                            ProcessMoneyExchangePeriod(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "QuotaDefinition":
+                                if (FindXmlElements.QuotaDefinitionBypass) break;
+                                var quotaDefinitions = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(quotaDefinitions))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.QuotaDefinition));
+                                            var xmlObject = (Scraping.QuotaDefinition)serializer.Deserialize(stringReader);
+
+                                            ProcessQuotaDefinition(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "MeursingTablePlan":
+                                if (FindXmlElements.MeursingTablePlanBypass) break;
+                                var meursingTablePLan = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(meursingTablePLan))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.MeursingTablePlan));
+                                            var xmlObject = (Scraping.MeursingTablePlan)serializer.Deserialize(stringReader);
+
+                                            ProcessMeursingTablePLan(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "ExplicitAbrogationRegulation":
+                                if (FindXmlElements.ExplicitAbrogationRegulationBypass) break;
+                                var explicitAbrogationRegulation = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(explicitAbrogationRegulation))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.explicitAbrogationRegulation));
+                                            var xmlObject = (Scraping.explicitAbrogationRegulation)serializer.Deserialize(stringReader);
+
+                                            ProcessExplicitAbrogationRegulation(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
+                            case "CompleteAbrogationRegulation":
+                                if (FindXmlElements.CompleteAbrogationRegulationBypass) break;
+                                var completeAbrogationRegulation = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(completeAbrogationRegulation))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.CompleteAbrogationRegulation));
+                                            var xmlObject = (Scraping.CompleteAbrogationRegulation)serializer.Deserialize(stringReader);
+
+                                            ProcessCompleteAbrogationRegulation(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
                             default:
                                 break;
                         }
@@ -1421,7 +1654,7 @@ namespace Scraping.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError($"Error saving Proccess Language");
+                _logger.LogError($"Error saving Proccess Meassure");
             }
 
             return success;
@@ -1519,7 +1752,7 @@ namespace Scraping.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError($"Error saving Proccess Language");
+                _logger.LogError($"Error saving Proccess Aditional Code Type");
             }
 
             return success;
@@ -1589,7 +1822,7 @@ namespace Scraping.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError($"Error saving Proccess Language");
+                _logger.LogError($"Error saving Meassure Type");
             }
 
             return success;
@@ -3003,6 +3236,1010 @@ namespace Scraping.Controllers
         }
 
         #endregion ProccessQuotaOrderNumber
+        #region ProcessMonetaryExchangePeriod
+        private bool ProcessMoneyExchangePeriod(Scraping.MonetaryExchangePeriod item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MonetaryExchangePeriods.Add(new DBModels.MonetaryExchangePeriod(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MonetaryExchangePeriods.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MonetaryExchangePeriods.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MonetaryExchangePeriods.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MonetaryExchangePeriods.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                foreach (monetaryExchangeRate d in item.monetaryExchangeRate)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MonetaryExchangeRates.Add(new DBModels.MonetaryExchangeRates(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MonetaryExchangeRates.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MonetaryExchangeRates.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MonetaryExchangeRates.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MonetaryExchangeRates.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError($"Error saving Monetary Exchange Period");
+            }
+
+            return success;
+        }
+        #endregion
+
+        #region ProcessQuotaDefinition
+        private bool ProcessQuotaDefinition(Scraping.QuotaDefinition item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.QuotaDefinitions.Add(new DBModels.QuotaDefinition(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.QuotaDefinitions.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.QuotaDefinitions.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.QuotaDefinitions.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.QuotaDefinitions.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                foreach (quotaAssociation d in item.quotaAssociation)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaAssociations.Add(new DBModels.QuotaAssociation(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaAssociations.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaAssociations.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                foreach (quotaBalanceEvent d in item.quotaBalanceEvent)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaBalanceEvents.Add(new DBModels.QuotaBalanceEvent(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaBalanceEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaBalanceEvents.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaBalanceEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaBalanceEvents.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                foreach (quotaBlockingPeriod d in item.quotaBlockingPeriod)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaBlockingPeriods.Add(new DBModels.QuotaBlockingPeriod(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaBlockingPeriods.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaBlockingPeriods.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaBlockingPeriods.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaBlockingPeriods.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                foreach (quotaClosedTransEvent d in item.quotaClosedAndTransferredEvent)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaClosedTransferredEvents.Add(new DBModels.QuotaClosedTransferredEvent(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaClosedTransferredEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaClosedTransferredEvents.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaClosedTransferredEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaClosedTransferredEvents.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+                foreach (quotaCriticalEvent d in item.quotaCriticalEvent)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaCriticalEvents.Add(new DBModels.QuotaCriticalEvent(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaCriticalEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaCriticalEvents.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaCriticalEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaCriticalEvents.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+                foreach (quotaExhaustionEvent d in item.quotaExhaustionEvent)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaExhaustionEvents.Add(new DBModels.QuotaExhaustionEvent(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaExhaustionEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaExhaustionEvents.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaExhaustionEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaExhaustionEvents.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+                foreach (quotaExtendedInformation d in item.quotaExtendedInformation)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaExtendedInformations.Add(new DBModels.QuotaExtendedInformation(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaExtendedInformations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaExtendedInformations.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaExtendedInformations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaExtendedInformations.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+                foreach (quotaReopeningEvent d in item.quotaReopeningEvent)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaReopeningEvents.Add(new DBModels.QuotaReopeningEvent(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaReopeningEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaReopeningEvents.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaReopeningEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaReopeningEvents.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+                foreach (quotaSuspensionPeriod d in item.quotaSuspensionPeriod)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaSuspensionPeriods.Add(new DBModels.QuotaSuspensionPeriod(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaSuspensionPeriods.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaSuspensionPeriods.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaSuspensionPeriods.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaSuspensionPeriods.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+                foreach (quotaUnblockingEvent d in item.quotaUnblockingEvent)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaUnblockingEvents.Add(new DBModels.QuotaUnblockingEvent(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaUnblockingEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaUnblockingEvents.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaUnblockingEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaUnblockingEvents.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+
+                foreach (quotaUnsuspensionEvent d in item.quotaUnsuspensionEvent)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaUnsuspensionEvents.Add(new DBModels.QuotaUnsuspensionEvent(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaUnsuspensionEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.QuotaUnsuspensionEvents.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaUnsuspensionEvents.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaUnsuspensionEvents.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError($"Error saving Quota Definitions");
+            }
+
+            return success;
+        }
+        #endregion
+
+        #region ProcessMeursingTablePLan
+        private bool ProcessMeursingTablePLan(Scraping.MeursingTablePlan item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MeursingTablePlans.Add(new DBModels.MeursingTablePlan(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MeursingTablePlans.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MeursingTablePlans.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MeursingTablePlans.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MeursingTablePlans.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                foreach (meursingHeading d in item.meursingHeading)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MeursingHeadings.Add(new DBModels.MeursingHeading(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MeursingHeadings.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MeursingHeadings.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MeursingHeadings.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MeursingHeadings.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    //Proccess Additional Code Descriptions
+                    foreach (Description desc in d.meursingHeadingText)
+                    {
+                        switch (desc.metainfo.opType)
+                        {
+                            case OpType.C:
+                                dbContext.MeursingHeadingDescriptions.Add(new DBModels.MeursingHeadingDescription(desc, d.hjid, fileName));
+                                break;
+                            case OpType.U:
+                                var dbObject = dbContext.MeursingHeadingDescriptions.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbObject.UpdateFields(desc, fileName);
+                                    dbContext.MeursingHeadingDescriptions.Update(dbObject);
+                                }
+                                break;
+                            case OpType.D:
+                                dbObject = dbContext.MeursingHeadingDescriptions.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbContext.MeursingHeadingDescriptions.Remove(dbObject);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                    foreach (meursingSubheading desc in d.meursingSubheading)
+                    {
+                        switch (desc.metainfo.opType)
+                        {
+                            case OpType.C:
+                                dbContext.MeursingSubheadings.Add(new DBModels.MeursingSubheading(desc, d.hjid, fileName));
+                                break;
+                            case OpType.U:
+                                var dbObject = dbContext.MeursingSubheadings.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbObject.UpdateFields(desc, fileName);
+                                    dbContext.MeursingSubheadings.Update(dbObject);
+                                }
+                                break;
+                            case OpType.D:
+                                dbObject = dbContext.MeursingSubheadings.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbContext.MeursingSubheadings.Remove(dbObject);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                    foreach (meursingHeadingFootnotesAssoc desc in d.footnoteAssociationMeursingHeading)
+                    {
+                        switch (desc.metainfo.opType)
+                        {
+                            case OpType.C:
+                                dbContext.MeursingHeadingFootnotesAssociations.Add(new DBModels.MeursingHeadingFootnotesAssociation(desc, d.hjid, fileName));
+                                break;
+                            case OpType.U:
+                                var dbObject = dbContext.MeursingHeadingFootnotesAssociations.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbObject.UpdateFields(desc, fileName);
+                                    dbContext.MeursingHeadingFootnotesAssociations.Update(dbObject);
+                                }
+                                break;
+                            case OpType.D:
+                                dbObject = dbContext.MeursingHeadingFootnotesAssociations.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbContext.MeursingHeadingFootnotesAssociations.Remove(dbObject);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError($"Error saving Meursing Table Plans");
+            }
+
+            return success;
+        }
+        #endregion
+
+        #region ProcessRegulationReplacement
+        private bool ProcessRegulationReplacement(Scraping.RegulationReplacement item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.RegulationReplacements.Add(new DBModels.RegulationReplacement(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.RegulationReplacements.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.RegulationReplacements.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.RegulationReplacements.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.RegulationReplacements.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError($"Error saving Regulation Replacement");
+            }
+
+            return success;
+        }
+
+        #endregion
+
+        #region ProcessExplicitAbrogationRegulation
+        private bool ProcessExplicitAbrogationRegulation(Scraping.explicitAbrogationRegulation item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.ExplicitAbrogationRegulations.Add(new DBModels.ExplicitAbrogationRegulation(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.ExplicitAbrogationRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.ExplicitAbrogationRegulations.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.ExplicitAbrogationRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.ExplicitAbrogationRegulations.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError($"Error saving Explicit Abrogation Regulations");
+            }
+
+            return success;
+        }
+        #endregion
+
+        #region ProcessCompleteAbrogationRegulation
+        private bool ProcessCompleteAbrogationRegulation(Scraping.CompleteAbrogationRegulation item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.CompleteAbrogationRegulations.Add(new DBModels.CompleteAbrogationRegulation(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.CompleteAbrogationRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.CompleteAbrogationRegulations.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.CompleteAbrogationRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.CompleteAbrogationRegulations.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError($"Error saving Complete Abrogation Regulations");
+            }
+
+            return success;
+        }
+        #endregion
+
+        #region ProcessMonetaryUnit
+        private bool ProccessMonetaryUnit(Scraping.MonetaryUnit item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MonetaryUnits.Add(new DBModels.MonetaryUnit(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MonetaryUnits.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MonetaryUnits.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MonetaryUnits.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MonetaryUnits.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess monetary unit description
+                foreach (Description d in item.monetaryUnitDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MonetaryUnitDescriptions.Add(new DBModels.MonetaryUnitDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MonetaryUnitDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MonetaryUnitDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MonetaryUnitDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MonetaryUnitDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Monetary Units");
+            }
+
+            return success;
+        }
+        #endregion
+
+        #region ProcessAditionalCode
+        private bool ProcessAditionalCode(Scraping.AdditionalCode item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.AdditionalCodes.Add(new DBModels.AdditionalCode(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.AdditionalCodes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.AdditionalCodes.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.AdditionalCodes.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.AdditionalCodes.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess Additional Code Description Periods
+                foreach (additionalCodeDescriptionPeriod fnd in item.additionalCodeDescriptionPeriod)
+                {
+                    switch (fnd.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.AdditionalCodeDescriptionPeriods.Add(new DBModels.AdditionalCodeDescriptionPeriod(fnd, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.AdditionalCodeDescriptionPeriods.Where(x => x.hjid == fnd.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(fnd, fileName);
+                                dbContext.AdditionalCodeDescriptionPeriods.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.AdditionalCodeDescriptionPeriods.Where(x => x.hjid == fnd.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.AdditionalCodeDescriptionPeriods.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    //Proccess Additional Code Descriptions
+                    foreach (Description desc in fnd.additionalCodeDescription)
+                    {
+                        switch (desc.metainfo.opType)
+                        {
+                            case OpType.C:
+                                dbContext.AdditionalCodeDescriptions.Add(new DBModels.AdditionalCodeDescription(desc, fnd.hjid, fileName));
+                                break;
+                            case OpType.U:
+                                var dbObject = dbContext.AdditionalCodeDescriptions.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbObject.UpdateFields(desc, fileName);
+                                    dbContext.AdditionalCodeDescriptions.Update(dbObject);
+                                }
+                                break;
+                            case OpType.D:
+                                dbObject = dbContext.AdditionalCodeDescriptions.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbContext.AdditionalCodeDescriptions.Remove(dbObject);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                }
+                foreach (ftnoteAssocAddCode d in item.footnoteAssociationAdditionalCode)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.AdditionalCodeFootnoteAssociations.Add(new DBModels.AdditionalCodeFootnoteAssociation(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.AdditionalCodeFootnoteAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.AdditionalCodeFootnoteAssociations.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.AdditionalCodeFootnoteAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.AdditionalCodeFootnoteAssociations.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Descriptions");
+            }
+
+            return success;
+        }
+
+        #endregion
+
+        #region ProcessBaseRegulations
+        private bool ProccessBaseRegulations(Scraping.BaseRegulation item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.BaseRegulations.Add(new DBModels.BaseRegulation(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.BaseRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.BaseRegulations.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.BaseRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.BaseRegulations.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError($"Error saving Base Regulations");
+            }
+
+            return success;
+        }
+        #endregion
+
+        #region ProcessModificationRegulation
+        private bool ProcessModificationRegulation(Scraping.ModificationRegulation item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.ModificationRegulations.Add(new DBModels.ModificationRegulation(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.ModificationRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.ModificationRegulations.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.ModificationRegulations.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.ModificationRegulations.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError($"Error saving Modification Regulations");
+            }
+
+            return success;
+        }
+        #endregion
+
+        #region ProcessMonetaryPlaceOfPublication
+        private bool ProcessMonetaryPlaceOfPublication(Scraping.MonetaryPlaceOfPublication item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.MonetaryPlaceOfPublications.Add(new DBModels.MonetaryPlaceOfPublication(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.MonetaryPlaceOfPublications.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.MonetaryPlaceOfPublications.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.MonetaryPlaceOfPublications.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.MonetaryPlaceOfPublications.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess Monetary Place of Publications Description
+                foreach (Description d in item.monetaryPlaceOfPublicationDescription)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MonetaryPlaceOfPublicationDescriptions.Add(new DBModels.MonetaryPlaceOfPublicationDescription(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MonetaryPlaceOfPublicationDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MonetaryPlaceOfPublicationDescriptions.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MonetaryPlaceOfPublicationDescriptions.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MonetaryPlaceOfPublicationDescriptions.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Monetary place of publication");
+            }
+
+            return success;
+        }
+        #endregion
     }
 
     internal static class FindXmlElements
@@ -3045,6 +4282,6 @@ namespace Scraping.Controllers
         internal static bool CertificateTypeBypass { get; set; } = true;
         internal static bool RegulationRoleTypeBypass { get; set; } = true;
         internal static bool QuotaDefinitionBypass { get; set; } = true;
-        internal static bool ExplicitAbrogationRegulation { get; set; } = true;
+        internal static bool ExplicitAbrogationRegulationBypass { get; set; } = true;
     }
 }

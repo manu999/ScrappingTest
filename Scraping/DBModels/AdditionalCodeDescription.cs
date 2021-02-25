@@ -4,18 +4,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("FootnoteDescriptions")]
-    public class FootnoteDescription
+    [Table("AdditionalCodeDescriptions")]
+    public class AdditionalCodeDescription
     {
         [Key]
         public long key { get; set; }
-        
 		public long hjid { get; set; }
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-
-        public long footnoteDescriptionPeriod_hjid { get; set; }
+        public long additionalCodeDescriptionPeriod_hjid { get; set; }
         public string description { get; set; }
         public long languages_hjid { get; set; }
 
@@ -26,14 +24,14 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public FootnoteDescription()
+        public AdditionalCodeDescription()
         {
         }
 
-        public FootnoteDescription(Description desc, long footNoteDescPeriod_hjid, string fileName = "")
+        public AdditionalCodeDescription(Description desc, long AdditionalCodeDescriptionPeriod_hjid, string fileName = "")
         {
             hjid = desc.hjid;
-            footnoteDescriptionPeriod_hjid = footNoteDescPeriod_hjid;
+            additionalCodeDescriptionPeriod_hjid = AdditionalCodeDescriptionPeriod_hjid;
             languages_hjid = desc.language.hjid;
             opType = desc.metainfo?.opType.ToString();
             origin = desc.metainfo?.origin.ToString();

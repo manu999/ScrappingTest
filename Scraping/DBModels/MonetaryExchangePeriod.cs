@@ -4,9 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("GeographicalAreas")]
-    public class GeographicalArea
+    [Table("MonetaryExchangePeriods")]
+    public class MonetaryExchangePeriod
     {
+        private MonetaryExchangePeriod item;
+        private string fileName;
+
         [Key]
         public long key { get; set; }
         
@@ -14,10 +17,7 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-
-        public string geographicalAreaId { get; set; }
-        public string geographicalCode { get; set; }
-        public long parentGeographicalAreaGroupSid { get; set; }
+        public long monetaryUnit_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime validityStartDate { get; set; }
@@ -32,20 +32,17 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-
-        public GeographicalArea()
+        public MonetaryExchangePeriod()
         {
         }
 
-        public GeographicalArea(Scraping.GeographicalArea obj, string fileName = "")
+        public MonetaryExchangePeriod(Scraping.MonetaryExchangePeriod obj, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            geographicalAreaId = obj.geographicalAreaId;
-            geographicalCode = obj.geographicalCode;
-            parentGeographicalAreaGroupSid = obj.parentGeographicalAreaGroupSid;
+            monetaryUnit_hjid = obj.monetaryUnit.hjid;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -54,14 +51,12 @@ namespace Scraping.DBModels
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.GeographicalArea obj, string fileName = "")
+        public void UpdateFields(Scraping.MonetaryExchangePeriod obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            geographicalAreaId = obj.geographicalAreaId;
-            geographicalCode = obj.geographicalCode;
-            parentGeographicalAreaGroupSid = obj.parentGeographicalAreaGroupSid;
+            monetaryUnit_hjid = obj.monetaryUnit.hjid;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -69,5 +64,6 @@ namespace Scraping.DBModels
             dataFileType = "";
             dataFileTypeValue = 0;
         }
+
     }
 }

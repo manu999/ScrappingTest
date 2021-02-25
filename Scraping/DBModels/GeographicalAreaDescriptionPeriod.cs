@@ -30,27 +30,27 @@ namespace Scraping.DBModels
         {
         }
 
-        public GeographicalAreaDescriptionPeriod(Scraping.GeographicalAreaDescriptionPeriod gad, long GeographicalArea_hjid, string fileName = "")
+        public GeographicalAreaDescriptionPeriod(Scraping.GeographicalAreaDescriptionPeriod obj, long GeographicalArea_hjid, string fileName = "")
         {
-            hjid = gad.hjid;
+            hjid = obj.hjid;
             geographicalArea_hjid = GeographicalArea_hjid;
-            opType = gad.metainfo?.opType.ToString();
-            origin = gad.metainfo?.origin.ToString();
-            status = gad.metainfo?.status.ToString();
-            validityStartDate = gad.validityStartDate;
-            transactionDate = gad.metainfo?.transactionDate ?? new DateTime();
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            validityStartDate = obj.validityStartDate;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.GeographicalAreaDescriptionPeriod gad, string fileName = "")
+        public void UpdateFields(Scraping.GeographicalAreaDescriptionPeriod obj, string fileName = "")
         {
-            opType = gad.metainfo?.opType.ToString();
-            origin = gad.metainfo?.origin.ToString();
-            status = gad.metainfo?.status.ToString();
-            validityStartDate = gad.validityStartDate;
-            transactionDate = gad.metainfo?.transactionDate ?? new DateTime();
+            opType = obj.metainfo?.opType.ToString();
+            origin = obj.metainfo?.origin.ToString();
+            status = obj.metainfo?.status.ToString();
+            validityStartDate = obj.validityStartDate;
+            transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;

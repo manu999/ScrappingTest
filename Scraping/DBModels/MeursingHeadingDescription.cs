@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("DutyExpressionDescriptions")]
-    public class DutyExpressionDescription
+    [Table("MeursingHeadingDescriptions")]
+    public class MeursingHeadingDescription
     {
         [Key]
         public long key { get; set; }
@@ -14,7 +14,7 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public long dutyExpression_hjid { get; set; }
+        public long meursingHeading_hjid { get; set; }
         public string description { get; set; }
         public long languages_hjid { get; set; }
 
@@ -25,15 +25,15 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public DutyExpressionDescription()
+        public MeursingHeadingDescription()
         {
         }
 
-        public DutyExpressionDescription(Description obj, long? DutyExpression_hjid, string fileName = "")
+        public MeursingHeadingDescription(Description obj, long MeursingHeading_hjid, string fileName = "")
         {
             hjid = obj.hjid;
-            dutyExpression_hjid = DutyExpression_hjid ?? 0;
             languages_hjid = obj.language.hjid;
+            meursingHeading_hjid = MeursingHeading_hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();

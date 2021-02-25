@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("GeographicalAreas")]
-    public class GeographicalArea
+    [Table("QuotaClosedTransferredEvents")]
+    public class QuotaClosedTransferredEvent
     {
         [Key]
         public long key { get; set; }
@@ -14,16 +14,16 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-
-        public string geographicalAreaId { get; set; }
-        public string geographicalCode { get; set; }
-        public long parentGeographicalAreaGroupSid { get; set; }
+        public long quotaDefinition_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]
-        public System.DateTime validityStartDate { get; set; }
+        public System.DateTime closingDate { get; set; }
 
         [Column(TypeName = "datetime2")]
-        public System.DateTime validityEndDate { get; set; }
+        public System.DateTime occurrenceTimestamp { get; set; }
+
+        public long target_QuotaDefinition_hjid { get; set; }
+        public decimal transferredAmount { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime transactionDate { get; set; }
@@ -32,38 +32,36 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-
-        public GeographicalArea()
+        public QuotaClosedTransferredEvent()
         {
         }
 
-        public GeographicalArea(Scraping.GeographicalArea obj, string fileName = "")
+        public QuotaClosedTransferredEvent(quotaClosedTransEvent obj, long QuotaDefinition_hjid, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            geographicalAreaId = obj.geographicalAreaId;
-            geographicalCode = obj.geographicalCode;
-            parentGeographicalAreaGroupSid = obj.parentGeographicalAreaGroupSid;
-            validityStartDate = obj.validityStartDate;
-            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
+            quotaDefinition_hjid = QuotaDefinition_hjid;
+            closingDate = obj.closingDate;
+            occurrenceTimestamp = obj.occurrenceTimestamp;
+            target_QuotaDefinition_hjid = obj.targetQuotaDefinition.hjid;
+            transferredAmount = obj.transferredAmount;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.GeographicalArea obj, string fileName = "")
+        public void UpdateFields(quotaClosedTransEvent obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            geographicalAreaId = obj.geographicalAreaId;
-            geographicalCode = obj.geographicalCode;
-            parentGeographicalAreaGroupSid = obj.parentGeographicalAreaGroupSid;
-            validityStartDate = obj.validityStartDate;
-            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
+            closingDate = obj.closingDate;
+            occurrenceTimestamp = obj.occurrenceTimestamp;
+            target_QuotaDefinition_hjid = obj.targetQuotaDefinition.hjid;
+            transferredAmount = obj.transferredAmount;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
