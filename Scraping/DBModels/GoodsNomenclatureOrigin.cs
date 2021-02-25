@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("AdditionalCodeFootnoteAssociations")]
-    public class AdditionalCodeFootnoteAssociation
+    [Table("GoodsNomenclatureOrigins")]
+    public class GoodsNomenclatureOrigin
     {
         [Key]
         public long key { get; set; }
@@ -14,14 +14,10 @@ namespace Scraping.DBModels
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public long additionalCode_hjid { get; set; }
-        public long footnote_hjid { get; set; }
-
-        [Column(TypeName = "datetime2")]
-        public System.DateTime validityStartDate { get; set; }
-
-        [Column(TypeName = "datetime2")]
-        public System.DateTime validityEndDate { get; set; }
+        public string derivedGoodsNomenclatureItemId { get; set; }
+        public string derivedProductlineSuffix { get; set; }
+        public long goodsNomenclatureSid { get; set; }
+        public long goodsNomenclature_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime transactionDate { get; set; }
@@ -30,30 +26,34 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public AdditionalCodeFootnoteAssociation()
+        public GoodsNomenclatureOrigin()
         {
         }
 
-        public AdditionalCodeFootnoteAssociation(Scraping.ftnoteAssocAddCode obj, long? AdditionalCode_hjid, string fileName = "")
+        public GoodsNomenclatureOrigin(Scraping.GoodsNomenOrigin obj, long GoodsNomenclature_hjid, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            additionalCode_hjid = AdditionalCode_hjid ?? 0;
-            footnote_hjid = obj.footnote?.hjid ?? 0;
+            derivedGoodsNomenclatureItemId = obj.derivedGoodsNomenclatureItemId;
+            goodsNomenclature_hjid = GoodsNomenclature_hjid;
+            derivedProductlineSuffix = obj.derivedProductlineSuffix;
+            goodsNomenclatureSid = obj.goodsNomenclatureSid;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.ftnoteAssocAddCode obj, string fileName = "")
+        public void UpdateFields(Scraping.GoodsNomenOrigin obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            footnote_hjid = obj.footnote?.hjid ?? 0;
+            derivedGoodsNomenclatureItemId = obj.derivedGoodsNomenclatureItemId;
+            derivedProductlineSuffix = obj.derivedProductlineSuffix;
+            goodsNomenclatureSid = obj.goodsNomenclatureSid;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";

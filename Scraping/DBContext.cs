@@ -77,7 +77,6 @@ namespace Scraping
         public DbSet<DBModels.GoodsNomenclatureGroup> GoodsNomenclatureGroups { get; set; }
         public DbSet<DBModels.GoodsNomenclatureGroupDescription> GoodsNomenclatureGroupDescriptions { get; set; }
         public DbSet<DBModels.RegulationRoleCombinations> RegulationRoleCombinationss { get; set; }
-        public DbSet<DBModels.AdditionalCodeFootnoteAssociation> AdditionalCodeFootnoteAssociations { get; set; }
         public DbSet<DBModels.ProrogationRegulation> ProrogationRegulations { get; set; }
         public DbSet<DBModels.ProrogationRegulationAction> ProrogationRegulationActions { get; set; }
         public DbSet<DBModels.FullTemporaryStopRegulation> FullTemporaryStopRegulations { get; set; }
@@ -85,6 +84,12 @@ namespace Scraping
         public DbSet<DBModels.RegulationReplacement> RegulationReplacements { get; set; }
         public DbSet<DBModels.MeursingAdditionalCode> MeursingAdditionalCodes { get; set; }
         public DbSet<DBModels.MeursingCellComponent> MeursingCellComponents { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureIndents> GoodsNomenclatureIndentss { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureOrigin> GoodsNomenclatureOrigins { get; set; }
+        public DbSet<DBModels.GoodsNomenclatureSuccessor> GoodsNomenclatureSuccessors { get; set; }
+        public DbSet<DBModels.QuotaOrderNumber> QuotaOrderNumbers { get; set; }
+        public DbSet<DBModels.QuotaOrderNumberOrigin> QuotaOrderNumberOrigins { get; set; }
+        public DbSet<DBModels.QuotaOrderNumberOriginExclusions> QuotaOrderNumberOriginExclusionss { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

@@ -652,6 +652,27 @@ namespace Scraping.Controllers
                                     Interlocked.Decrement(ref activeThreadCount);
                                 });
                                 break;
+                            case "QuotaOrderNumber":
+                                if (FindXmlElements.QuotaOrderNumberBypass) break;
+                                var quotaOrderNumberString = (XNode.ReadFrom(reader) as XElement).ToString();
+                                Task.Run(() =>
+                                {
+                                    //Increment active threads count
+                                    Interlocked.Increment(ref activeThreadCount);
+                                    using (DBContext dbContext = new DBContext())
+                                    {
+                                        using (StringReader stringReader = new StringReader(quotaOrderNumberString))
+                                        {
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.QuotaOrderNumber));
+                                            var xmlObject = (Scraping.QuotaOrderNumber)serializer.Deserialize(stringReader);
+
+                                            ProccessQuotaOrderNumber(xmlObject, dbContext, fileName);
+                                        }
+                                    }
+                                    //Decrement active threads count
+                                    Interlocked.Decrement(ref activeThreadCount);
+                                });
+                                break;
                             default:
                                 break;
                         }
@@ -1435,34 +1456,6 @@ namespace Scraping.Controllers
                         break;
                     default:
                         break;
-                }
-
-                //Proccess Additional Code Footnote Association
-                foreach (var d in item.footnoteAssociationGoodsNomenclature)
-                {
-                    switch (d.metainfo.opType)
-                    {
-                        case OpType.C:
-                            dbContext.AdditionalCodeFootnoteAssociations.Add(new DBModels.AdditionalCodeFootnoteAssociation(d, item.hjid, fileName));
-                            break;
-                        case OpType.U:
-                            var dbObject = dbContext.AdditionalCodeFootnoteAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
-                            if (dbObject != null)
-                            {
-                                dbObject.UpdateFields(d, fileName);
-                                dbContext.AdditionalCodeFootnoteAssociations.Update(dbObject);
-                            }
-                            break;
-                        case OpType.D:
-                            dbObject = dbContext.AdditionalCodeFootnoteAssociations.Where(x => x.hjid == d.hjid).FirstOrDefault();
-                            if (dbObject != null)
-                            {
-                                dbContext.AdditionalCodeFootnoteAssociations.Remove(dbObject);
-                            }
-                            break;
-                        default:
-                            break;
-                    }
                 }
 
                 //Proccess additional Code Type Description
@@ -2507,9 +2500,93 @@ namespace Scraping.Controllers
                             default:
                                 break;
                         }
-
                     }
                 }
+
+                //Proccess Goods Nomenclature Indents
+                foreach (var d in item.goodsNomenclatureIndents)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.GoodsNomenclatureIndentss.Add(new DBModels.GoodsNomenclatureIndents(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.GoodsNomenclatureIndentss.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.GoodsNomenclatureIndentss.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.GoodsNomenclatureIndentss.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.GoodsNomenclatureIndentss.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                //Proccess Goods Nomenclature Origin
+                foreach (var d in item.goodsNomenclatureOrigin)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.GoodsNomenclatureOrigins.Add(new DBModels.GoodsNomenclatureOrigin(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.GoodsNomenclatureOrigins.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.GoodsNomenclatureOrigins.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.GoodsNomenclatureOrigins.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.GoodsNomenclatureOrigins.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                //Proccess Goods Nomenclature Successor
+                foreach (var d in item.goodsNomenclatureSuccessor)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.GoodsNomenclatureSuccessors.Add(new DBModels.GoodsNomenclatureSuccessor(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.GoodsNomenclatureSuccessors.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.GoodsNomenclatureSuccessors.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.GoodsNomenclatureSuccessors.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.GoodsNomenclatureSuccessors.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
                 dbContext.SaveChanges();
                 success = true;
             }
@@ -2770,6 +2847,105 @@ namespace Scraping.Controllers
             return success;
         }
         #endregion ProccessMeursingAdditionalCode
+
+        #region ProccessQuotaOrderNumber
+        private bool ProccessQuotaOrderNumber(Scraping.QuotaOrderNumber item, DBContext dbContext, string fileName = "")
+        {
+            bool success = false;
+            try
+            {
+                switch (item.metainfo.opType)
+                {
+                    case OpType.C:
+                        dbContext.QuotaOrderNumbers.Add(new DBModels.QuotaOrderNumber(item, fileName));
+                        break;
+                    case OpType.U:
+                        var dbObject = dbContext.QuotaOrderNumbers.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbObject.UpdateFields(item, fileName);
+                            dbContext.QuotaOrderNumbers.Update(dbObject);
+                        }
+                        break;
+                    case OpType.D:
+                        dbObject = dbContext.QuotaOrderNumbers.Where(x => x.hjid == item.hjid).FirstOrDefault();
+                        if (dbObject != null)
+                        {
+                            dbContext.QuotaOrderNumbers.Remove(dbObject);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                //Proccess Quota Order Number Origin
+                foreach (QuotaOrderNumberOrigin certificateDP in item.quotaOrderNumberOrigin)
+                {
+                    switch (certificateDP.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.QuotaOrderNumberOrigins.Add(new DBModels.QuotaOrderNumberOrigin(certificateDP, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.QuotaOrderNumberOrigins.Where(x => x.hjid == certificateDP.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(certificateDP, fileName);
+                                dbContext.QuotaOrderNumberOrigins.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.QuotaOrderNumberOrigins.Where(x => x.hjid == certificateDP.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.QuotaOrderNumberOrigins.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                    //Proccess Quota Order Number Origin Exclusions
+                    foreach (QuotaOrderNumberOriginExcl desc in certificateDP.quotaOrderNumberOriginExclusions)
+                    {
+                        switch (desc.metainfo.opType)
+                        {
+                            case OpType.C:
+                                dbContext.QuotaOrderNumberOriginExclusionss.Add(new DBModels.QuotaOrderNumberOriginExclusions(desc, certificateDP.hjid, fileName));
+                                break;
+                            case OpType.U:
+                                var dbObject = dbContext.QuotaOrderNumberOriginExclusionss.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbObject.UpdateFields(desc, fileName);
+                                    dbContext.QuotaOrderNumberOriginExclusionss.Update(dbObject);
+                                }
+                                break;
+                            case OpType.D:
+                                dbObject = dbContext.QuotaOrderNumberOriginExclusionss.Where(x => x.hjid == desc.hjid).FirstOrDefault();
+                                if (dbObject != null)
+                                {
+                                    dbContext.QuotaOrderNumberOriginExclusionss.Remove(dbObject);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                }
+                dbContext.SaveChanges();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Error saving Certificates");
+            }
+
+            return success;
+        }
+
+        #endregion ProccessQuotaOrderNumber
     }
 
     internal static class FindXmlElements

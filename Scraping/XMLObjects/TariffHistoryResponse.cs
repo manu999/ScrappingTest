@@ -663,11 +663,11 @@ namespace Scraping
 
         private goodsNomenDescriptionPeriod[] goodsNomenclatureDescriptionPeriodField;
 
-        private goodsNomenclatureIndents[] goodsNomenclatureIndentsField;
+        private GoodsNomenclatureIndents[] goodsNomenclatureIndentsField;
 
-        private goodsNomenOrigin[] goodsNomenclatureOriginField;
+        private GoodsNomenOrigin[] goodsNomenclatureOriginField;
 
-        private goodsNomenSuccessor[] goodsNomenclatureSuccessorField;
+        private GoodsNomenSuccessor[] goodsNomenclatureSuccessorField;
 
         private goodsNomenGroupMembership[] nomenclatureGroupMembershipField;
 
@@ -883,7 +883,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("goodsNomenclatureIndents", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public goodsNomenclatureIndents[] goodsNomenclatureIndents
+        public GoodsNomenclatureIndents[] goodsNomenclatureIndents
         {
             get
             {
@@ -897,7 +897,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("goodsNomenclatureOrigin", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public goodsNomenOrigin[] goodsNomenclatureOrigin
+        public GoodsNomenOrigin[] goodsNomenclatureOrigin
         {
             get
             {
@@ -911,7 +911,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("goodsNomenclatureSuccessor", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public goodsNomenSuccessor[] goodsNomenclatureSuccessor
+        public GoodsNomenSuccessor[] goodsNomenclatureSuccessor
         {
             get
             {
@@ -2320,7 +2320,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class goodsNomenclatureIndents
+    public partial class GoodsNomenclatureIndents
     {
 
         private long hjidField;
@@ -2474,7 +2474,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class goodsNomenOrigin
+    public partial class GoodsNomenOrigin
     {
 
         private long hjidField;
@@ -2644,7 +2644,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class goodsNomenSuccessor
+    public partial class GoodsNomenSuccessor
     {
 
         private long hjidField;
@@ -5245,11 +5245,11 @@ namespace Scraping
     public partial class findQuotaOrderNumberByDatesResponseHistory
     {
 
-        private quotaOrderNumber[] quotaOrderNumberField;
+        private QuotaOrderNumber[] quotaOrderNumberField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("QuotaOrderNumber", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public quotaOrderNumber[] QuotaOrderNumber
+        public QuotaOrderNumber[] QuotaOrderNumber
         {
             get
             {
@@ -5268,7 +5268,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class quotaOrderNumber
+    public partial class QuotaOrderNumber
     {
 
         private long hjidField;
@@ -5293,7 +5293,7 @@ namespace Scraping
 
         private bool validityStartDateFieldSpecified;
 
-        private quotaOrderNumberOrigin[] quotaOrderNumberOriginField;
+        private QuotaOrderNumberOrigin[] quotaOrderNumberOriginField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -5451,7 +5451,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("quotaOrderNumberOrigin", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public quotaOrderNumberOrigin[] quotaOrderNumberOrigin
+        public QuotaOrderNumberOrigin[] quotaOrderNumberOrigin
         {
             get
             {
@@ -5470,7 +5470,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class quotaOrderNumberOrigin
+    public partial class QuotaOrderNumberOrigin
     {
 
         private long hjidField;
@@ -5495,7 +5495,7 @@ namespace Scraping
 
         private GeographicalArea geographicalAreaField;
 
-        private quotaOrderNumberOriginExcl[] quotaOrderNumberOriginExclusionsField;
+        private QuotaOrderNumberOriginExcl[] quotaOrderNumberOriginExclusionsField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -5653,7 +5653,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("quotaOrderNumberOriginExclusions", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true)]
-        public quotaOrderNumberOriginExcl[] quotaOrderNumberOriginExclusions
+        public QuotaOrderNumberOriginExcl[] quotaOrderNumberOriginExclusions
         {
             get
             {
@@ -5672,7 +5672,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class quotaOrderNumberOriginExcl
+    public partial class QuotaOrderNumberOriginExcl
     {
 
         private long hjidField;
@@ -5881,7 +5881,7 @@ namespace Scraping
 
         private quotaExtendedInformation[] quotaExtendedInformationField;
 
-        private quotaOrderNumber quotaOrderNumberField;
+        private QuotaOrderNumber quotaOrderNumberField;
 
         private quotaReopeningEvent[] quotaReopeningEventField;
 
@@ -6299,7 +6299,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public quotaOrderNumber quotaOrderNumber
+        public QuotaOrderNumber quotaOrderNumber
         {
             get
             {

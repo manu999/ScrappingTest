@@ -4,24 +4,23 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Scraping.DBModels
 {
-    [Table("ProrogationRegulationActions")]
-    public class ProrogationRegulationAction
+    [Table("QuotaOrderNumbers")]
+    public class QuotaOrderNumber
     {
         [Key]
         public long key { get; set; }
-
-        public long hjid { get; set; }
+        
+		public long hjid { get; set; }
         public string opType { get; set; }
         public string origin { get; set; }
         public string status { get; set; }
-        public long prorogationRegulation_hjid { get; set; }
+        public string quotaOrderNumberId { get; set; }
 
         [Column(TypeName = "datetime2")]
-        public System.DateTime prorogatedDate { get; set; }
+        public System.DateTime validityStartDate { get; set; }
 
-        public string prorogatedRegulationId { get; set; }
-        public string prorogatedRegulationRole { get; set; }
-        public long baseRegulation_hjid { get; set; }
+        [Column(TypeName = "datetime2")]
+        public System.DateTime validityEndDate { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime transactionDate { get; set; }
@@ -30,34 +29,33 @@ namespace Scraping.DBModels
 		public int dataFileTypeValue { get; set; }
         public string dataFileName { get; set; }
 
-        public ProrogationRegulationAction()
+        public QuotaOrderNumber()
         {
         }
 
-        public ProrogationRegulationAction(Scraping.ProrogationRegulationAction obj, long? ProrogationRegulation_hjid, string fileName = "")
+        public QuotaOrderNumber(Scraping.QuotaOrderNumber obj, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            prorogatedRegulationId = obj.prorogatedRegulationId;
-            prorogatedRegulationRole = obj.prorogatedRegulationRole;
-            prorogationRegulation_hjid = ProrogationRegulation_hjid ?? 0;
-            baseRegulation_hjid = obj.baseRegulation.hjid;
+            quotaOrderNumberId = obj.quotaOrderNumberId;
+            validityStartDate = obj.validityStartDate;
+            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.ProrogationRegulationAction obj, string fileName = "")
+        public void UpdateFields(Scraping.QuotaOrderNumber obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            prorogatedRegulationId = obj.prorogatedRegulationId;
-            prorogatedRegulationRole = obj.prorogatedRegulationRole;
-            baseRegulation_hjid = obj.baseRegulation.hjid;
+            quotaOrderNumberId = obj.quotaOrderNumberId;
+            validityStartDate = obj.validityStartDate;
+            validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";

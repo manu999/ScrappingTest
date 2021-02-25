@@ -48,7 +48,8 @@ namespace Scraping.DBModels
             informationText = obj.informationText;
             officialjournalNumber = obj.officialjournalNumber;
             officialjournalPage = obj.officialjournalPage;
-            //validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
+            replacementIndicator = obj.replacementIndicator;
+            regulationRoleType_hjid = obj.regulationRoleType.hjid;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
@@ -65,6 +66,8 @@ namespace Scraping.DBModels
             informationText = obj.informationText;
             officialjournalNumber = obj.officialjournalNumber;
             officialjournalPage = obj.officialjournalPage;
+            replacementIndicator = obj.replacementIndicator;
+            regulationRoleType_hjid = obj.regulationRoleType.hjid;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
