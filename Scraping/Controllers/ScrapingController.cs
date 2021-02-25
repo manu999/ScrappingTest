@@ -1904,7 +1904,7 @@ namespace Scraping.Controllers
         }
         #endregion
 
-        #region ProcessMoneyExchangePeriod
+        #region ProcessMonetaryExchangePeriod
         private bool ProcessMoneyExchangePeriod(Scraping.MonetaryExchangePeriod item, DBContext dbContext, string fileName = "")
         {
             bool success = false;
@@ -1933,7 +1933,32 @@ namespace Scraping.Controllers
                     default:
                         break;
                 }
-            }
+                foreach (monetaryExchangeRate d in item.monetaryExchangeRate)
+                {
+                    switch (d.metainfo.opType)
+                    {
+                        case OpType.C:
+                            dbContext.MonetaryExchangeRates.Add(new DBModels.MonetaryExchangeRates(d, item.hjid, fileName));
+                            break;
+                        case OpType.U:
+                            var dbObject = dbContext.MonetaryExchangeRates.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbObject.UpdateFields(d, fileName);
+                                dbContext.MonetaryExchangeRates.Update(dbObject);
+                            }
+                            break;
+                        case OpType.D:
+                            dbObject = dbContext.MonetaryExchangeRates.Where(x => x.hjid == d.hjid).FirstOrDefault();
+                            if (dbObject != null)
+                            {
+                                dbContext.MonetaryExchangeRates.Remove(dbObject);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+            }   }
             catch (Exception)
             {
                 _logger.LogError($"Error saving Monetary Exchange Period");
