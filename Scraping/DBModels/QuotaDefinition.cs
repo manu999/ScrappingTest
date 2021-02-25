@@ -23,6 +23,7 @@ namespace Scraping.DBModels
         public long measurementUnit_hjid { get; set; }
         public long measurementUnitQualifier_hjid { get; set; }
         public long monetaryUnit_hjid { get; set; } 
+        public long quotaOrderNumber_hjid { get; set; }
 
         [Column(TypeName = "datetime2")]
         public System.DateTime validityStartDate { get; set; }
@@ -47,6 +48,7 @@ namespace Scraping.DBModels
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
+            quotaOrderNumber_hjid = obj.quotaOrderNumber.hjid;
             criticalState = obj.criticalState;
             criticalThreshold = obj.criticalThreshold;
             description = obj.description;
@@ -69,6 +71,7 @@ namespace Scraping.DBModels
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
+            quotaOrderNumber_hjid = obj.quotaOrderNumber.hjid;
             criticalThreshold = obj.criticalThreshold;
             description = obj.description;
             initialVolume = obj.initialVolume;

@@ -61,14 +61,34 @@ namespace Scraping
         public DbSet<DBModels.AdditionalCode> AdditionalCodes { get; set; }
         public DbSet<DBModels.AdditionalCodeDescription> AdditionalCodeDescriptions { get; set; }
         public DbSet<DBModels.AdditionalCodeDescriptionPeriod> AdditionalCodeDescriptionPeriods { get; set; }
+        public DbSet<DBModels.AdditionalCodeFootnoteAssociation> AdditionalCodeFootnoteAssociations { get; set; }
         public DbSet<DBModels.BaseRegulation> BaseRegulations { get; set; }
         public DbSet<DBModels.ModificationRegulation> ModificationRegulations { get; set; }
         public DbSet<DBModels.MonetaryPlaceOfPublication> MonetaryPlaceOfPublications { get; set; }
         public DbSet<DBModels.MonetaryPlaceOfPublicationDescription> MonetaryPlaceOfPublicationDescriptions { get; set; }
         public DbSet<DBModels.MonetaryExchangePeriod> MonetaryExchangePeriods { get; set; }
         public DbSet<DBModels.QuotaDefinition> QuotaDefinitions { get; set; }
+        public DbSet<DBModels.QuotaExhaustionEvent> QuotaExhaustionEvents { get; set; }
+        public DbSet<DBModels.QuotaAssociation> QuotaAssociations { get; set; }
+        public DbSet<DBModels.QuotaBalanceEvent> QuotaBalanceEvents { get; set; }
+        public DbSet<DBModels.QuotaCriticalEvent> QuotaCriticalEvents { get; set; }
+        public DbSet<DBModels.QuotaReopeningEvent> QuotaReopeningEvents { get; set; }
+        public DbSet<DBModels.QuotaUnblockingEvent> QuotaUnblockingEvents { get; set; }
+        public DbSet<DBModels.QuotaOrderNumber> QuotaOrderNumbers { get; set; }
+        public DbSet<DBModels.QuotaUnsuspensionEvent> QuotaUnsuspensionEvents { get; set; }
+        public DbSet<DBModels.QuotaSuspensionPeriod> QuotaSuspensionPeriods { get; set; }
+        public DbSet<DBModels.QuotaClosedTransferredEvent> QuotaClosedTransferredEvents { get; set; }
+        public DbSet<DBModels.QuotaExtendedInformation> QuotaExtendedInformations { get; set; }
+        public DbSet<DBModels.QuotaBlockingPeriod> QuotaBlockingPeriods { get; set; }
         public DbSet<DBModels.MeursingTablePlan> MeursingTablePlans { get; set; }
+        public DbSet<DBModels.MeursingHeading> MeursingHeadings { get; set; }
+        public DbSet<DBModels.MeursingHeadingDescription> MeursingHeadingDescriptions { get; set; }
+        public DbSet<DBModels.MeursingSubheading> MeursingSubheadings { get; set; }
+        public DbSet<DBModels.MeursingHeadingFootnotesAssociation> MeursingHeadingFootnotesAssociations { get; set; }
         public DbSet<DBModels.RegulationReplacement> RegulationReplacements { get; set; }
+        public DbSet<DBModels.ExplicitAbrogationRegulation> ExplicitAbrogationRegulations { get; set; }
+        public DbSet<DBModels.CompleteAbrogationRegulation> CompleteAbrogationRegulations { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

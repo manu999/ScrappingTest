@@ -46,7 +46,6 @@ namespace Scraping.DBModels
         public void UpdateFields(Description desc, string fileName = "")
         {
             languages_hjid = desc.language.hjid;
-            additionalCodeDescriptionPeriod_hjid = additionalCodeDescriptionPeriod_hjid;
             opType = desc.metainfo?.opType.ToString();
             origin = desc.metainfo?.origin.ToString();
             status = desc.metainfo?.status.ToString();
