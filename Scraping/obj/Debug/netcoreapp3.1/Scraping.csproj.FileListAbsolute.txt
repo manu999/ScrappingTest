@@ -1,8 +1,6 @@
 C:\Users\malzugaray\source\repos\ScrapingTest\Scraping\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\malzugaray\source\repos\ScrapingTest\Scraping\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\malzugaray\source\repos\ScrapingTest\Scraping\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\malzugaray\source\repos\ScrapingTest\Scraping\bin\Debug\netcoreapp3.1\Scraping.exe
-C:\Users\malzugaray\source\repos\ScrapingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.csprojAssemblyReference.cache
 C:\Users\malzugaray\source\repos\ScrapingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.AssemblyInfoInputs.cache
 C:\Users\malzugaray\source\repos\ScrapingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.AssemblyInfo.cs
 C:\Users\malzugaray\source\repos\ScrapingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.RazorTargetAssemblyInfo.cache
@@ -189,3 +187,4 @@ C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\obj\Debug\netcoreapp3.1\S
 C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.dll
 C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.pdb
 C:\Users\ssabatino\source\repos\ScrappingTest\Scraping\obj\Debug\netcoreapp3.1\Scraping.genruntimeconfig.cache
+C:\Users\malzugaray\source\repos\ScrapingTest\Scraping\obj\Debug\netcoreapp3.1\scopedcss\bundle\Scraping.styles.css

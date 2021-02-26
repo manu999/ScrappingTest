@@ -33,7 +33,7 @@ namespace Scraping.DBModels
         {
             hjid = desc.hjid;
             monetaryPlaceOfPublication_hjid = MonetaryPlaceOfPublication_hjid;
-            languages_hjid = desc.language.hjid;
+            languages_hjid = desc.language?.hjid ?? 0;
             opType = desc.metainfo?.opType.ToString();
             origin = desc.metainfo?.origin.ToString();
             status = desc.metainfo?.status.ToString();
@@ -46,7 +46,7 @@ namespace Scraping.DBModels
 
         public void UpdateFields(Description desc, string fileName = "")
         {
-            languages_hjid = desc.language.hjid;
+            languages_hjid = desc.language?.hjid ?? 0;
             opType = desc.metainfo?.opType.ToString();
             origin = desc.metainfo?.origin.ToString();
             status = desc.metainfo?.status.ToString();

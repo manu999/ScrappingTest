@@ -1,32 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ssabatino\\source\\repos\\ScrappingTest\\Scraping\\Scraping.csproj": {}
+    "C:\\Users\\malzugaray\\source\\repos\\ScrapingTest\\Scraping\\Scraping.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ssabatino\\source\\repos\\ScrappingTest\\Scraping\\Scraping.csproj": {
+    "C:\\Users\\malzugaray\\source\\repos\\ScrapingTest\\Scraping\\Scraping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ssabatino\\source\\repos\\ScrappingTest\\Scraping\\Scraping.csproj",
+        "projectUniqueName": "C:\\Users\\malzugaray\\source\\repos\\ScrapingTest\\Scraping\\Scraping.csproj",
         "projectName": "Scraping",
-        "projectPath": "C:\\Users\\ssabatino\\source\\repos\\ScrappingTest\\Scraping\\Scraping.csproj",
-        "packagesPath": "C:\\Users\\ssabatino\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ssabatino\\source\\repos\\ScrappingTest\\Scraping\\obj\\",
+        "projectPath": "C:\\Users\\malzugaray\\source\\repos\\ScrapingTest\\Scraping\\Scraping.csproj",
+        "packagesPath": "C:\\Users\\malzugaray\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\malzugaray\\source\\repos\\ScrapingTest\\Scraping\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ssabatino\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\malzugaray\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://descartes.myget.org/F/oneface/auth/21d9a02a-fa18-4145-8563-b52b06301981/api/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {

@@ -53,7 +53,6 @@ namespace Scraping.DBModels
 
         public void UpdateFields(meursingSubheading obj, string fileName = "")
         {
-            hjid = obj.hjid;
             subheadingSequenceNumber = obj.subheadingSequenceNumber;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();

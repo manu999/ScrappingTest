@@ -63,9 +63,9 @@ namespace Scraping.DBModels
             officialjournalPage = obj.officialjournalPage;
             replacementIndicator = obj.replacementIndicator;
             stoppedFlag = obj.stoppedFlag;
-            baseRegulation_hjid = obj.baseRegulation.hjid;
-            explicitAbrogationRegulation_hjid = obj.explicitAbrogationRegulation.hjid;
-            regulationRoleType_hjid = obj.regulationRoleType.hjid;
+            baseRegulation_hjid = obj.baseRegulation?.hjid ?? 0;
+            explicitAbrogationRegulation_hjid = obj.explicitAbrogationRegulation?.hjid ?? 0;
+            regulationRoleType_hjid = obj.regulationRoleType?.hjid ?? 0;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -86,9 +86,9 @@ namespace Scraping.DBModels
             officialjournalPage = obj.officialjournalPage;
             replacementIndicator = obj.replacementIndicator;
             stoppedFlag = obj.stoppedFlag;
-            baseRegulation_hjid = obj.baseRegulation.hjid;
-            explicitAbrogationRegulation_hjid = obj.explicitAbrogationRegulation.hjid;
-            regulationRoleType_hjid = obj.regulationRoleType.hjid;
+            baseRegulation_hjid = obj.baseRegulation?.hjid ?? 0;
+            explicitAbrogationRegulation_hjid = obj.explicitAbrogationRegulation?.hjid ?? 0;
+            regulationRoleType_hjid = obj.regulationRoleType?.hjid ?? 0;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();

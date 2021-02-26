@@ -38,7 +38,7 @@ namespace Scraping.DBModels
         {
             hjid = obj.hjid;
             meursingHeading_hjid = MeursingHeading_hjid;
-            footnote_hjid = obj.footnote.hjid;
+            footnote_hjid = obj.footnote?.hjid ?? 0;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
@@ -52,8 +52,7 @@ namespace Scraping.DBModels
 
         public void UpdateFields(meursingHeadingFootnotesAssoc obj, string fileName = "")
         {
-            hjid = obj.hjid;
-            footnote_hjid = obj.footnote.hjid;
+            footnote_hjid = obj.footnote?.hjid ?? 0;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();

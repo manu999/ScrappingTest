@@ -49,7 +49,7 @@ namespace Scraping.DBModels
             officialjournalNumber = obj.officialjournalNumber;
             officialjournalPage = obj.officialjournalPage;
             replacementIndicator = obj.replacementIndicator;
-            regulationRoleType_hjid = obj.regulationRoleType.hjid;
+            regulationRoleType_hjid = obj.regulationRoleType?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
@@ -67,7 +67,7 @@ namespace Scraping.DBModels
             officialjournalNumber = obj.officialjournalNumber;
             officialjournalPage = obj.officialjournalPage;
             replacementIndicator = obj.replacementIndicator;
-            regulationRoleType_hjid = obj.regulationRoleType.hjid;
+            regulationRoleType_hjid = obj.regulationRoleType?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";

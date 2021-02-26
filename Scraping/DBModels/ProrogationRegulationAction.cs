@@ -43,7 +43,7 @@ namespace Scraping.DBModels
             prorogatedRegulationId = obj.prorogatedRegulationId;
             prorogatedRegulationRole = obj.prorogatedRegulationRole;
             prorogationRegulation_hjid = ProrogationRegulation_hjid ?? 0;
-            baseRegulation_hjid = obj.baseRegulation.hjid;
+            baseRegulation_hjid = obj.baseRegulation?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
@@ -57,7 +57,7 @@ namespace Scraping.DBModels
             status = obj.metainfo?.status.ToString();
             prorogatedRegulationId = obj.prorogatedRegulationId;
             prorogatedRegulationRole = obj.prorogatedRegulationRole;
-            baseRegulation_hjid = obj.baseRegulation.hjid;
+            baseRegulation_hjid = obj.baseRegulation?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";

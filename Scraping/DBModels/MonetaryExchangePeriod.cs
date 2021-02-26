@@ -42,7 +42,7 @@ namespace Scraping.DBModels
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            monetaryUnit_hjid = obj.monetaryUnit.hjid;
+            monetaryUnit_hjid = obj.monetaryUnit?.hjid ?? 0;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -56,7 +56,7 @@ namespace Scraping.DBModels
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            monetaryUnit_hjid = obj.monetaryUnit.hjid;
+            monetaryUnit_hjid = obj.monetaryUnit?.hjid ?? 0;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();

@@ -32,7 +32,7 @@ namespace Scraping.DBModels
         public MeursingHeadingDescription(Description obj, long MeursingHeading_hjid, string fileName = "")
         {
             hjid = obj.hjid;
-            languages_hjid = obj.language.hjid;
+            languages_hjid = obj.language?.hjid ?? 0;
             meursingHeading_hjid = MeursingHeading_hjid;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
@@ -46,7 +46,7 @@ namespace Scraping.DBModels
 
         public void UpdateFields(Description obj, string fileName = "")
         {
-            languages_hjid = obj.language.hjid;
+            languages_hjid = obj.language?.hjid ?? 0;
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();

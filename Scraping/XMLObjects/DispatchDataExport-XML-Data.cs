@@ -20,8 +20,8 @@ using System.Xml.Serialization;
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03", IsNullable=false)]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport", IsNullable=false)]
 public partial class TariffHistoryResponse {
     
     private ResultsInfo resultsInfoField;
@@ -56,7 +56,7 @@ public partial class TariffHistoryResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class ResultsInfo {
     
     private string totalRecordsField;
@@ -208,7 +208,7 @@ public partial class ResultsInfo {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findSensitiveGoodByDatesResponseHistory {
     
     private sensitiveGood[] sensitiveGoodField;
@@ -230,7 +230,7 @@ public partial class findSensitiveGoodByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class sensitiveGood {
     
     private long hjidField;
@@ -356,7 +356,7 @@ public partial class sensitiveGood {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class metainfo {
     
     private OpType opTypeField;
@@ -467,7 +467,7 @@ public partial class metainfo {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace= "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public enum OpType {
     
     /// <remarks/>
@@ -483,7 +483,7 @@ public enum OpType {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace= "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public enum originType {
     
     /// <remarks/>
@@ -496,7 +496,7 @@ public enum originType {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace= "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public enum statusType {
     
     /// <remarks/>
@@ -526,7 +526,7 @@ public enum statusType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class goodsNomenclature {
     
     private long hjidField;
@@ -782,7 +782,7 @@ public partial class goodsNomenclature {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class goodsNomenFootnotesAssoc {
     
     private long hjidField;
@@ -934,7 +934,7 @@ public partial class goodsNomenFootnotesAssoc {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class footnote {
     
     private long hjidField;
@@ -1112,7 +1112,7 @@ public partial class footnote {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class footnoteDescriptionPeriod {
     
     private long hjidField;
@@ -1238,7 +1238,7 @@ public partial class footnoteDescriptionPeriod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class Description {
     
     private long hjidField;
@@ -1351,7 +1351,7 @@ public partial class Description {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class language {
     
     private long hjidField;
@@ -1490,7 +1490,7 @@ public partial class language {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class DescriptionLang {
     
     private long hjidField;
@@ -1603,7 +1603,7 @@ public partial class DescriptionLang {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class footnoteType {
     
     private long hjidField;
@@ -1781,7 +1781,7 @@ public partial class footnoteType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class goodsNomenDescriptionPeriod {
     
     private long hjidField;
@@ -1907,7 +1907,7 @@ public partial class goodsNomenDescriptionPeriod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class goodsNomenclatureIndents {
     
     private long hjidField;
@@ -2033,7 +2033,7 @@ public partial class goodsNomenclatureIndents {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class goodsNomenOrigin {
     
     private long hjidField;
@@ -2172,7 +2172,7 @@ public partial class goodsNomenOrigin {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class goodsNomenSuccessor {
     
     private long hjidField;
@@ -2311,7 +2311,7 @@ public partial class goodsNomenSuccessor {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class goodsNomenGroupMembership {
     
     private long hjidField;
@@ -2463,7 +2463,7 @@ public partial class goodsNomenGroupMembership {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class goodsNomenclatureGroup {
     
     private long hjidField;
@@ -2654,7 +2654,7 @@ public partial class goodsNomenclatureGroup {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findRegulationRoleTypeByDatesResponseHistory {
     
     private regulationRoleType[] regulationRoleTypeField;
@@ -2676,7 +2676,7 @@ public partial class findRegulationRoleTypeByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class regulationRoleType {
     
     private long hjidField;
@@ -2854,7 +2854,7 @@ public partial class regulationRoleType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class regulationRoleCombinations {
     
     private long hjidField;
@@ -2954,7 +2954,7 @@ public partial class regulationRoleCombinations {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findRegulationReplacementByDatesResponseHistory {
     
     private regulationReplacement[] regulationReplacementField;
@@ -2976,7 +2976,7 @@ public partial class findRegulationReplacementByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class regulationReplacement {
     
     private long hjidField;
@@ -3154,7 +3154,7 @@ public partial class regulationReplacement {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class geographicalArea {
     
     private long hjidField;
@@ -3371,7 +3371,7 @@ public partial class geographicalArea {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class geographicalAreaDescriptionPeriod {
     
     private long hjidField;
@@ -3497,7 +3497,7 @@ public partial class geographicalAreaDescriptionPeriod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class geographicalAreaMembership {
     
     private long hjidField;
@@ -3662,7 +3662,7 @@ public partial class geographicalAreaMembership {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measureType {
     
     private long hjidField;
@@ -3931,7 +3931,7 @@ public partial class measureType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measureTypeSeries {
     
     private long hjidField;
@@ -4109,7 +4109,7 @@ public partial class measureTypeSeries {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findRegulationGroupByDatesResponseHistory {
     
     private regulationGroup[] regulationGroupField;
@@ -4131,7 +4131,7 @@ public partial class findRegulationGroupByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class regulationGroup {
     
     private long hjidField;
@@ -4296,7 +4296,7 @@ public partial class regulationGroup {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findQuotaOrderNumberByDatesResponseHistory {
     
     private quotaOrderNumber[] quotaOrderNumberField;
@@ -4318,7 +4318,7 @@ public partial class findQuotaOrderNumberByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaOrderNumber {
     
     private long hjidField;
@@ -4483,7 +4483,7 @@ public partial class quotaOrderNumber {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaOrderNumberOrigin {
     
     private long hjidField;
@@ -4648,7 +4648,7 @@ public partial class quotaOrderNumberOrigin {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaOrderNumberOriginExcl {
     
     private long hjidField;
@@ -4748,7 +4748,7 @@ public partial class quotaOrderNumberOriginExcl {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findQuotaDefinitionByDatesResponseHistory {
     
     private quotaDefinition[] quotaDefinitionField;
@@ -4770,7 +4770,7 @@ public partial class findQuotaDefinitionByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaDefinition {
     
     private long hjidField;
@@ -5221,7 +5221,7 @@ public partial class quotaDefinition {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measurementUnit {
     
     private long hjidField;
@@ -5399,7 +5399,7 @@ public partial class measurementUnit {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measurementUnitQualifier {
     
     private long hjidField;
@@ -5564,7 +5564,7 @@ public partial class measurementUnitQualifier {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class monetaryUnit {
     
     private long hjidField;
@@ -5729,7 +5729,7 @@ public partial class monetaryUnit {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaAssociation {
     
     private long hjidField;
@@ -5868,7 +5868,7 @@ public partial class quotaAssociation {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaBalanceEvent {
     
     private long hjidField;
@@ -6085,7 +6085,7 @@ public partial class quotaBalanceEvent {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaBlockingPeriod {
     
     private long hjidField;
@@ -6276,7 +6276,7 @@ public partial class quotaBlockingPeriod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaClosedTransEvent {
     
     private long hjidField;
@@ -6454,7 +6454,7 @@ public partial class quotaClosedTransEvent {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaCriticalEvent {
     
     private long hjidField;
@@ -6606,7 +6606,7 @@ public partial class quotaCriticalEvent {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaExhaustionEvent {
     
     private long hjidField;
@@ -6745,7 +6745,7 @@ public partial class quotaExhaustionEvent {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaExtendedInformation {
     
     private long hjidField;
@@ -7053,7 +7053,7 @@ public partial class quotaExtendedInformation {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaReopeningEvent {
     
     private long hjidField;
@@ -7192,7 +7192,7 @@ public partial class quotaReopeningEvent {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaSuspensionPeriod {
     
     private long hjidField;
@@ -7344,7 +7344,7 @@ public partial class quotaSuspensionPeriod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaUnblockingEvent {
     
     private long hjidField;
@@ -7483,7 +7483,7 @@ public partial class quotaUnblockingEvent {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class quotaUnsuspensionEvent {
     
     private long hjidField;
@@ -7622,7 +7622,7 @@ public partial class quotaUnsuspensionEvent {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findPublicationSigleByDatesResponseHistory {
     
     private publicationSigle[] publicationSigleField;
@@ -7644,7 +7644,7 @@ public partial class findPublicationSigleByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class publicationSigle {
     
     private long hjidField;
@@ -7835,7 +7835,7 @@ public partial class publicationSigle {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findProrogationRegulationByDatesResponseHistory {
     
     private prorogationRegulation[] prorogationRegulationField;
@@ -7857,7 +7857,7 @@ public partial class findProrogationRegulationByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class prorogationRegulation {
     
     private long hjidField;
@@ -8087,7 +8087,7 @@ public partial class prorogationRegulation {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class prorogationRegulationAction {
     
     private long hjidField;
@@ -8239,7 +8239,7 @@ public partial class prorogationRegulationAction {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class baseRegulation {
     
     private long hjidField;
@@ -8638,7 +8638,7 @@ public partial class baseRegulation {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class completeAbrogationRegulation {
     
     private long hjidField;
@@ -8855,7 +8855,7 @@ public partial class completeAbrogationRegulation {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class explicitAbrogationRegulation {
     
     private long hjidField;
@@ -9098,7 +9098,7 @@ public partial class explicitAbrogationRegulation {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMonetaryUnitByDatesResponse {
     
     private monetaryUnit[] monetaryUnitField;
@@ -9120,7 +9120,7 @@ public partial class findMonetaryUnitByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMonetaryPlaceOfPublicationByDatesResponseHistory {
     
     private monetaryPlaceOfPublication[] monetaryPlaceOfPublicationField;
@@ -9142,7 +9142,7 @@ public partial class findMonetaryPlaceOfPublicationByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class monetaryPlaceOfPublication {
     
     private long hjidField;
@@ -9307,7 +9307,7 @@ public partial class monetaryPlaceOfPublication {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class MonetaryExchangePeriod {
     
     private long hjidField;
@@ -9472,7 +9472,7 @@ public partial class MonetaryExchangePeriod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class monetaryExchangeRate {
     
     private long hjidField;
@@ -9624,7 +9624,7 @@ public partial class monetaryExchangeRate {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMonetaryExchangePeriodByDatesResponseHistory {
     
     private MonetaryExchangePeriod[] monetaryExchangePeriodField;
@@ -9646,7 +9646,7 @@ public partial class findMonetaryExchangePeriodByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findModificationRegulationByDatesResponseHistory {
     
     private modificationRegulation[] modificationRegulationField;
@@ -9668,7 +9668,7 @@ public partial class findModificationRegulationByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class modificationRegulation {
     
     private long hjidField;
@@ -10015,7 +10015,7 @@ public partial class modificationRegulation {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMeursingTablePlanByDatesResponseHistory {
     
     private meursingTablePlan[] meursingTablePlanField;
@@ -10037,7 +10037,7 @@ public partial class findMeursingTablePlanByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class meursingTablePlan {
     
     private long hjidField;
@@ -10202,7 +10202,7 @@ public partial class meursingTablePlan {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class meursingHeading {
     
     private long hjidField;
@@ -10419,7 +10419,7 @@ public partial class meursingHeading {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class meursingHeadingFootnotesAssoc {
     
     private long hjidField;
@@ -10571,7 +10571,7 @@ public partial class meursingHeadingFootnotesAssoc {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class meursingSubheading {
     
     private long hjidField;
@@ -10749,7 +10749,7 @@ public partial class meursingSubheading {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMeursingAdditionalCodeByDatesResponseHistory {
     
     private meursingAdditionalCode[] meursingAdditionalCodeField;
@@ -10771,7 +10771,7 @@ public partial class findMeursingAdditionalCodeByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class meursingAdditionalCode {
     
     private long hjidField;
@@ -10936,7 +10936,7 @@ public partial class meursingAdditionalCode {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class meursingCellComponent {
     
     private long hjidField;
@@ -11101,7 +11101,7 @@ public partial class meursingCellComponent {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMeasurementUnitQualifierByDatesResponse {
     
     private measurementUnitQualifier[] measurementUnitQualifierField;
@@ -11123,7 +11123,7 @@ public partial class findMeasurementUnitQualifierByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMeasurementUnitByDatesResponse {
     
     private measurementUnit[] measurementUnitField;
@@ -11145,7 +11145,7 @@ public partial class findMeasurementUnitByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMeasureTypeSeriesByDatesResponse {
     
     private measureTypeSeries[] measureTypeSeriesField;
@@ -11167,7 +11167,7 @@ public partial class findMeasureTypeSeriesByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMeasureTypeByDatesResponse {
     
     private measureType[] measureTypeField;
@@ -11189,7 +11189,7 @@ public partial class findMeasureTypeByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMeasureConditionCodeByDatesResponse {
     
     private measureConditionCode[] measureConditionCodeField;
@@ -11211,7 +11211,7 @@ public partial class findMeasureConditionCodeByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measureConditionCode {
     
     private long hjidField;
@@ -11376,7 +11376,7 @@ public partial class measureConditionCode {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMeasureByDatesResponseHistory {
     
     private measure[] measureField;
@@ -11398,7 +11398,7 @@ public partial class findMeasureByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measure {
     
     private long hjidField;
@@ -11810,7 +11810,7 @@ public partial class measure {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class additionalCode {
     
     private long hjidField;
@@ -12001,7 +12001,7 @@ public partial class additionalCode {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class additionalCodeDescriptionPeriod {
     
     private long hjidField;
@@ -12153,7 +12153,7 @@ public partial class additionalCodeDescriptionPeriod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class additionalCodeType {
     
     private long hjidField;
@@ -12357,7 +12357,7 @@ public partial class additionalCodeType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class additionalCodeTypeMeasureType {
     
     private long hjidField;
@@ -12509,7 +12509,7 @@ public partial class additionalCodeTypeMeasureType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class ftnoteAssocAddCode {
     
     private long hjidField;
@@ -12661,7 +12661,7 @@ public partial class ftnoteAssocAddCode {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class exportRefundNomenclature {
     
     private long hjidField;
@@ -12891,7 +12891,7 @@ public partial class exportRefundNomenclature {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class exportRefundNomenDescriptionPeriod {
     
     private long hjidField;
@@ -13017,7 +13017,7 @@ public partial class exportRefundNomenDescriptionPeriod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class exportRefundNomenIndents {
     
     private long hjidField;
@@ -13143,7 +13143,7 @@ public partial class exportRefundNomenIndents {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class exportRefundNomenFootnotesAssoc {
     
     private long hjidField;
@@ -13295,7 +13295,7 @@ public partial class exportRefundNomenFootnotesAssoc {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class ftnoteAssocMeasure {
     
     private long hjidField;
@@ -13395,7 +13395,7 @@ public partial class ftnoteAssocMeasure {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measureComponent {
     
     private long hjidField;
@@ -13560,7 +13560,7 @@ public partial class measureComponent {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class dutyExpression {
     
     private long hjidField;
@@ -13764,7 +13764,7 @@ public partial class dutyExpression {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measureCondition {
     
     private long hjidField;
@@ -13994,7 +13994,7 @@ public partial class measureCondition {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class certificate {
     
     private long hjidField;
@@ -14172,7 +14172,7 @@ public partial class certificate {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class certificateDescriptionPeriod {
     
     private long hjidField;
@@ -14298,7 +14298,7 @@ public partial class certificateDescriptionPeriod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class certificateType {
     
     private long hjidField;
@@ -14463,7 +14463,7 @@ public partial class certificateType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measureAction {
     
     private long hjidField;
@@ -14628,7 +14628,7 @@ public partial class measureAction {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measureConditionComp {
     
     private long hjidField;
@@ -14793,7 +14793,7 @@ public partial class measureConditionComp {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measureExlGeoArea {
     
     private long hjidField;
@@ -14893,7 +14893,7 @@ public partial class measureExlGeoArea {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class measurePartTempStop {
     
     private long hjidField;
@@ -15136,7 +15136,7 @@ public partial class measurePartTempStop {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findMeasureActionByDatesResponse {
     
     private measureAction[] measureActionField;
@@ -15158,7 +15158,7 @@ public partial class findMeasureActionByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findLanguageByDatesResponseHistory {
     
     private language[] languageField;
@@ -15180,7 +15180,7 @@ public partial class findLanguageByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findGoodsNomenclatureGroupByDatesResponse {
     
     private goodsNomenclatureGroup[] goodsNomenclatureGroupField;
@@ -15202,7 +15202,7 @@ public partial class findGoodsNomenclatureGroupByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findGoodsNomenclatureByDatesResponse {
     
     private goodsNomenclature[] goodsNomenclatureField;
@@ -15224,7 +15224,7 @@ public partial class findGoodsNomenclatureByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findGeographicalAreaByDatesResponse {
     
     private geographicalArea[] geographicalAreaField;
@@ -15246,7 +15246,7 @@ public partial class findGeographicalAreaByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findFullTemporaryStopRegulationByDatesResponseHistory {
     
     private fullTemporaryStopRegulation[] fullTemporaryStopRegulationField;
@@ -15268,7 +15268,7 @@ public partial class findFullTemporaryStopRegulationByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class fullTemporaryStopRegulation {
     
     private long hjidField;
@@ -15602,7 +15602,7 @@ public partial class fullTemporaryStopRegulation {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class ftsRegulationAction {
     
     private long hjidField;
@@ -15715,7 +15715,7 @@ public partial class ftsRegulationAction {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findFootnoteTypeByDatesResponse {
     
     private footnoteType[] footnoteTypeField;
@@ -15737,7 +15737,7 @@ public partial class findFootnoteTypeByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findFootnoteByDatesResponse {
     
     private footnote[] footnoteField;
@@ -15759,7 +15759,7 @@ public partial class findFootnoteByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findExportRefundNomenclatureByDatesResponse {
     
     private exportRefundNomenclature[] exportRefundNomenclatureField;
@@ -15781,7 +15781,7 @@ public partial class findExportRefundNomenclatureByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findExplicitAbrogationRegulationByDatesResponseHistory {
     
     private explicitAbrogationRegulation[] explicitAbrogationRegulationField;
@@ -15803,7 +15803,7 @@ public partial class findExplicitAbrogationRegulationByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findDutyExpressionByDatesResponse {
     
     private dutyExpression[] dutyExpressionField;
@@ -15825,7 +15825,7 @@ public partial class findDutyExpressionByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findCompleteAbrogationRegulationByDatesResponseHistory {
     
     private completeAbrogationRegulation[] completeAbrogationRegulationField;
@@ -15847,7 +15847,7 @@ public partial class findCompleteAbrogationRegulationByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findCertificateTypeByDatesResponse {
     
     private certificateType[] certificateTypeField;
@@ -15869,7 +15869,7 @@ public partial class findCertificateTypeByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findCertificateByDatesResponse {
     
     private certificate[] certificateField;
@@ -15891,7 +15891,7 @@ public partial class findCertificateByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findCeilingByDatesResponseHistory {
     
     private ceiling[] ceilingField;
@@ -15913,7 +15913,7 @@ public partial class findCeilingByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class ceiling {
     
     private long hjidField;
@@ -16091,7 +16091,7 @@ public partial class ceiling {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findBaseRegulationByDatesResponseHistory {
     
     private baseRegulation[] baseRegulationField;
@@ -16113,7 +16113,7 @@ public partial class findBaseRegulationByDatesResponseHistory {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findAdditionalCodeTypeByDatesResponse {
     
     private additionalCodeType[] additionalCodeTypeField;
@@ -16135,7 +16135,7 @@ public partial class findAdditionalCodeTypeByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class findAdditionalCodeByDatesResponse {
     
     private additionalCode[] additionalCodeField;
@@ -16157,7 +16157,7 @@ public partial class findAdditionalCodeByDatesResponse {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03/DispatcheDataExport")]
 public partial class TariffHistoryResponseTariffHistoryItem {
     
     private object itemField;

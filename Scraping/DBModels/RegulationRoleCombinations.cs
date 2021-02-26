@@ -35,7 +35,7 @@ namespace Scraping.DBModels
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
             regulationRoleType_hjid = RegulationRoleType_hjid ?? 0;
-            regulationRoleType_master_hjid = obj.regulationRoleTypeMaster.hjid;
+            regulationRoleType_master_hjid = obj.regulationRoleTypeMaster?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
@@ -47,7 +47,7 @@ namespace Scraping.DBModels
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            regulationRoleType_master_hjid = obj.regulationRoleTypeMaster.hjid;
+            regulationRoleType_master_hjid = obj.regulationRoleTypeMaster?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";

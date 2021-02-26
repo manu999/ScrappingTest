@@ -35,7 +35,7 @@ namespace Scraping.DBModels
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
             quotaOrderNumberOrigin_hjid = QuotaOrderNumberOrigin_hjid;
-            geographicalArea_hjid = obj.geographicalArea.hjid;
+            geographicalArea_hjid = obj.geographicalArea?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
@@ -47,7 +47,7 @@ namespace Scraping.DBModels
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            geographicalArea_hjid = obj.geographicalArea.hjid;
+            geographicalArea_hjid = obj.geographicalArea?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";

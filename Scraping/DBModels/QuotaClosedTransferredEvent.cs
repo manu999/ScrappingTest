@@ -45,7 +45,7 @@ namespace Scraping.DBModels
             quotaDefinition_hjid = QuotaDefinition_hjid;
             closingDate = obj.closingDate;
             occurrenceTimestamp = obj.occurrenceTimestamp;
-            target_QuotaDefinition_hjid = obj.targetQuotaDefinition.hjid;
+            target_QuotaDefinition_hjid = obj.targetQuotaDefinition?.hjid ?? 0;
             transferredAmount = obj.transferredAmount;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
@@ -60,7 +60,7 @@ namespace Scraping.DBModels
             status = obj.metainfo?.status.ToString();
             closingDate = obj.closingDate;
             occurrenceTimestamp = obj.occurrenceTimestamp;
-            target_QuotaDefinition_hjid = obj.targetQuotaDefinition.hjid;
+            target_QuotaDefinition_hjid = obj.targetQuotaDefinition?.hjid ?? 0;
             transferredAmount = obj.transferredAmount;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;

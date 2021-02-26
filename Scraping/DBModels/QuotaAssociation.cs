@@ -39,7 +39,7 @@ namespace Scraping.DBModels
             quotaDefinition_hjid = QuotaDefinition_hjid;
             coefficient = obj.coefficient;
             relationType = obj.relationType;
-            subQuotaDefinition_hjid = obj.subQuotaDefinition.hjid;
+            subQuotaDefinition_hjid = obj.subQuotaDefinition?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
@@ -53,7 +53,7 @@ namespace Scraping.DBModels
             status = obj.metainfo?.status.ToString();
             coefficient = obj.coefficient;
             relationType = obj.relationType;
-            subQuotaDefinition_hjid = obj.subQuotaDefinition.hjid;
+            subQuotaDefinition_hjid = obj.subQuotaDefinition?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
