@@ -42,7 +42,7 @@ namespace Scraping.DBModels
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
             additionalCodeCode = obj.additionalCodeCode;
-            additionalCodeType_hjid = obj.additionalCodeType.hjid;
+            additionalCodeType_hjid = obj.additionalCodeType?.hjid ?? 0;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -57,7 +57,7 @@ namespace Scraping.DBModels
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
             additionalCodeCode = obj.additionalCodeCode;
-            additionalCodeType_hjid = obj.additionalCodeType.hjid;
+            additionalCodeType_hjid = obj.additionalCodeType?.hjid??0;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();

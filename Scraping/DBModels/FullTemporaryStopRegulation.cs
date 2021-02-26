@@ -57,9 +57,9 @@ namespace Scraping.DBModels
             status = obj.metainfo?.status.ToString();
             fullTemporaryStopRegulationId = obj.fullTemporaryStopRegulationId;
             replacementIndicator = obj.replacementIndicator;
-            completeAbrogationRegulation_hjid = obj.completeAbrogationRegulation.hjid;
-            explicitAbrogationRegulation_hjid = obj.explicitAbrogationRegulation.hjid;
-            regulationRoleType_hjid = obj.regulationRoleType.hjid;
+            completeAbrogationRegulation_hjid = obj.completeAbrogationRegulation?.hjid??0;
+            explicitAbrogationRegulation_hjid = obj.explicitAbrogationRegulation?.hjid??0;
+            regulationRoleType_hjid = obj.regulationRoleType?.hjid??0;
             approvedFlag = obj.approvedFlag;
             informationText = obj.informationText;
             officialjournalNumber = obj.officialjournalNumber;
@@ -78,9 +78,9 @@ namespace Scraping.DBModels
             status = obj.metainfo?.status.ToString();
             fullTemporaryStopRegulationId = obj.fullTemporaryStopRegulationId;
             replacementIndicator = obj.replacementIndicator;
-            completeAbrogationRegulation_hjid = obj.completeAbrogationRegulation.hjid;
-            explicitAbrogationRegulation_hjid = obj.explicitAbrogationRegulation.hjid;
-            regulationRoleType_hjid = obj.regulationRoleType.hjid;
+            completeAbrogationRegulation_hjid = obj.completeAbrogationRegulation?.hjid??0;
+            explicitAbrogationRegulation_hjid = obj.explicitAbrogationRegulation?.hjid??0;
+            regulationRoleType_hjid = obj.regulationRoleType?.hjid??0;
             approvedFlag = obj.approvedFlag;
             informationText = obj.informationText;
             officialjournalNumber = obj.officialjournalNumber;

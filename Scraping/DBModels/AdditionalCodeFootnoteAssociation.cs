@@ -41,7 +41,7 @@ namespace Scraping.DBModels
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
             additionalCode_hjid = AdditionalCode_hjid;
-            footnote_hjid = obj.footnote.hjid;
+            footnote_hjid = obj.footnote?.hjid ??0;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
@@ -55,7 +55,7 @@ namespace Scraping.DBModels
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
-            footnote_hjid = obj.footnote.hjid;
+            footnote_hjid = obj.footnote?.hjid??0;
             validityStartDate = obj.validityStartDate;
             validityEndDate = obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();

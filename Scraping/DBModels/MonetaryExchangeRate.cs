@@ -40,7 +40,7 @@ namespace Scraping.DBModels
             childMonetaryUnitCode = obj.childMonetaryUnitCode;
             childMonetaryUnitHJID = obj.childMonetaryUnitHJID;
             exchangeRate = obj.exchangeRate;
-            monetaryUnit_hjid = obj.monetaryUnit.hjid;
+            monetaryUnit_hjid = obj.monetaryUnit?.hjid??0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
@@ -55,7 +55,7 @@ namespace Scraping.DBModels
             childMonetaryUnitCode = obj.childMonetaryUnitCode;
             childMonetaryUnitHJID = obj.childMonetaryUnitHJID;
             exchangeRate = obj.exchangeRate;
-            monetaryUnit_hjid = obj.monetaryUnit.hjid;
+            monetaryUnit_hjid = obj.monetaryUnit?.hjid??0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";

@@ -37,7 +37,7 @@ namespace Scraping.DBModels
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
             description = obj.description;
-            languages_hjid = obj.language.hjid;
+            languages_hjid = obj.language?.hjid ??0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
@@ -50,7 +50,7 @@ namespace Scraping.DBModels
             origin = obj.metainfo?.origin.ToString();
             status = obj.metainfo?.status.ToString();
             description = obj.description;
-            languages_hjid = obj.language.hjid;
+            languages_hjid = obj.language?.hjid??0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
