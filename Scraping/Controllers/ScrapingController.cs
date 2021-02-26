@@ -87,9 +87,9 @@ namespace Scraping.Controllers
             if (proccesFile)
             {
                 //fileName to be proccess
-                //var fileName = "C:\\Users\\malzugaray\\Documents\\export-20181201T000000-20181201T000500\\export-20181201T000000-20181201T000500.xml";
+                var fileName = "C:\\Users\\malzugaray\\Documents\\export-20181201T000000-20181201T000500\\export-20181201T000000-20181201T000500.xml";
                 //var fileName = "C:\\Users\\malzugaray\\Documents\\export-20210101T000000-20210101T000500\\export-20210101T000000-20210101T000500.xml";
-                var fileName = "C:\\Users\\malzugaray\\source\\repos\\ScrapingTest\\Scraping\\testMessage.xml";
+                //var fileName = "C:\\Users\\malzugaray\\source\\repos\\ScrapingTest\\Scraping\\testMessage.xml";
                 //C:\Users\malzugaray\Documents\export-20181201T000000-20181201T000500
 
                 //Proccess Model and store in DB
@@ -875,8 +875,8 @@ namespace Scraping.Controllers
                                     {
                                         using (StringReader stringReader = new StringReader(explicitAbrogationRegulation))
                                         {
-                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.explicitAbrogationRegulation));
-                                            var xmlObject = (Scraping.explicitAbrogationRegulation)serializer.Deserialize(stringReader);
+                                            XmlSerializer serializer = new XmlSerializer(typeof(Scraping.ExplicitAbrogationRegulation));
+                                            var xmlObject = (Scraping.ExplicitAbrogationRegulation)serializer.Deserialize(stringReader);
 
                                             ProcessExplicitAbrogationRegulation(xmlObject, dbContext, fileName);
                                         }
@@ -952,7 +952,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Footnote Description Periods
-                foreach(footnoteDescriptionPeriod fnd in item.footnoteDescriptionPeriod)
+                foreach(footnoteDescriptionPeriod fnd in item.footnoteDescriptionPeriod ?? Enumerable.Empty<footnoteDescriptionPeriod>())
                 {
                     switch (fnd.metainfo.opType)
                     {
@@ -978,7 +978,7 @@ namespace Scraping.Controllers
                             break;
                     }
                     //Proccess Footnote Descriptions
-                    foreach (Description desc in fnd.footnoteDescription)
+                    foreach (Description desc in fnd.footnoteDescription ?? Enumerable.Empty<Description>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -1049,7 +1049,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Footnote Type Descriptions
-                foreach (Description d in item.footnoteTypeDescription)
+                foreach (Description d in item.footnoteTypeDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1118,7 +1118,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Certificate Description Periods
-                foreach (certificateDescriptionPeriod certificateDP in item.certificateDescriptionPeriod)
+                foreach (certificateDescriptionPeriod certificateDP in item.certificateDescriptionPeriod ?? Enumerable.Empty<certificateDescriptionPeriod>())
                 {
                     switch (certificateDP.metainfo.opType)
                     {
@@ -1144,7 +1144,7 @@ namespace Scraping.Controllers
                             break;
                     }
                     //Proccess Footnote Descriptions
-                    foreach (Description desc in certificateDP.certificateDescription)
+                    foreach (Description desc in certificateDP.certificateDescription ?? Enumerable.Empty<Description>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -1215,7 +1215,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Footnote Type Descriptions
-                foreach (Description d in item.certificateTypeDescription)
+                foreach (Description d in item.certificateTypeDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1284,7 +1284,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Geographical Area Description Periods
-                foreach (GeographicalAreaDescriptionPeriod geoAreaDP in item.geographicalAreaDescriptionPeriod)
+                foreach (GeographicalAreaDescriptionPeriod geoAreaDP in item.geographicalAreaDescriptionPeriod ?? Enumerable.Empty<GeographicalAreaDescriptionPeriod>())
                 {
                     switch (geoAreaDP.metainfo.opType)
                     {
@@ -1310,7 +1310,7 @@ namespace Scraping.Controllers
                             break;
                     }
                     //Proccess Geographical Area Descriptions
-                    foreach (Description desc in geoAreaDP.geographicalAreaDescription)
+                    foreach (Description desc in geoAreaDP.geographicalAreaDescription ?? Enumerable.Empty<Description>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -1342,7 +1342,7 @@ namespace Scraping.Controllers
                 if(item.geographicalAreaMembership != null)
                 {
                     //Proccess Geographical Area Membership
-                    foreach (geographicalAreaMembership gam in item.geographicalAreaMembership)
+                    foreach (geographicalAreaMembership gam in item.geographicalAreaMembership ?? Enumerable.Empty<geographicalAreaMembership>())
                     {
                         switch (gam.metainfo.opType)
                         {
@@ -1413,7 +1413,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Footnote Type Descriptions
-                foreach (DescriptionLang d in item.languageDescription)
+                foreach (DescriptionLang d in item.languageDescription ?? Enumerable.Empty<DescriptionLang>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1482,7 +1482,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess footnoteAssociationMeasure
-                foreach (var d in item.footnoteAssociationMeasure)
+                foreach (var d in item.footnoteAssociationMeasure ?? Enumerable.Empty<ftnoteAssocMeasure>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1510,7 +1510,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measureComponent
-                foreach (var d in item.measureComponent)
+                foreach (var d in item.measureComponent ?? Enumerable.Empty<measureComponent>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1538,7 +1538,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measureCondition
-                foreach (var d in item.measureCondition)
+                foreach (var d in item.measureCondition ?? Enumerable.Empty<measureCondition>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1565,7 +1565,7 @@ namespace Scraping.Controllers
                     }
 
                     //Proccess measureConditionComponent
-                    foreach (var c in d.measureConditionComponent)
+                    foreach (var c in d.measureConditionComponent ?? Enumerable.Empty<measureConditionComp>())
                     {
                         switch (c.metainfo.opType)
                         {
@@ -1594,7 +1594,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measureExcludedGeographicalArea
-                foreach (var d in item.measureExcludedGeographicalArea)
+                foreach (var d in item.measureExcludedGeographicalArea ?? Enumerable.Empty<measureExlGeoArea>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1622,7 +1622,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measurePartialTemporaryStop
-                foreach (var d in item.measurePartialTemporaryStop)
+                foreach (var d in item.measurePartialTemporaryStop ?? Enumerable.Empty<measurePartTempStop>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1692,7 +1692,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess additional Code Type Description
-                foreach (var d in item.additionalCodeTypeDescription)
+                foreach (var d in item.additionalCodeTypeDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1720,7 +1720,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess additional Code Type Measure Type
-                foreach (var d in item.additionalCodeTypeMeasureType)
+                foreach (var d in item.additionalCodeTypeMeasureType ?? Enumerable.Empty<additionalCodeTypeMeasureType>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1790,7 +1790,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measure Type Series Description
-                foreach (var d in item.measureTypeSeriesDescription)
+                foreach (var d in item.measureTypeSeriesDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1860,7 +1860,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measurement Unit Qualifier Description
-                foreach (var d in item.measurementUnitQualifierDescription)
+                foreach (var d in item.measurementUnitQualifierDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -1930,7 +1930,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess goods Nomenclature Group Description
-                foreach (var d in item.goodsNomenclatureGroupDescription)
+                foreach (var d in item.goodsNomenclatureGroupDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2000,7 +2000,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess regulation Role Type Description
-                foreach (var d in item.regulationRoleTypeDescription)
+                foreach (var d in item.regulationRoleTypeDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2028,7 +2028,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess regulation Role Combinations
-                foreach (var d in item.regulationRoleCombinations)
+                foreach (var d in item.regulationRoleCombinations ?? Enumerable.Empty<regulationRoleCombinations>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2097,7 +2097,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measurement Unit Description
-                foreach (var d in item.measurementUnitDescription)
+                foreach (var d in item.measurementUnitDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2208,7 +2208,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Export Refund Nomenclature Description Periods
-                foreach (exportRefundNomenDescriptionPeriod certificateDP in item.exportRefundNomenclatureDescriptionPeriod)
+                foreach (exportRefundNomenDescriptionPeriod certificateDP in item.exportRefundNomenclatureDescriptionPeriod ?? Enumerable.Empty<exportRefundNomenDescriptionPeriod>())
                 {
                     switch (certificateDP.metainfo.opType)
                     {
@@ -2235,7 +2235,7 @@ namespace Scraping.Controllers
                     }
 
                     //Proccess export Refund Nomenclature Description
-                    foreach (Description desc in certificateDP.exportRefundNomenclatureDescription)
+                    foreach (Description desc in certificateDP.exportRefundNomenclatureDescription ?? Enumerable.Empty<Description>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -2265,7 +2265,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Export Refund Nomen Footnotes Association
-                foreach (ExportRefundNomenFootnotesAssoc d in item.footnoteAssociationErn)
+                foreach (ExportRefundNomenFootnotesAssoc d in item.footnoteAssociationErn ?? Enumerable.Empty<ExportRefundNomenFootnotesAssoc>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2293,7 +2293,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Export Refund Nomen Indents
-                foreach (ExportRefundNomenIndents d in item.exportRefundNomenclatureIndents)
+                foreach (ExportRefundNomenIndents d in item.exportRefundNomenclatureIndents ?? Enumerable.Empty<ExportRefundNomenIndents>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2364,7 +2364,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measure Condition Code Description
-                foreach (var d in item.measureConditionCodeDescription)
+                foreach (var d in item.measureConditionCodeDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2433,7 +2433,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess duty Expression Description
-                foreach (var d in item.dutyExpressionDescription)
+                foreach (var d in item.dutyExpressionDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2502,7 +2502,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measure Action Description
-                foreach (var d in item.measureActionDescription)
+                foreach (var d in item.measureActionDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2571,7 +2571,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess regulation Group Description
-                foreach (var d in item.regulationGroupDescription)
+                foreach (var d in item.regulationGroupDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2640,7 +2640,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess measure Type Description
-                foreach (var d in item.measureTypeDescription)
+                foreach (var d in item.measureTypeDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2710,7 +2710,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess footnote Association Goods Nomenclature
-                foreach (var d in item.footnoteAssociationGoodsNomenclature)
+                foreach (var d in item.footnoteAssociationGoodsNomenclature ?? Enumerable.Empty<goodsNomenFootnotesAssoc>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2738,7 +2738,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess goods Nomenclature Description Period
-                foreach (goodsNomenDescriptionPeriod certificateDP in item.goodsNomenclatureDescriptionPeriod)
+                foreach (goodsNomenDescriptionPeriod certificateDP in item.goodsNomenclatureDescriptionPeriod ?? Enumerable.Empty<goodsNomenDescriptionPeriod>())
                 {
                     switch (certificateDP.metainfo.opType)
                     {
@@ -2765,7 +2765,7 @@ namespace Scraping.Controllers
                     }
 
                     //Proccess goods Nomenclature Description
-                    foreach (Description desc in certificateDP.goodsNomenclatureDescription)
+                    foreach (Description desc in certificateDP.goodsNomenclatureDescription ?? Enumerable.Empty<Description>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -2794,7 +2794,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Goods Nomenclature Indents
-                foreach (var d in item.goodsNomenclatureIndents)
+                foreach (var d in item.goodsNomenclatureIndents ?? Enumerable.Empty<GoodsNomenclatureIndents>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2822,7 +2822,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Goods Nomenclature Origin
-                foreach (var d in item.goodsNomenclatureOrigin)
+                foreach (var d in item.goodsNomenclatureOrigin ?? Enumerable.Empty<GoodsNomenOrigin>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2850,7 +2850,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Goods Nomenclature Successor
-                foreach (var d in item.goodsNomenclatureSuccessor)
+                foreach (var d in item.goodsNomenclatureSuccessor ?? Enumerable.Empty<GoodsNomenSuccessor>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2920,7 +2920,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess prorogation Regulation Action
-                foreach (var d in item.prorogationRegulationAction)
+                foreach (var d in item.prorogationRegulationAction ?? Enumerable.Empty<ProrogationRegulationAction>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -2989,7 +2989,7 @@ namespace Scraping.Controllers
                 }
                 
                 //Proccess Full Temporary Stop Regulation Action
-                foreach (var d in item.ftsRegulationAction)
+                foreach (var d in item.ftsRegulationAction ?? Enumerable.Empty<ftsRegulationAction>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3099,7 +3099,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Meursing Cell Component
-                foreach (var d in item.meursingCellComponent)
+                foreach (var d in item.meursingCellComponent ?? Enumerable.Empty<MeursingCellComponent>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3169,7 +3169,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Quota Order Number Origin
-                foreach (QuotaOrderNumberOrigin certificateDP in item.quotaOrderNumberOrigin)
+                foreach (QuotaOrderNumberOrigin certificateDP in item.quotaOrderNumberOrigin ?? Enumerable.Empty<QuotaOrderNumberOrigin>())
                 {
                     switch (certificateDP.metainfo.opType)
                     {
@@ -3196,7 +3196,7 @@ namespace Scraping.Controllers
                     }
 
                     //Proccess Quota Order Number Origin Exclusions
-                    foreach (QuotaOrderNumberOriginExcl desc in certificateDP.quotaOrderNumberOriginExclusions)
+                    foreach (QuotaOrderNumberOriginExcl desc in certificateDP.quotaOrderNumberOriginExclusions ?? Enumerable.Empty<QuotaOrderNumberOriginExcl>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -3265,7 +3265,7 @@ namespace Scraping.Controllers
                     default:
                         break;
                 }
-                foreach (monetaryExchangeRate d in item.monetaryExchangeRate)
+                foreach (monetaryExchangeRate d in item.monetaryExchangeRate ?? Enumerable.Empty<monetaryExchangeRate>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3330,7 +3330,7 @@ namespace Scraping.Controllers
                     default:
                         break;
                 }
-                foreach (quotaAssociation d in item.quotaAssociation)
+                foreach (quotaAssociation d in item.quotaAssociation ?? Enumerable.Empty<quotaAssociation>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3356,7 +3356,7 @@ namespace Scraping.Controllers
                             break;
                     }
                 }
-                foreach (quotaBalanceEvent d in item.quotaBalanceEvent)
+                foreach (quotaBalanceEvent d in item.quotaBalanceEvent ?? Enumerable.Empty<quotaBalanceEvent>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3382,7 +3382,7 @@ namespace Scraping.Controllers
                             break;
                     }
                 }
-                foreach (quotaBlockingPeriod d in item.quotaBlockingPeriod)
+                foreach (quotaBlockingPeriod d in item.quotaBlockingPeriod ?? Enumerable.Empty<quotaBlockingPeriod>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3408,7 +3408,7 @@ namespace Scraping.Controllers
                             break;
                     }
                 }
-                foreach (quotaClosedTransEvent d in item.quotaClosedAndTransferredEvent)
+                foreach (quotaClosedTransEvent d in item.quotaClosedAndTransferredEvent ?? Enumerable.Empty<quotaClosedTransEvent>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3435,7 +3435,7 @@ namespace Scraping.Controllers
                     }
 
                 }
-                foreach (quotaCriticalEvent d in item.quotaCriticalEvent)
+                foreach (quotaCriticalEvent d in item.quotaCriticalEvent ?? Enumerable.Empty<quotaCriticalEvent>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3462,7 +3462,7 @@ namespace Scraping.Controllers
                     }
 
                 }
-                foreach (quotaExhaustionEvent d in item.quotaExhaustionEvent)
+                foreach (quotaExhaustionEvent d in item.quotaExhaustionEvent ?? Enumerable.Empty<quotaExhaustionEvent>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3489,7 +3489,7 @@ namespace Scraping.Controllers
                     }
 
                 }
-                foreach (quotaExtendedInformation d in item.quotaExtendedInformation)
+                foreach (quotaExtendedInformation d in item.quotaExtendedInformation ?? Enumerable.Empty<quotaExtendedInformation>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3516,7 +3516,7 @@ namespace Scraping.Controllers
                     }
 
                 }
-                foreach (quotaReopeningEvent d in item.quotaReopeningEvent)
+                foreach (quotaReopeningEvent d in item.quotaReopeningEvent ?? Enumerable.Empty<quotaReopeningEvent>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3543,7 +3543,7 @@ namespace Scraping.Controllers
                     }
 
                 }
-                foreach (quotaSuspensionPeriod d in item.quotaSuspensionPeriod)
+                foreach (quotaSuspensionPeriod d in item.quotaSuspensionPeriod ?? Enumerable.Empty<quotaSuspensionPeriod>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3570,7 +3570,7 @@ namespace Scraping.Controllers
                     }
 
                 }
-                foreach (quotaUnblockingEvent d in item.quotaUnblockingEvent)
+                foreach (quotaUnblockingEvent d in item.quotaUnblockingEvent ?? Enumerable.Empty<quotaUnblockingEvent>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3598,7 +3598,7 @@ namespace Scraping.Controllers
 
                 }
 
-                foreach (quotaUnsuspensionEvent d in item.quotaUnsuspensionEvent)
+                foreach (quotaUnsuspensionEvent d in item.quotaUnsuspensionEvent ?? Enumerable.Empty<quotaUnsuspensionEvent>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3665,7 +3665,7 @@ namespace Scraping.Controllers
                         break;
                 }
 
-                foreach (meursingHeading d in item.meursingHeading)
+                foreach (meursingHeading d in item.meursingHeading ?? Enumerable.Empty<meursingHeading>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -3691,7 +3691,7 @@ namespace Scraping.Controllers
                             break;
                     }
                     //Proccess Additional Code Descriptions
-                    foreach (Description desc in d.meursingHeadingText)
+                    foreach (Description desc in d.meursingHeadingText ?? Enumerable.Empty<Description>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -3718,7 +3718,7 @@ namespace Scraping.Controllers
                         }
 
                     }
-                    foreach (meursingSubheading desc in d.meursingSubheading)
+                    foreach (meursingSubheading desc in d.meursingSubheading ?? Enumerable.Empty<meursingSubheading>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -3745,7 +3745,7 @@ namespace Scraping.Controllers
                         }
 
                     }
-                    foreach (meursingHeadingFootnotesAssoc desc in d.footnoteAssociationMeursingHeading)
+                    foreach (meursingHeadingFootnotesAssoc desc in d.footnoteAssociationMeursingHeading ?? Enumerable.Empty<meursingHeadingFootnotesAssoc>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -3824,7 +3824,7 @@ namespace Scraping.Controllers
         #endregion
 
         #region ProcessExplicitAbrogationRegulation
-        private bool ProcessExplicitAbrogationRegulation(Scraping.explicitAbrogationRegulation item, DBContext dbContext, string fileName = "")
+        private bool ProcessExplicitAbrogationRegulation(Scraping.ExplicitAbrogationRegulation item, DBContext dbContext, string fileName = "")
         {
             bool success = false;
             try
@@ -3932,7 +3932,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess monetary unit description
-                foreach (Description d in item.monetaryUnitDescription)
+                foreach (Description d in item.monetaryUnitDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -4001,7 +4001,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Additional Code Description Periods
-                foreach (additionalCodeDescriptionPeriod fnd in item.additionalCodeDescriptionPeriod)
+                foreach (additionalCodeDescriptionPeriod fnd in item.additionalCodeDescriptionPeriod ?? Enumerable.Empty<additionalCodeDescriptionPeriod>())
                 {
                     switch (fnd.metainfo.opType)
                     {
@@ -4027,7 +4027,7 @@ namespace Scraping.Controllers
                             break;
                     }
                     //Proccess Additional Code Descriptions
-                    foreach (Description desc in fnd.additionalCodeDescription)
+                    foreach (Description desc in fnd.additionalCodeDescription ?? Enumerable.Empty<Description>())
                     {
                         switch (desc.metainfo.opType)
                         {
@@ -4055,7 +4055,7 @@ namespace Scraping.Controllers
 
                     }
                 }
-                foreach (ftnoteAssocAddCode d in item.footnoteAssociationAdditionalCode)
+                foreach (ftnoteAssocAddCode d in item.footnoteAssociationAdditionalCode ?? Enumerable.Empty<ftnoteAssocAddCode>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -4203,7 +4203,7 @@ namespace Scraping.Controllers
                 }
 
                 //Proccess Monetary Place of Publications Description
-                foreach (Description d in item.monetaryPlaceOfPublicationDescription)
+                foreach (Description d in item.monetaryPlaceOfPublicationDescription ?? Enumerable.Empty<Description>())
                 {
                     switch (d.metainfo.opType)
                     {
@@ -4246,42 +4246,42 @@ namespace Scraping.Controllers
     {
         internal static bool IsActive { get; set; } = true;
         internal static StringBuilder XmlString { get; set; } = new StringBuilder();
-        internal static bool GoodNominclatureBypass { get; set; } = true;
+        internal static bool GoodNominclatureBypass { get; set; } = false;
         internal static bool FootnoteBypass { get; set; } = false;
-        internal static bool AdditionalCodeBypass { get; set; } = true;
-        internal static bool FootnoteTypeBypass { get; set; } = true;
-        internal static bool MeasureBypass { get; set; } = true;
-        internal static bool MonetaryPlaceOfPublicationBypass { get; set; } = true;
-        internal static bool MonetaryExchangePeriodBypass { get; set; } = true;
-        internal static bool ExportRefundNomenclatureBypass { get; set; } = true;
-        internal static bool QuotaOrderNumberBypass { get; set; } = true;
-        internal static bool MeasureActionBypass { get; set; } = true;
-        internal static bool MeasureConditionCodeBypass { get; set; } = true;
-        internal static bool MeursingAdditionalCodeBypass { get; set; } = true;
-        internal static bool MeursingTablePlanBypass { get; set; } = true;
-        internal static bool RegulationReplacementBypass { get; set; } = true;
-        internal static bool FullTemporaryStopRegulationBypass { get; set; } = true;
-        internal static bool ProrogationRegulationBypass { get; set; } = true;
-        internal static bool CompleteAbrogationRegulationBypass { get; set; } = true;
-        internal static bool PublicationSigleBypass { get; set; } = true;
-        internal static bool MonetaryUnitBypass { get; set; } = true;
-        internal static bool GoodsNomenclatureBypass { get; set; } = true;
-        internal static bool ModificationRegulationBypass { get; set; } = true;
-        internal static bool BaseRegulationBypass { get; set; } = true;
-        internal static bool DutyExpressionBypass { get; set; } = true;
-        internal static bool GoodsNomenclatureGroupBypass { get; set; } = true;
-        internal static bool GeographicalAreaBypass { get; set; } = true;
-        internal static bool MeasureTypeBypass { get; set; } = true;
-        internal static bool MeasurementUnitQualifierBypass { get; set; } = true;
-        internal static bool MeasurementUnitBypass { get; set; } = true;
-        internal static bool CertificateBypass { get; set; } = true;
-        internal static bool RegulationGroupBypass { get; set; } = true;
-        internal static bool MeasureTypeSeriesBypass { get; set; } = true;
-        internal static bool LanguageBypass { get; set; } = true;
-        internal static bool AdditionalCodeTypeBypass { get; set; } = true;
-        internal static bool CertificateTypeBypass { get; set; } = true;
-        internal static bool RegulationRoleTypeBypass { get; set; } = true;
-        internal static bool QuotaDefinitionBypass { get; set; } = true;
-        internal static bool ExplicitAbrogationRegulationBypass { get; set; } = true;
+        internal static bool AdditionalCodeBypass { get; set; } = false;
+        internal static bool FootnoteTypeBypass { get; set; } = false;
+        internal static bool MeasureBypass { get; set; } = false;
+        internal static bool MonetaryPlaceOfPublicationBypass { get; set; } = false;
+        internal static bool MonetaryExchangePeriodBypass { get; set; } = false;
+        internal static bool ExportRefundNomenclatureBypass { get; set; } = false;
+        internal static bool QuotaOrderNumberBypass { get; set; } = false;
+        internal static bool MeasureActionBypass { get; set; } = false;
+        internal static bool MeasureConditionCodeBypass { get; set; } = false;
+        internal static bool MeursingAdditionalCodeBypass { get; set; } = false;
+        internal static bool MeursingTablePlanBypass { get; set; } = false;
+        internal static bool RegulationReplacementBypass { get; set; } = false;
+        internal static bool FullTemporaryStopRegulationBypass { get; set; } = false;
+        internal static bool ProrogationRegulationBypass { get; set; } = false;
+        internal static bool CompleteAbrogationRegulationBypass { get; set; } = false;
+        internal static bool PublicationSigleBypass { get; set; } = false;
+        internal static bool MonetaryUnitBypass { get; set; } = false;
+        internal static bool GoodsNomenclatureBypass { get; set; } = false;
+        internal static bool ModificationRegulationBypass { get; set; } = false;
+        internal static bool BaseRegulationBypass { get; set; } = false;
+        internal static bool DutyExpressionBypass { get; set; } = false;
+        internal static bool GoodsNomenclatureGroupBypass { get; set; } = false;
+        internal static bool GeographicalAreaBypass { get; set; } = false;
+        internal static bool MeasureTypeBypass { get; set; } = false;
+        internal static bool MeasurementUnitQualifierBypass { get; set; } = false;
+        internal static bool MeasurementUnitBypass { get; set; } = false;
+        internal static bool CertificateBypass { get; set; } = false;
+        internal static bool RegulationGroupBypass { get; set; } = false;
+        internal static bool MeasureTypeSeriesBypass { get; set; } = false;
+        internal static bool LanguageBypass { get; set; } = false;
+        internal static bool AdditionalCodeTypeBypass { get; set; } = false;
+        internal static bool CertificateTypeBypass { get; set; } = false;
+        internal static bool RegulationRoleTypeBypass { get; set; } = false;
+        internal static bool QuotaDefinitionBypass { get; set; } = false;
+        internal static bool ExplicitAbrogationRegulationBypass { get; set; } = false;
     }
 }

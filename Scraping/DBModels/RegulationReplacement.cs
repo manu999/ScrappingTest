@@ -44,8 +44,8 @@ namespace Scraping.DBModels
             replacedRegulationRole = obj.replacedRegulationRole;
             replacingRegulationId = obj.replacingRegulationId;
             replacingRegulationRole = obj.replacingRegulationRole;
-            geographicalArea_hjid = obj.geographicalArea.hjid;
-            measureType_hjid = obj.measureType.hjid;
+            geographicalArea_hjid = obj.geographicalArea?.hjid ?? 0;
+            measureType_hjid = obj.measureType?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";
@@ -62,8 +62,8 @@ namespace Scraping.DBModels
             replacedRegulationRole = obj.replacedRegulationRole;
             replacingRegulationId = obj.replacingRegulationId;
             replacingRegulationRole = obj.replacingRegulationRole;
-            geographicalArea_hjid = obj.geographicalArea.hjid;
-            measureType_hjid = obj.measureType.hjid;
+            geographicalArea_hjid = obj.geographicalArea?.hjid ?? 0;
+            measureType_hjid = obj.measureType?.hjid ?? 0;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;
             dataFileType = "";

@@ -10125,7 +10125,7 @@ namespace Scraping
 
         private completeAbrogationRegulation completeAbrogationRegulationField;
 
-        private explicitAbrogationRegulation explicitAbrogationRegulationField;
+        private ExplicitAbrogationRegulation explicitAbrogationRegulationField;
 
         private RegulationGroup regulationGroupField;
 
@@ -10511,7 +10511,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public explicitAbrogationRegulation explicitAbrogationRegulation
+        public ExplicitAbrogationRegulation explicitAbrogationRegulation
         {
             get
             {
@@ -10824,7 +10824,7 @@ namespace Scraping
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.eurodyn.com/Tariff/services/DispatchDataExportXMLData/v03")]
-    public partial class explicitAbrogationRegulation
+    public partial class ExplicitAbrogationRegulation
     {
 
         private long hjidField;
@@ -11867,7 +11867,7 @@ namespace Scraping
 
         private completeAbrogationRegulation completeAbrogationRegulationField;
 
-        private explicitAbrogationRegulation explicitAbrogationRegulationField;
+        private ExplicitAbrogationRegulation explicitAbrogationRegulationField;
 
         private RegulationRoleType regulationRoleTypeField;
 
@@ -12209,7 +12209,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public explicitAbrogationRegulation explicitAbrogationRegulation
+        public ExplicitAbrogationRegulation explicitAbrogationRegulation
         {
             get
             {
@@ -18709,7 +18709,7 @@ namespace Scraping
 
         private completeAbrogationRegulation completeAbrogationRegulationField;
 
-        private explicitAbrogationRegulation explicitAbrogationRegulationField;
+        private ExplicitAbrogationRegulation explicitAbrogationRegulationField;
 
         private ftsRegulationAction[] ftsRegulationActionField;
 
@@ -19025,7 +19025,7 @@ namespace Scraping
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public explicitAbrogationRegulation explicitAbrogationRegulation
+        public ExplicitAbrogationRegulation explicitAbrogationRegulation
         {
             get
             {
@@ -19291,11 +19291,11 @@ namespace Scraping
     public partial class findExplicitAbrogationRegulationByDatesResponseHistory
     {
 
-        private explicitAbrogationRegulation[] explicitAbrogationRegulationField;
+        private ExplicitAbrogationRegulation[] explicitAbrogationRegulationField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ExplicitAbrogationRegulation", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public explicitAbrogationRegulation[] ExplicitAbrogationRegulation
+        public ExplicitAbrogationRegulation[] ExplicitAbrogationRegulation
         {
             get
             {

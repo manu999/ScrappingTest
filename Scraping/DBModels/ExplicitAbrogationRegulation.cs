@@ -40,7 +40,7 @@ namespace Scraping.DBModels
         public ExplicitAbrogationRegulation()
         {
         }
-        public ExplicitAbrogationRegulation(Scraping.explicitAbrogationRegulation obj, string fileName = "")
+        public ExplicitAbrogationRegulation(Scraping.ExplicitAbrogationRegulation obj, string fileName = "")
         {
             hjid = obj.hjid;
             opType = obj.metainfo?.opType.ToString();
@@ -61,7 +61,7 @@ namespace Scraping.DBModels
             dataFileTypeValue = 0;
         }
 
-        public void UpdateFields(Scraping.explicitAbrogationRegulation obj, string fileName = "")
+        public void UpdateFields(Scraping.ExplicitAbrogationRegulation obj, string fileName = "")
         {
             opType = obj.metainfo?.opType.ToString();
             origin = obj.metainfo?.origin.ToString();
