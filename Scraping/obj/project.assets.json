@@ -5430,23 +5430,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\idelgado\\.nuget\\packages\\": {},
+    "C:\\Users\\ssabatino\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\idelgado\\source\\repos\\ScrappingTest\\Scraping\\Scraping.csproj",
+      "projectUniqueName": "C:\\Users\\ssabatino\\source\\repos\\ScrappingTest\\Scraping\\Scraping.csproj",
       "projectName": "Scraping",
-      "projectPath": "C:\\Users\\idelgado\\source\\repos\\ScrappingTest\\Scraping\\Scraping.csproj",
-      "packagesPath": "C:\\Users\\idelgado\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\idelgado\\source\\repos\\ScrappingTest\\Scraping\\obj\\",
+      "projectPath": "C:\\Users\\ssabatino\\source\\repos\\ScrappingTest\\Scraping\\Scraping.csproj",
+      "packagesPath": "C:\\Users\\ssabatino\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ssabatino\\source\\repos\\ScrappingTest\\Scraping\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\idelgado\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ssabatino\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

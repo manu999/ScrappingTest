@@ -37,7 +37,7 @@ namespace Scraping.DBModels
         public Certificate(Scraping.Certificate cert, string fileName = "")
         {
             hjid = cert.hjid;
-            certificateType_hjid = cert.certificateType.hjid;
+            certificateType_hjid = cert.certificateType?.hjid ?? 0;
             opType = cert.metainfo?.opType.ToString();
             origin = cert.metainfo?.origin.ToString();
             status = cert.metainfo?.status.ToString();
@@ -52,7 +52,7 @@ namespace Scraping.DBModels
 
         public void UpdateFields(Scraping.Certificate cert, string fileName = "")
         {
-            certificateType_hjid = cert.certificateType.hjid;
+            certificateType_hjid = cert.certificateType?.hjid??0;
             opType = cert.metainfo?.opType.ToString();
             origin = cert.metainfo?.origin.ToString();
             status = cert.metainfo?.status.ToString();

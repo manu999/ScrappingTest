@@ -41,7 +41,7 @@ namespace Scraping.DBModels
         public Footnote(Scraping.Footnote fn, string fileName = "")
         {
             hjid = fn.hjid;
-            footnoteTypes_hjid = fn.footnoteType.hjid;
+            footnoteTypes_hjid = fn.footnoteType?.hjid??0;
             opType = fn.metainfo?.opType.ToString();
             origin = fn.metainfo?.origin.ToString();
             status = fn.metainfo?.status.ToString();
@@ -56,7 +56,7 @@ namespace Scraping.DBModels
 
         public void UpdateFields(Scraping.Footnote fn, string fileName = "")
         {
-            footnoteTypes_hjid = fn.footnoteType.hjid;
+            footnoteTypes_hjid = fn.footnoteType?.hjid??0;
             opType = fn.metainfo?.opType.ToString();
             origin = fn.metainfo?.origin.ToString();
             status = fn.metainfo?.status.ToString();

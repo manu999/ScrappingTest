@@ -54,7 +54,7 @@ namespace Scraping.DBModels
             originDestCode = obj.originDestCode;
             priorityCode = obj.priorityCode;
             tradeMovementCode = obj.tradeMovementCode;
-            measureTypeSeries_hjid = obj.measureTypeSeries.hjid;
+            measureTypeSeries_hjid = obj.measureTypeSeries?.hjid??0;
             validityEndDate = obj.validityEndDate == DateTime.MinValue ? DateTime.MaxValue : obj.validityEndDate;
             transactionDate = obj.metainfo?.transactionDate ?? new DateTime();
             dataFileName = fileName;

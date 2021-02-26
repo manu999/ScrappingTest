@@ -40,7 +40,7 @@ namespace Scraping.DBModels
         public ExportRefundNomenclature(Scraping.ExportRefundNomenclature obj, string fileName = "")
         {
             hjid = obj.hjid;
-            additionalCodeType_hjid = obj.additionalCodeType.hjid;
+            additionalCodeType_hjid = obj.additionalCodeType?.hjid??0;
             exportRefundCode = obj.exportRefundCode;
             productLine = obj.productLine;
             opType = obj.metainfo?.opType.ToString();
@@ -56,7 +56,7 @@ namespace Scraping.DBModels
 
         public void UpdateFields(Scraping.ExportRefundNomenclature obj, string fileName = "")
         {
-            additionalCodeType_hjid = obj.additionalCodeType.hjid;
+            additionalCodeType_hjid = obj.additionalCodeType?.hjid??0;
             exportRefundCode = obj.exportRefundCode;
             productLine = obj.productLine;
             opType = obj.metainfo?.opType.ToString();
